@@ -1,5 +1,10 @@
 import os
 from .base import *
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
+
 
 DEBUG = True
 DATABASES = {
