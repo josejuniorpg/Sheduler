@@ -7,7 +7,7 @@ from .managers import UserManager
 
 # Create your models here.
 
-class User(AbstractBaseUser, PermissionsMixin, TimeStampedModel):  # todo Put the Timestamp
+class User(AbstractBaseUser, PermissionsMixin, TimeStampedModel):
 
     GENDER_CHOICES = (
         ('M', 'Men'),
@@ -29,6 +29,6 @@ class User(AbstractBaseUser, PermissionsMixin, TimeStampedModel):  # todo Put th
 
     USERNAME_FIELD = 'email'
 
-    REQUIRED_FIELDS = ['username']
+    REQUIRED_FIELDS = ['username', 'is_staff', 'is_active', 'is_superuser']
 
     objects = UserManager()
