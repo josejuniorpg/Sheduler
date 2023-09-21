@@ -1,0 +1,18 @@
+<!-- head para PC -->
+{% extends "home/base_home.html" %}
+{% load  static %}
+
+{% block title %}
+    {{ home.title }}
+{% endblock %}
+
+
+{% block description %}
+{#    <meta name="description" content="{{ home.description }}">#}
+{% endblock %}
+
+{% block content %}
+    {% include "includes/header.html" %}
+    <h1>BienYuni</h1>
+    {% include "includes/footer.html" %}
+{% endblock content %}
