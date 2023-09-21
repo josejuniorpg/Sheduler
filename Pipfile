@@ -10,6 +10,7 @@ django-model-utils = "*"
 phonenumbers = "*"
 django-phonenumber-field = "*"
 pillow = "*"
+django-rosetta = "*"
 
 [dev-packages]
 
