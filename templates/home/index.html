@@ -2,6 +2,8 @@
 <!-- head para PC -->
 {% extends "home/base_home.html" %}
 {% load  static %}
+{% load i18n %}
+
 
 {% block title %}
     {{ title }}
@@ -16,6 +18,12 @@
     {% include "includes/header.html" %}
 
     <h1>BienYuni</h1>
+    {% trans "Yuni date" %}
+    {% trans "Yuni NUmber" %}
+    {% trans "Yuni New" %}
+
+    <a href="{% url 'home_app:change-language' 'es' %}">Español</a> |
+    <a href="{% url 'home_app:change-language' 'en' %}">English</a>
 
     {% include "includes/footer.html" %}
 {% endblock content %}

@@ -52,12 +52,12 @@ AUTH_USER_MODEL = 'users.User'  # Application for Users
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'scheduler.urls'
@@ -134,6 +134,5 @@ LANGUAGES = [
     ('en', _('English')),
     ('es', _('Spanish')),
 ]
-
 LOCALE_PATHS = os.path.join(BASE_DIR, 'locale'),
-
+LANGUAGE_COOKIE_NAME = 'my_language'

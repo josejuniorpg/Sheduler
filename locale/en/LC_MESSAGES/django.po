@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-21 16:10-0600\n"
+"POT-Creation-Date: 2023-09-21 16:25-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\applications\home\views.py:8
+#: .\applications\home\views.py:16
 msgid "Welcome | Home Page"
 msgstr ""
 
@@ -28,4 +28,16 @@ msgstr ""
 
 #: .\scheduler\settings\base.py:135
 msgid "Spanish"
+msgstr ""
+
+#: .\templates\home\index.html:21
+msgid "Yuni date"
+msgstr ""
+
+#: .\templates\home\index.html:22
+msgid "Yuni NUmber"
+msgstr ""
+
+#: .\templates\home\index.html:23
+msgid "Yuni New"
 msgstr ""
