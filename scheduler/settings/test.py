@@ -1,7 +1,13 @@
+# Django imports
 import os
-from .base import *
+
+# Packages imports
 import environ
 
+# Local imports
+from .base import *
+
+# Initialize environment variables
 env = environ.Env()
 environ.Env.read_env()
 

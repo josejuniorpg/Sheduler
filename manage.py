@@ -1,11 +1,17 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
+
+# Django imports
 import os
 import sys
+
+# Packages imports
 import environ
 
+# Initialize the environment variables
 env = environ.Env()
 environ.Env.read_env()
+
 
 def main():
     """Run administrative tasks."""
