@@ -41,6 +41,8 @@ LOCAL_APPS = [
 
 THIRD_PARTY_APPS = [
     'rosetta',
+    "django_bootstrap5",
+
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS

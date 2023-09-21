@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-
+{% load django_bootstrap5 %}
 {% load  static %}
 
 {% block css %}
-{#<link rel="stylesheet" href="{% static 'css/myblog.css' %}">#}
+    {% bootstrap_css %}
 {% endblock css %}
 
 {% block js %}
-
+    {% bootstrap_javascript %}
 {% endblock js %}

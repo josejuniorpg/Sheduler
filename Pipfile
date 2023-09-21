@@ -11,6 +11,7 @@ phonenumbers = "*"
 django-phonenumber-field = "*"
 pillow = "*"
 django-rosetta = "*"
+django-bootstrap5 = "*"
 
 [dev-packages]
 
