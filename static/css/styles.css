@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-size: 16px;
 }
-
-body {
-  background-color: lightblue; /* Cambia "lightblue" al color que desees */
+.pruebas{
+    background-color: #e1e6eb; /* Cambia "lightblue" al color que desees */
 }
