@@ -1,15 +1,58 @@
-._div-form-search{
+._main-home {
+    padding: 1rem;
+}
+
+/*Header styles*/
+._div-form-search {
     margin-left: auto;
     margin-right: 2rem;
 }
 
-._form-search{
-    margin: 1rem;
+._form-search {
+    margin: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-._button-form-search{
+._button-form-search {
     margin: 1rem;
+    color: #717a82;
+}
+
+._links-header {
+    color: #ece8e8;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+    color: #e3f2fd;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+    background-color: #048ABF;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color: #048ABF;
+}
+
+.dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+    background-color: rgba(252, 249, 249, 0.91);
+}
+
+.dropdown-content a:hover {
+    color: #FFFFFF;
+    background-color: #048ABF;
 }

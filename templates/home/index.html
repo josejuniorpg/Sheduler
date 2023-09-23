@@ -1,4 +1,3 @@
-
 <!-- head para PC -->
 {% extends "home/base_home.html" %}
 {% load  static %}
@@ -11,19 +10,16 @@
 
 
 {% block description %}
-{#   todo After see, what is this? #}
+    {#   todo After see, what is this? #}
 {% endblock %}
 
 {% block content %}
     {% include "includes/header.html" %}
-
-    <h1>BienYuni</h1>
-    {% trans "Yuni date" %}
-    {% trans "Yuni NUmber" %}
-    {% trans "Yuni New" %}
-
-    <a href="{% url 'home_app:change-language' 'es' %}">Español</a> |
-    <a href="{% url 'home_app:change-language' 'en' %}">English</a>
-
+    <main class="_main-home">
+        <h1>BienYuni</h1>
+        {% trans "Yuni date" %}
+        {% trans "Yuni NUmber" %}
+        {% trans "Yuni New" %}
+    </main>
     {% include "includes/footer.html" %}
 {% endblock content %}
