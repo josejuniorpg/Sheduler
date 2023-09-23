@@ -1,4 +1,15 @@
-.yuni {
-    color: aqua;
-    background: red;
+._div-form-search{
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+._form-search{
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+._button-form-search{
+    margin: 1rem;
 }
