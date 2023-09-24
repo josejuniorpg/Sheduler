@@ -1,8 +1,18 @@
 ._main-home {
-    padding: 1rem;
+    margin-top: 5rem;
+    margin-left: 1rem;
 }
 
 /*Header styles*/
+
+._my-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
 ._div-left-header {
     margin-left: auto;
     margin-right: 2rem;
@@ -16,17 +26,18 @@
 }
 
 ._button-form-search {
-    margin:1.5rem;
+    margin: 1.5rem;
     color: #717a82;
 }
-._button-header-login{
+
+._button-header-login {
     margin-left: 1rem;
     color: white;
     background: rgba(68, 234, 31, 0.55);
 
 }
 
-._button-header-login:hover{
+._button-header-login:hover {
     margin-left: 1rem;
     color: white;
     background: rgba(96, 236, 64, 0.82)
@@ -69,3 +80,14 @@
     color: #FFFFFF;
     background-color: #048ABF;
 }
+
+/*Footer Styles*/
+
+._my-footer {
+    margin-top: 0.5rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #048ABF;
+}
+
