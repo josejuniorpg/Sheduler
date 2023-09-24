@@ -3,21 +3,33 @@
 }
 
 /*Header styles*/
-._div-form-search {
+._div-left-header {
     margin-left: auto;
     margin-right: 2rem;
+    display: inline-flex;
 }
 
 ._form-search {
-    margin: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
 ._button-form-search {
-    margin: 1rem;
+    margin:1.5rem;
     color: #717a82;
+}
+._button-header-login{
+    margin-left: 1rem;
+    color: white;
+    background: rgba(68, 234, 31, 0.55);
+
+}
+
+._button-header-login:hover{
+    margin-left: 1rem;
+    color: white;
+    background: rgba(96, 236, 64, 0.82)
 }
 
 ._links-header {
@@ -28,6 +40,7 @@
     display: inline-block;
     position: relative;
     color: #e3f2fd;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
 .dropdown-content {
