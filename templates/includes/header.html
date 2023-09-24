@@ -1,3 +1,4 @@
+{% load i18n %}
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #048ABF; padding: 1rem">
         <a class="navbar-brand" href="#" style="margin-left: 1rem">Scheduler</a>
@@ -22,12 +23,12 @@
                 <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
+                            {% trans "Language" %}
                     </a>
                     <div class="dropdown-content" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'home_app:change-language' 'es' %}">Espanol</a>
+                        <a class="dropdown-item" href="{% url 'home_app:change-language' 'es' %}"> {% trans "Spanish" %}</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'home_app:change-language' 'en' %}">Ingles</a>
+                        <a class="dropdown-item" href="{% url 'home_app:change-language' 'en' %}"> {% trans "English" %}</a>
                     </div>
                 </div>
                 <form class="form-inline my-2 my-lg-0 _form-search">
