@@ -13,6 +13,7 @@ pillow = "*"
 django-rosetta = "*"
 django-bootstrap5 = "*"
 sentry-sdk = "*"
+fontawesomefree = "*"
 
 [dev-packages]
 

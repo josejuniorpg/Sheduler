@@ -1,12 +1,9 @@
 {% extends "base.html" %}
-{% load django_bootstrap5 %}
 {% load  static %}
 
 {% block css %}
-    {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'css/home/style.css' %}">
 {% endblock css %}
 
 {% block js %}
-    {% bootstrap_javascript %}
 {% endblock js %}
