@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-23 19:35-0600\n"
+"POT-Creation-Date: 2023-10-06 17:04-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "Welcome | Home Page"
 msgstr ""
 
-#: .\scheduler\settings\base.py:134 .\templates\includes\header.html:31
+#: .\scheduler\settings\base.py:135 .\templates\includes\header.html:31
 msgid "English"
 msgstr ""
 
-#: .\scheduler\settings\base.py:135 .\templates\includes\header.html:29
+#: .\scheduler\settings\base.py:136 .\templates\includes\header.html:29
 msgid "Spanish"
 msgstr ""
 
@@ -44,4 +44,8 @@ msgstr ""
 
 #: .\templates\includes\header.html:26
 msgid "Language"
+msgstr ""
+
+#: .\templates\includes\header.html:39
+msgid "Logout"
 msgstr ""

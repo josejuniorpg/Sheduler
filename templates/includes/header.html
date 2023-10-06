@@ -23,19 +23,26 @@
                 <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {% trans "Language" %}
+                        {% trans "Language" %}
                     </a>
                     <div class="dropdown-content" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'home_app:change-language' 'es' %}"> {% trans "Spanish" %}</a>
+                        <a class="dropdown-item"
+                           href="{% url 'home_app:change-language' 'es' %}"> {% trans "Spanish" %}</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'home_app:change-language' 'en' %}"> {% trans "English" %}</a>
+                        <a class="dropdown-item"
+                           href="{% url 'home_app:change-language' 'en' %}"> {% trans "English" %}</a>
                     </div>
                 </div>
                 <form class="form-inline my-2 my-lg-0 _form-search">
                     <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-light my-2 my-sm-0 _button-form-search" type="submit">Search</button>
                 </form>
-                <button class="btn  my-2 my-sm-0 _button-header-login" type="submit">Login</button>
+
+                {% if user.is_authenticated %}
+                    <button class="btn  my-2 my-sm-0 _button-header-logout" type="submit">{% trans "Logout" %}</button>
+                {% else %}
+                    <button class="btn  my-2 my-sm-0 _button-header-login" type="submit">Login</button>
+                {% endif %}
             </div>
         </div>
     </nav>

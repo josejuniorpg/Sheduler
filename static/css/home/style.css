@@ -29,14 +29,23 @@
     margin-left: 0.1rem;
     color: white;
     background: rgba(68, 234, 31, 0.55);
+}
 
+._button-header-logout {
+    margin-left: 0.1rem;
+    color: white;
+    background: rgba(255, 31, 65, 0.74);
+}
+
+._button-header-logout:hover {
+    color: white;
+    background: rgb(91, 30, 30)
 }
 
 ._button-header-login:hover {
     color: white;
     background: rgba(96, 236, 64, 0.82)
 }
-
 ._links-header {
     color: #ece8e8;
 }
