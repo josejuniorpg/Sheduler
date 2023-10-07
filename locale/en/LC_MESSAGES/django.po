@@ -8,15 +8,40 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-06 22:44-0600\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2023-10-07 00:32-0600\n"
+"PO-Revision-Date: 2023-10-07 00:31+0000\n"
+"Last-Translator:   <yunipgdes@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.9\n"
+
+#: .\applications\users\forms.py:12 .\applications\users\forms.py:15
+msgid "Password"
+msgstr ""
+
+#: .\applications\users\forms.py:19 .\applications\users\forms.py:22
+msgid "RepeatPassword"
+msgstr "Repeat Password"
+
+#: .\applications\users\forms.py:26
+msgid "Email"
+msgstr ""
+
+#: .\applications\users\forms.py:27
+msgid "FirstName"
+msgstr "First Name"
+
+#: .\applications\users\forms.py:46
+msgid "ThePasswordsDoNotMatch"
+msgstr "The Passwords Do Not Match"
+
+#: .\applications\users\forms.py:63 .\applications\users\forms.py:65
+msgid "TheCodeIsIncorrect"
+msgstr "The Code Is Incorrect"
 
 #: .\scheduler\settings\base.py:135 .\templates\includes\header.html:35
 msgid "English"
@@ -28,18 +53,6 @@ msgstr ""
 
 #: .\templates\home\index.html:8
 msgid "Welcome | Home Page"
-msgstr ""
-
-#: .\templates\home\index.html:19
-msgid "Yuni date"
-msgstr ""
-
-#: .\templates\home\index.html:20
-msgid "Yuni NUmber"
-msgstr ""
-
-#: .\templates\home\index.html:21
-msgid "Yuni New"
 msgstr ""
 
 #: .\templates\includes\footer.html:10
@@ -84,14 +97,14 @@ msgstr ""
 msgid "Verificaton Code"
 msgstr ""
 
-#: .\templates\users\verification.html:18
+#: .\templates\users\verification.html:17
 msgid "Email Verification"
 msgstr ""
 
-#: .\templates\users\verification.html:19
+#: .\templates\users\verification.html:18
 msgid "Enter the verification code"
 msgstr ""
 
-#: .\templates\users\verification.html:22
+#: .\templates\users\verification.html:21
 msgid "Confirm"
 msgstr ""

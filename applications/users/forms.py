@@ -1,31 +1,29 @@
 # Django imports
 from django import forms
 from django.contrib.auth import authenticate
+from django.utils.translation import gettext_lazy as _
 
 # Local imports
 from .models import User
 
 class UserRegisterForm(forms.ModelForm):
 
-    password1 = forms.CharField(
-        label='Contraseña',
-        required=True,
+    password1 = forms.CharField(label=_('Password'),required=True,
         widget=forms.PasswordInput(
             attrs={
-                'placeholder': 'Contraseña'
+                'placeholder': _('Password')
             }
         )
     )
-    password2 = forms.CharField(
-        label='Contraseña',
-        required=True,
+    password2 = forms.CharField(label=_('RepeatPassword'),required=True,
         widget=forms.PasswordInput(
             attrs={
-                'placeholder': 'Repetir Contraseña'
+                'placeholder': _('RepeatPassword')
             }
         )
     )
-
+    email = forms.EmailField(label=_('Email'), required=True)
+    first_name = forms.CharField(label=_('FirstName'), required=True)
     class Meta:
         """Meta definition for Userform."""
 
@@ -40,9 +38,11 @@ class UserRegisterForm(forms.ModelForm):
             'profile_image',
         )
 
+
+
     def clean_password2(self):
         if self.cleaned_data['password1'] != self.cleaned_data['password2']:
-            self.add_error('password2', 'Las contraseñas no son iguales')
+            self.add_error('password2', _('ThePasswordsDoNotMatch'))
 
 class VerificationForm(forms.Form):
     code_verification = forms.CharField(required=True)
@@ -59,7 +59,7 @@ class VerificationForm(forms.Form):
                 code
             )
             if not active:
-                raise forms.ValidationError('El codigo es incorrecto')
+                raise forms.ValidationError(_('TheCodeIsIncorrect'))
         else:
-            raise forms.ValidationError('El codigo es incorrecto')
+            raise forms.ValidationError(_('TheCodeIsIncorrect'))
         return code
