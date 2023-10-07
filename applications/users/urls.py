@@ -8,4 +8,5 @@ app_name = 'users_app'
 
 urlpatterns = [
     # path('', views.NewDepartamentoView.as_view(), name='new-departamento'),
+    path('register/', views.UserRegisterView.as_view(), name='register'),
 ]
