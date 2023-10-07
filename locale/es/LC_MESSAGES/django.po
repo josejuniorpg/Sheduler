@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-07 00:32-0600\n"
-"PO-Revision-Date: 2023-10-07 00:10+0000\n"
+"POT-Creation-Date: 2023-10-07 01:29-0600\n"
+"PO-Revision-Date: 2023-10-07 01:30+0000\n"
 "Last-Translator:   <yunipgdes@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -19,27 +19,27 @@ msgstr ""
 "X-Generator: Poedit 3.3.2\n"
 "X-Translated-Using: django-rosetta 0.9.9\n"
 
-#: .\applications\users\forms.py:12 .\applications\users\forms.py:15
-msgid "Password"
-msgstr "Contraseña"
-
-#: .\applications\users\forms.py:19 .\applications\users\forms.py:22
-msgid "RepeatPassword"
-msgstr "Repetir Contraseña"
-
-#: .\applications\users\forms.py:26
+#: .\applications\users\forms.py:11
 msgid "Email"
 msgstr "Correo"
 
-#: .\applications\users\forms.py:27
+#: .\applications\users\forms.py:12
 msgid "FirstName"
 msgstr "Nombre/s"
 
-#: .\applications\users\forms.py:46
-msgid "ThePasswordsDoNotMatch"
-msgstr "Las contraseñas son diferentes"
+#: .\applications\users\forms.py:13
+msgid "LastName"
+msgstr "Apellidos"
 
-#: .\applications\users\forms.py:63 .\applications\users\forms.py:65
+#: .\applications\users\forms.py:15
+msgid "PhoneNumber"
+msgstr "Numero Telefonico"
+
+#: .\applications\users\forms.py:16
+msgid "ProfileImage"
+msgstr "Foto de perfil."
+
+#: .\applications\users\forms.py:48 .\applications\users\forms.py:50
 msgid "TheCodeIsIncorrect"
 msgstr "El código es incorrecto"
 
@@ -68,8 +68,8 @@ msgid ""
 "  Here you can use rows and columns to organize your footer content. Lorem "
 "ipsumdolor sit amet, consectetur adipisicing elit."
 msgstr ""
-"  Aquí puede utilizar filas y columnas para organizar el contenido de su pie "
-"de página. Lorem ipsumdolor sit amet, consectetur adipisicing elit."
+"  Aquí puede utilizar filas y columnas para organizar el contenido de su pie"
+" de página. Lorem ipsumdolor sit amet, consectetur adipisicing elit."
 
 #: .\templates\includes\footer.html:60
 msgid "Products"
@@ -95,6 +95,11 @@ msgstr "Salir"
 msgid "Register"
 msgstr "Registrar"
 
+#: .\templates\users\register.html:18
+#| msgid "Register"
+msgid "Register User"
+msgstr "Crear Usuario"
+
 #: .\templates\users\verification.html:8
 msgid "Verificaton Code"
 msgstr "Codigo de Verificacion"
@@ -110,3 +115,12 @@ msgstr "Introduzca el codigo de verificacion"
 #: .\templates\users\verification.html:21
 msgid "Confirm"
 msgstr "Confirmar"
+
+#~ msgid "Password"
+#~ msgstr "Contraseña"
+
+#~ msgid "RepeatPassword"
+#~ msgstr "Repetir Contraseña"
+
+#~ msgid "ThePasswordsDoNotMatch"
+#~ msgstr "Las contraseñas son diferentes"

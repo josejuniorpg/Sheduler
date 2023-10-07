@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-07 00:32-0600\n"
-"PO-Revision-Date: 2023-10-07 00:31+0000\n"
+"POT-Creation-Date: 2023-10-07 01:29-0600\n"
+"PO-Revision-Date: 2023-10-07 01:28+0000\n"
 "Last-Translator:   <yunipgdes@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,27 +19,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.9\n"
 
-#: .\applications\users\forms.py:12 .\applications\users\forms.py:15
-msgid "Password"
-msgstr ""
-
-#: .\applications\users\forms.py:19 .\applications\users\forms.py:22
-msgid "RepeatPassword"
-msgstr "Repeat Password"
-
-#: .\applications\users\forms.py:26
+#: .\applications\users\forms.py:11
 msgid "Email"
 msgstr ""
 
-#: .\applications\users\forms.py:27
+#: .\applications\users\forms.py:12
 msgid "FirstName"
 msgstr "First Name"
 
-#: .\applications\users\forms.py:46
-msgid "ThePasswordsDoNotMatch"
-msgstr "The Passwords Do Not Match"
+#: .\applications\users\forms.py:13
+msgid "LastName"
+msgstr "Last Name"
 
-#: .\applications\users\forms.py:63 .\applications\users\forms.py:65
+#: .\applications\users\forms.py:15
+msgid "PhoneNumber"
+msgstr "Phone Number"
+
+#: .\applications\users\forms.py:16
+msgid "ProfileImage"
+msgstr "Profile Image"
+
+#: .\applications\users\forms.py:48 .\applications\users\forms.py:50
 msgid "TheCodeIsIncorrect"
 msgstr "The Code Is Incorrect"
 
@@ -93,6 +93,10 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
+#: .\templates\users\register.html:18
+msgid "Register User"
+msgstr ""
+
 #: .\templates\users\verification.html:8
 msgid "Verificaton Code"
 msgstr ""
@@ -108,3 +112,9 @@ msgstr ""
 #: .\templates\users\verification.html:21
 msgid "Confirm"
 msgstr ""
+
+#~ msgid "RepeatPassword"
+#~ msgstr "Repeat Password"
+
+#~ msgid "ThePasswordsDoNotMatch"
+#~ msgstr "The Passwords Do Not Match"

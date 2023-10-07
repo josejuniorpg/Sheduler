@@ -1,29 +1,19 @@
 # Django imports
 from django import forms
 from django.contrib.auth import authenticate
+from django.contrib.auth.forms import UserCreationForm
 from django.utils.translation import gettext_lazy as _
 
 # Local imports
 from .models import User
 
-class UserRegisterForm(forms.ModelForm):
-
-    password1 = forms.CharField(label=_('Password'),required=True,
-        widget=forms.PasswordInput(
-            attrs={
-                'placeholder': _('Password')
-            }
-        )
-    )
-    password2 = forms.CharField(label=_('RepeatPassword'),required=True,
-        widget=forms.PasswordInput(
-            attrs={
-                'placeholder': _('RepeatPassword')
-            }
-        )
-    )
+class UserRegisterForm(UserCreationForm):
     email = forms.EmailField(label=_('Email'), required=True)
     first_name = forms.CharField(label=_('FirstName'), required=True)
+    last_name = forms.CharField(label=_('LastName'), required=True)
+
+    phone_number = forms.CharField(label=_('PhoneNumber'), required=True)
+    profile_image = forms.ImageField(label=_('ProfileImage'))
     class Meta:
         """Meta definition for Userform."""
 
@@ -36,13 +26,9 @@ class UserRegisterForm(forms.ModelForm):
             'gender',
             'phone_number',
             'profile_image',
+            'password1',
+            'password2',
         )
-
-
-
-    def clean_password2(self):
-        if self.cleaned_data['password1'] != self.cleaned_data['password2']:
-            self.add_error('password2', _('ThePasswordsDoNotMatch'))
 
 class VerificationForm(forms.Form):
     code_verification = forms.CharField(required=True)
