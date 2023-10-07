@@ -13,8 +13,6 @@ from scheduler import settings
 
 class HomePageView(TemplateView):
     template_name = "home/index.html"
-    output = _("Welcome | Home Page")
-    extra_context = {'title':output}
 
 class CambiarIdiomaView(View):
     def get(self, request, new_language):

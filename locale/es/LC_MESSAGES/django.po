@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-06 18:06-0600\n"
+"POT-Creation-Date: 2023-10-06 19:24-0600\n"
 "PO-Revision-Date: 2023-10-06 18:07-0600\n"
 "Last-Translator: yunipgdes@gmail.com\n"
 "Language-Team: \n"
@@ -19,10 +19,6 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.9\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: .\applications\home\views.py:16
-msgid "Welcome | Home Page"
-msgstr "Bienvenido | Inicio"
-
 #: .\scheduler\settings\base.py:135 .\templates\includes\header.html:33
 msgid "English"
 msgstr "Ingles"
@@ -31,15 +27,19 @@ msgstr "Ingles"
 msgid "Spanish"
 msgstr "Español"
 
-#: .\templates\home\index.html:20
+#: .\templates\home\index.html:8
+msgid "Welcome | Home Page"
+msgstr "Bienvenido | Inicio"
+
+#: .\templates\home\index.html:19 .\templates\users\register.html:19
 msgid "Yuni date"
 msgstr "Espanol"
 
-#: .\templates\home\index.html:21
+#: .\templates\home\index.html:20 .\templates\users\register.html:20
 msgid "Yuni NUmber"
 msgstr "Esapanol"
 
-#: .\templates\home\index.html:22
+#: .\templates\home\index.html:21 .\templates\users\register.html:21
 msgid "Yuni New"
 msgstr "Espamnmpl"
 
