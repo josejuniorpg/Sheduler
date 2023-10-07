@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-06 17:04-0600\n"
-"PO-Revision-Date: 2023-10-06 13:20-0600\n"
+"POT-Creation-Date: 2023-10-06 18:06-0600\n"
+"PO-Revision-Date: 2023-10-06 18:07-0600\n"
 "Last-Translator: yunipgdes@gmail.com\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -23,11 +23,11 @@ msgstr ""
 msgid "Welcome | Home Page"
 msgstr "Bienvenido | Inicio"
 
-#: .\scheduler\settings\base.py:135 .\templates\includes\header.html:31
+#: .\scheduler\settings\base.py:135 .\templates\includes\header.html:33
 msgid "English"
 msgstr "Ingles"
 
-#: .\scheduler\settings\base.py:136 .\templates\includes\header.html:29
+#: .\scheduler\settings\base.py:136 .\templates\includes\header.html:30
 msgid "Spanish"
 msgstr "Español"
 
@@ -43,10 +43,38 @@ msgstr "Esapanol"
 msgid "Yuni New"
 msgstr "Espamnmpl"
 
+#: .\templates\includes\footer.html:8
+msgid "Get connected with us on social networks:"
+msgstr "Mantente conectado con nuestras redes sociales:"
+
+#: .\templates\includes\footer.html:46
+msgid "Company name"
+msgstr "Empresa"
+
+#: .\templates\includes\footer.html:49
+msgid ""
+"  Here you can use rows and columns to organize your footer content. Lorem "
+"ipsumdolor sit amet, consectetur adipisicing elit."
+msgstr ""
+"  Aquí puede utilizar filas y columnas para organizar el contenido de su pie "
+"de página. Lorem ipsumdolor sit amet, consectetur adipisicing elit."
+
+#: .\templates\includes\footer.html:58
+msgid "Products"
+msgstr "Productos"
+
+#: .\templates\includes\footer.html:79
+msgid "Links"
+msgstr "Links"
+
+#: .\templates\includes\footer.html:99
+msgid "Contact"
+msgstr "Contacto"
+
 #: .\templates\includes\header.html:26
 msgid "Language"
 msgstr "Idioma"
 
-#: .\templates\includes\header.html:39
+#: .\templates\includes\header.html:42
 msgid "Logout"
 msgstr "Salir"
