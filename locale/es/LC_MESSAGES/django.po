@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-06 22:41-0600\n"
+"POT-Creation-Date: 2023-10-06 22:44-0600\n"
 "PO-Revision-Date: 2023-10-06 18:07-0600\n"
 "Last-Translator: yunipgdes@gmail.com\n"
 "Language-Team: \n"
@@ -85,8 +85,16 @@ msgstr "Registrar"
 
 #: .\templates\users\verification.html:8
 msgid "Verificaton Code"
-msgstr "Code de Verificacion"
+msgstr "Codigo de Verificacion"
 
 #: .\templates\users\verification.html:18
 msgid "Email Verification"
 msgstr "Verificacion de Email"
+
+#: .\templates\users\verification.html:19
+msgid "Enter the verification code"
+msgstr "Introduzca el codigo de verificacion"
+
+#: .\templates\users\verification.html:22
+msgid "Confirm"
+msgstr "Confirmar"
