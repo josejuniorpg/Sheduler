@@ -29,3 +29,8 @@ class UserManager(BaseUserManager, models.Manager):
             return True
         else:
             return False
+
+    def create_user_profile_image(self, user, profile_image):
+        user.profile_image = profile_image
+        user.save(using=self.db)
+        return user
