@@ -2,10 +2,10 @@
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic import FormView, TemplateView
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse_lazy
 
 # Local imports
-from applications.users.forms import UserRegisterForm
+from applications.users.forms import UserRegisterForm, VerificationForm
 from applications.users.functions import code_generator
 from applications.users.models import User
 
@@ -31,7 +31,7 @@ class UserRegisterView(FormView):
                 code_verification=code
             )
             if user:
-                User.objects.create_user_profile_image(user,form.cleaned_data['profile_image'])
+                User.objects.create_user_profile_image(user, form.cleaned_data['profile_image'])
             # # enviar el codigo al email del user
             # subject = 'Confrimacion d eemail'
             # message = 'Codigo de verificacion: ' + code
@@ -39,13 +39,33 @@ class UserRegisterView(FormView):
             # #
             # send_mail(asunto, mensaje, email_remitente, [form.cleaned_data['email'], ])
             # # redirigir a pantalla de valdiacion
-            # return HttpResponseRedirect(
-            #     reverse(
-            #         'users_app:user-verification',
-            #         kwargs={'pk': usuario.id}
-            #     )
-            # )
-            return HttpResponse("Contenido de la respuesta", status=200)
-        except Exception as e:
-            return HttpResponse(f"Error {e}", status=500)
 
+            return HttpResponseRedirect(
+                reverse_lazy(
+                    'users_app:verification-user',
+                    kwargs={'pk': user.id}
+                )
+            )
+        except Exception as e:
+            return HttpResponse(f"Error;    {e}", status=500)
+
+
+class CodeVerificationView(FormView):
+    template_name = 'users/verification.html'
+    form_class = VerificationForm
+    # success_url = reverse_lazy('users_app:user-login')
+    success_url = '/'
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs.update({
+            'pk': self.kwargs['pk'],
+        })
+        return kwargs
+
+    def form_valid(self, form):
+        User.objects.filter(
+            id=self.kwargs['pk']).update(
+            is_active=True
+        )
+        return super().form_valid(form)

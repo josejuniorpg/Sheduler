@@ -1,0 +1,24 @@
+<!-- head para PC -->
+{% extends "users/base_users.html" %}
+{% load  static %}
+{% load i18n %}
+
+
+{% block title %}
+    {% trans "Verificaton Code" %}
+{% endblock %}
+
+
+{% block description %}
+{% endblock %}
+
+{% block content %}
+    <main class="_main-home">
+        <h1>{% trans "Email Verification" %}</h1>
+        <h3>{% trans "Enter the verification code" %}:</h3>
+        <form method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">{% trans "Confirm" %}</button>
+        </form>
+    </main>
+{% endblock content %}
