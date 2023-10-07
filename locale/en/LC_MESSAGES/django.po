@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-06 19:24-0600\n"
+"POT-Creation-Date: 2023-10-06 22:41-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\scheduler\settings\base.py:135 .\templates\includes\header.html:33
+#: .\scheduler\settings\base.py:135 .\templates\includes\header.html:35
 msgid "English"
 msgstr ""
 
-#: .\scheduler\settings\base.py:136 .\templates\includes\header.html:30
+#: .\scheduler\settings\base.py:136 .\templates\includes\header.html:32
 msgid "Spanish"
 msgstr ""
 
@@ -30,48 +30,60 @@ msgstr ""
 msgid "Welcome | Home Page"
 msgstr ""
 
-#: .\templates\home\index.html:19 .\templates\users\register.html:19
+#: .\templates\home\index.html:19
 msgid "Yuni date"
 msgstr ""
 
-#: .\templates\home\index.html:20 .\templates\users\register.html:20
+#: .\templates\home\index.html:20
 msgid "Yuni NUmber"
 msgstr ""
 
-#: .\templates\home\index.html:21 .\templates\users\register.html:21
+#: .\templates\home\index.html:21
 msgid "Yuni New"
 msgstr ""
 
-#: .\templates\includes\footer.html:8
+#: .\templates\includes\footer.html:10
 msgid "Get connected with us on social networks:"
 msgstr ""
 
-#: .\templates\includes\footer.html:46
+#: .\templates\includes\footer.html:48
 msgid "Company name"
 msgstr ""
 
-#: .\templates\includes\footer.html:49
+#: .\templates\includes\footer.html:51
 msgid ""
 "  Here you can use rows and columns to organize your footer content. Lorem "
 "ipsumdolor sit amet, consectetur adipisicing elit."
 msgstr ""
 
-#: .\templates\includes\footer.html:58
+#: .\templates\includes\footer.html:60
 msgid "Products"
 msgstr ""
 
-#: .\templates\includes\footer.html:79
+#: .\templates\includes\footer.html:81
 msgid "Links"
 msgstr ""
 
-#: .\templates\includes\footer.html:99
+#: .\templates\includes\footer.html:101
 msgid "Contact"
 msgstr ""
 
-#: .\templates\includes\header.html:26
+#: .\templates\includes\header.html:28
 msgid "Language"
 msgstr ""
 
-#: .\templates\includes\header.html:42
+#: .\templates\includes\header.html:44
 msgid "Logout"
+msgstr ""
+
+#: .\templates\users\register.html:8
+msgid "Register"
+msgstr ""
+
+#: .\templates\users\verification.html:8
+msgid "Verificaton Code"
+msgstr ""
+
+#: .\templates\users\verification.html:18
+msgid "Email Verification"
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-06 19:24-0600\n"
+"POT-Creation-Date: 2023-10-06 22:41-0600\n"
 "PO-Revision-Date: 2023-10-06 18:07-0600\n"
 "Last-Translator: yunipgdes@gmail.com\n"
 "Language-Team: \n"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.9\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: .\scheduler\settings\base.py:135 .\templates\includes\header.html:33
+#: .\scheduler\settings\base.py:135 .\templates\includes\header.html:35
 msgid "English"
 msgstr "Ingles"
 
-#: .\scheduler\settings\base.py:136 .\templates\includes\header.html:30
+#: .\scheduler\settings\base.py:136 .\templates\includes\header.html:32
 msgid "Spanish"
 msgstr "Español"
 
@@ -31,27 +31,27 @@ msgstr "Español"
 msgid "Welcome | Home Page"
 msgstr "Bienvenido | Inicio"
 
-#: .\templates\home\index.html:19 .\templates\users\register.html:19
+#: .\templates\home\index.html:19
 msgid "Yuni date"
 msgstr "Espanol"
 
-#: .\templates\home\index.html:20 .\templates\users\register.html:20
+#: .\templates\home\index.html:20
 msgid "Yuni NUmber"
 msgstr "Esapanol"
 
-#: .\templates\home\index.html:21 .\templates\users\register.html:21
+#: .\templates\home\index.html:21
 msgid "Yuni New"
 msgstr "Espamnmpl"
 
-#: .\templates\includes\footer.html:8
+#: .\templates\includes\footer.html:10
 msgid "Get connected with us on social networks:"
 msgstr "Mantente conectado con nuestras redes sociales:"
 
-#: .\templates\includes\footer.html:46
+#: .\templates\includes\footer.html:48
 msgid "Company name"
 msgstr "Empresa"
 
-#: .\templates\includes\footer.html:49
+#: .\templates\includes\footer.html:51
 msgid ""
 "  Here you can use rows and columns to organize your footer content. Lorem "
 "ipsumdolor sit amet, consectetur adipisicing elit."
@@ -59,22 +59,34 @@ msgstr ""
 "  Aquí puede utilizar filas y columnas para organizar el contenido de su pie "
 "de página. Lorem ipsumdolor sit amet, consectetur adipisicing elit."
 
-#: .\templates\includes\footer.html:58
+#: .\templates\includes\footer.html:60
 msgid "Products"
 msgstr "Productos"
 
-#: .\templates\includes\footer.html:79
+#: .\templates\includes\footer.html:81
 msgid "Links"
 msgstr "Links"
 
-#: .\templates\includes\footer.html:99
+#: .\templates\includes\footer.html:101
 msgid "Contact"
 msgstr "Contacto"
 
-#: .\templates\includes\header.html:26
+#: .\templates\includes\header.html:28
 msgid "Language"
 msgstr "Idioma"
 
-#: .\templates\includes\header.html:42
+#: .\templates\includes\header.html:44
 msgid "Logout"
 msgstr "Salir"
+
+#: .\templates\users\register.html:8
+msgid "Register"
+msgstr "Registrar"
+
+#: .\templates\users\verification.html:8
+msgid "Verificaton Code"
+msgstr "Code de Verificacion"
+
+#: .\templates\users\verification.html:18
+msgid "Email Verification"
+msgstr "Verificacion de Email"
