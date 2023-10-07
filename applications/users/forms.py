@@ -8,10 +8,14 @@ from django.utils.translation import gettext_lazy as _
 from .models import User
 
 class UserRegisterForm(UserCreationForm):
+    GENDER_CHOICES_TRANSLATED = [('1', _('Men')),('2', _('Female')),('3', _('Others')),]
+
     email = forms.EmailField(label=_('Email'), required=True)
     first_name = forms.CharField(label=_('FirstName'), required=True)
     last_name = forms.CharField(label=_('LastName'), required=True)
 
+
+    gender = forms.ChoiceField(choices=GENDER_CHOICES_TRANSLATED, label=_('Gender'))
     phone_number = forms.CharField(label=_('PhoneNumber'), required=True)
     profile_image = forms.ImageField(label=_('ProfileImage'))
     class Meta:

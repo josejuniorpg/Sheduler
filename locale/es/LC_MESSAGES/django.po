@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-07 01:29-0600\n"
-"PO-Revision-Date: 2023-10-07 01:30+0000\n"
+"POT-Creation-Date: 2023-10-07 01:40-0600\n"
+"PO-Revision-Date: 2023-10-07 01:40+0000\n"
 "Last-Translator:   <yunipgdes@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -20,26 +20,42 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.9\n"
 
 #: .\applications\users\forms.py:11
+msgid "Men"
+msgstr "Hombre"
+
+#: .\applications\users\forms.py:11
+msgid "Female"
+msgstr "Mujer"
+
+#: .\applications\users\forms.py:11
+msgid "Others"
+msgstr "Otro"
+
+#: .\applications\users\forms.py:13
 msgid "Email"
 msgstr "Correo"
 
-#: .\applications\users\forms.py:12
+#: .\applications\users\forms.py:14
 msgid "FirstName"
 msgstr "Nombre/s"
 
-#: .\applications\users\forms.py:13
+#: .\applications\users\forms.py:15
 msgid "LastName"
 msgstr "Apellidos"
 
-#: .\applications\users\forms.py:15
+#: .\applications\users\forms.py:18
+msgid "Gender"
+msgstr "Genero"
+
+#: .\applications\users\forms.py:19
 msgid "PhoneNumber"
 msgstr "Numero Telefonico"
 
-#: .\applications\users\forms.py:16
+#: .\applications\users\forms.py:20
 msgid "ProfileImage"
 msgstr "Foto de perfil."
 
-#: .\applications\users\forms.py:48 .\applications\users\forms.py:50
+#: .\applications\users\forms.py:52 .\applications\users\forms.py:54
 msgid "TheCodeIsIncorrect"
 msgstr "El código es incorrecto"
 
@@ -91,12 +107,11 @@ msgstr "Idioma"
 msgid "Logout"
 msgstr "Salir"
 
-#: .\templates\users\register.html:8
+#: .\templates\users\register.html:8 .\templates\users\register.html:21
 msgid "Register"
 msgstr "Registrar"
 
 #: .\templates\users\register.html:18
-#| msgid "Register"
 msgid "Register User"
 msgstr "Crear Usuario"
 
