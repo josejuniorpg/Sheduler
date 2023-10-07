@@ -20,10 +20,13 @@
     {% block css %}{% endblock css %}
 </head>
 <body class="_body-class">
+{% include "includes/header.html" %}
 {% block content %}
 {% endblock content %}
-{% block js %}{% endblock js %}
+{% include "includes/footer.html" %}
 
+
+{% block js %}{% endblock js %}
 {#Boostrao Import JS#}
 {% bootstrap_javascript %}
 </body>
