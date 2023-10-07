@@ -26,7 +26,7 @@ class User(AbstractBaseUser, PermissionsMixin, TimeStampedModel):
     status = models.BooleanField(default=True)  # todo maybe change the name to is_delete
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
     code_verification = models.CharField(max_length=6, blank=True)  # Todo Configure  code verification email.
-    phone_number = PhoneNumberField(blank=True)
+    phone_number = PhoneNumberField(blank=True) #todo make unique phone
     profile_image = models.ImageField(upload_to='users/profileImages', blank=True, null=True)
 
     # PermissionMixin required fields
@@ -45,7 +45,7 @@ class User(AbstractBaseUser, PermissionsMixin, TimeStampedModel):
         ordering = ['first_name', 'last_name']
 
     def __str__(self):
-        template = f'{self.first_name}, {self.last_name}, {self.email}, {self.username}'
+        template = f'{self.first_name}, {self.last_name}, {self.email}, {self.username}, ID: {self.id}'
         return template.format(self)
 
     def get_short_name(self):
