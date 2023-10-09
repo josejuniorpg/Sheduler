@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-08 20:49-0600\n"
+"POT-Creation-Date: 2023-10-08 22:06-0600\n"
 "PO-Revision-Date: 2023-10-08 20:53+0000\n"
 "Last-Translator:   <yunipgdes@gmail.com>\n"
 "Language-Team: \n"
@@ -68,8 +68,8 @@ msgid ""
 "  Here you can use rows and columns to organize your footer content. Lorem "
 "ipsumdolor sit amet, consectetur adipisicing elit."
 msgstr ""
-"  Aquí puede utilizar filas y columnas para organizar el contenido de su pie"
-" de página. Lorem ipsumdolor sit amet, consectetur adipisicing elit."
+"  Aquí puede utilizar filas y columnas para organizar el contenido de su pie "
+"de página. Lorem ipsumdolor sit amet, consectetur adipisicing elit."
 
 #: .\templates\includes\footer.html:60
 msgid "Products"
@@ -91,51 +91,53 @@ msgstr "Idioma"
 msgid "Logout"
 msgstr "Salir"
 
-#: .\templates\users\register.html:8 .\templates\users\register.html:137
+#: .\templates\users\register.html:8 .\templates\users\register.html:146
 msgid "Register"
 msgstr "Registrar"
 
-#: .\templates\users\register.html:33
+#: .\templates\users\register.html:26
+msgid "Sign up"
+msgstr "Registrarse"
+
+#: .\templates\users\register.html:34
 msgid "Your Username"
 msgstr "Tu Username"
 
-#: .\templates\users\register.html:46
+#: .\templates\users\register.html:48
 #, fuzzy
 #| msgid "Email"
 msgid "Email"
 msgstr "Correo"
 
-#: .\templates\users\register.html:54
-#| msgid "FirstName"
+#: .\templates\users\register.html:57
 msgid "First Name"
 msgstr "Nombre/s"
 
-#: .\templates\users\register.html:63
+#: .\templates\users\register.html:67
 msgid "LastName"
 msgstr "Apellidos"
 
-#: .\templates\users\register.html:79
-#| msgid "PhoneNumber"
+#: .\templates\users\register.html:84
 msgid "PhoneNumber"
 msgstr "Numero Telefonico"
 
-#: .\templates\users\register.html:91
+#: .\templates\users\register.html:97
 msgid "Picture"
 msgstr "Imagen"
 
-#: .\templates\users\register.html:105
+#: .\templates\users\register.html:112
 msgid "Password"
 msgstr "Contraseña"
 
-#: .\templates\users\register.html:118
+#: .\templates\users\register.html:126
 msgid "RepeatYourPassword"
 msgstr "Repetir Contraseña"
 
-#: .\templates\users\register.html:131
+#: .\templates\users\register.html:139
 msgid "I agree all statements in"
 msgstr "Estoy de acuerdo y he leído los"
 
-#: .\templates\users\register.html:131
+#: .\templates\users\register.html:140
 msgid "Terms of service"
 msgstr "Términos y Condiciones."
 

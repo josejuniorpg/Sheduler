@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-08 20:49-0600\n"
+"POT-Creation-Date: 2023-10-08 22:06-0600\n"
 "PO-Revision-Date: 2023-10-08 20:51+0000\n"
 "Last-Translator:   <yunipgdes@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -89,50 +89,51 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: .\templates\users\register.html:8 .\templates\users\register.html:137
+#: .\templates\users\register.html:8 .\templates\users\register.html:146
 msgid "Register"
 msgstr ""
 
-#: .\templates\users\register.html:33
+#: .\templates\users\register.html:26
+msgid "Sign up"
+msgstr ""
+
+#: .\templates\users\register.html:34
 msgid "Your Username"
 msgstr ""
 
-#: .\templates\users\register.html:46
+#: .\templates\users\register.html:48
 msgid "Email"
 msgstr ""
 
-#: .\templates\users\register.html:54
+#: .\templates\users\register.html:57
 msgid "First Name"
 msgstr "First Name"
 
-#: .\templates\users\register.html:63
-#| msgid "Last Name"
+#: .\templates\users\register.html:67
 msgid "LastName"
 msgstr "Last Name"
 
-#: .\templates\users\register.html:79
-#| msgid "Phone Number"
+#: .\templates\users\register.html:84
 msgid "PhoneNumber"
 msgstr "Phone Number"
 
-#: .\templates\users\register.html:91
+#: .\templates\users\register.html:97
 msgid "Picture"
 msgstr ""
 
-#: .\templates\users\register.html:105
-#| msgid "RepeatPassword"
+#: .\templates\users\register.html:112
 msgid "Password"
 msgstr "Password"
 
-#: .\templates\users\register.html:118
+#: .\templates\users\register.html:126
 msgid "RepeatYourPassword"
 msgstr "Repeat You Password"
 
-#: .\templates\users\register.html:131
+#: .\templates\users\register.html:139
 msgid "I agree all statements in"
 msgstr ""
 
-#: .\templates\users\register.html:131
+#: .\templates\users\register.html:140
 msgid "Terms of service"
 msgstr ""
 
