@@ -1,23 +1,29 @@
 # Django imports
 from django import forms
-from django.contrib.auth import authenticate
+# from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.utils.translation import gettext_lazy as _
 
 # Local imports
 from .models import User
 
+
 class UserRegisterForm(UserCreationForm):
-    GENDER_CHOICES_TRANSLATED = [('1', _('Men')),('2', _('Female')),('3', _('Others')),]
+    GENDER_CHOICES_TRANSLATED = [('1', _('Men')), ('2', _('Female')), ('3', _('Others')), ]
 
-    email = forms.EmailField(label=_('Email'), required=True)
-    first_name = forms.CharField(label=_('FirstName'), required=True)
-    last_name = forms.CharField(label=_('LastName'), required=True)
+    username = forms.CharField(required=True,
+                               widget=forms.TextInput(attrs={'class': 'form-control'}))
+    # email = forms.EmailField(label=_('Email'), required=True)
+    email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'class': 'form-control'}))
+    first_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    last_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    gender = forms.ChoiceField(choices=GENDER_CHOICES_TRANSLATED, label=_('Gender'),
+                               widget=forms.Select(attrs={'class': 'form-select'}))
+    phone_number = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    profile_image = forms.ImageField(label=_('ProfileImage'), required=False)
+    password1 = forms.CharField(required=True, widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    password2 = forms.CharField(required=True, widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
-
-    gender = forms.ChoiceField(choices=GENDER_CHOICES_TRANSLATED, label=_('Gender'))
-    phone_number = forms.CharField(label=_('PhoneNumber'), required=True)
-    profile_image = forms.ImageField(label=_('ProfileImage'))
     class Meta:
         """Meta definition for Userform."""
 
@@ -33,6 +39,7 @@ class UserRegisterForm(UserCreationForm):
             'password1',
             'password2',
         )
+
 
 class VerificationForm(forms.Form):
     code_verification = forms.CharField(required=True)

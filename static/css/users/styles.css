@@ -1,0 +1,9 @@
+._button-register{
+    background-color: #039cd9;
+    color: #ffffff
+}
+
+._button-register:hover{
+    background-color: #1c668d;
+    color: #ffffff
+}

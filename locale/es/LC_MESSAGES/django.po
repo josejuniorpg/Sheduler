@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-07 01:40-0600\n"
-"PO-Revision-Date: 2023-10-07 01:40+0000\n"
+"POT-Creation-Date: 2023-10-08 20:49-0600\n"
+"PO-Revision-Date: 2023-10-08 20:53+0000\n"
 "Last-Translator:   <yunipgdes@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -19,43 +19,27 @@ msgstr ""
 "X-Generator: Poedit 3.3.2\n"
 "X-Translated-Using: django-rosetta 0.9.9\n"
 
-#: .\applications\users\forms.py:11
+#: .\applications\users\forms.py:12
 msgid "Men"
 msgstr "Hombre"
 
-#: .\applications\users\forms.py:11
+#: .\applications\users\forms.py:12
 msgid "Female"
 msgstr "Mujer"
 
-#: .\applications\users\forms.py:11
+#: .\applications\users\forms.py:12
 msgid "Others"
 msgstr "Otro"
 
-#: .\applications\users\forms.py:13
-msgid "Email"
-msgstr "Correo"
-
-#: .\applications\users\forms.py:14
-msgid "FirstName"
-msgstr "Nombre/s"
-
-#: .\applications\users\forms.py:15
-msgid "LastName"
-msgstr "Apellidos"
-
-#: .\applications\users\forms.py:18
+#: .\applications\users\forms.py:20
 msgid "Gender"
 msgstr "Genero"
 
-#: .\applications\users\forms.py:19
-msgid "PhoneNumber"
-msgstr "Numero Telefonico"
-
-#: .\applications\users\forms.py:20
+#: .\applications\users\forms.py:23
 msgid "ProfileImage"
 msgstr "Foto de perfil."
 
-#: .\applications\users\forms.py:52 .\applications\users\forms.py:54
+#: .\applications\users\forms.py:59 .\applications\users\forms.py:61
 msgid "TheCodeIsIncorrect"
 msgstr "El código es incorrecto"
 
@@ -107,13 +91,53 @@ msgstr "Idioma"
 msgid "Logout"
 msgstr "Salir"
 
-#: .\templates\users\register.html:8 .\templates\users\register.html:21
+#: .\templates\users\register.html:8 .\templates\users\register.html:137
 msgid "Register"
 msgstr "Registrar"
 
-#: .\templates\users\register.html:18
-msgid "Register User"
-msgstr "Crear Usuario"
+#: .\templates\users\register.html:33
+msgid "Your Username"
+msgstr "Tu Username"
+
+#: .\templates\users\register.html:46
+#, fuzzy
+#| msgid "Email"
+msgid "Email"
+msgstr "Correo"
+
+#: .\templates\users\register.html:54
+#| msgid "FirstName"
+msgid "First Name"
+msgstr "Nombre/s"
+
+#: .\templates\users\register.html:63
+msgid "LastName"
+msgstr "Apellidos"
+
+#: .\templates\users\register.html:79
+#| msgid "PhoneNumber"
+msgid "PhoneNumber"
+msgstr "Numero Telefonico"
+
+#: .\templates\users\register.html:91
+msgid "Picture"
+msgstr "Imagen"
+
+#: .\templates\users\register.html:105
+msgid "Password"
+msgstr "Contraseña"
+
+#: .\templates\users\register.html:118
+msgid "RepeatYourPassword"
+msgstr "Repetir Contraseña"
+
+#: .\templates\users\register.html:131
+msgid "I agree all statements in"
+msgstr "Estoy de acuerdo y he leído los"
+
+#: .\templates\users\register.html:131
+msgid "Terms of service"
+msgstr "Términos y Condiciones."
 
 #: .\templates\users\verification.html:8
 msgid "Verificaton Code"
@@ -130,12 +154,3 @@ msgstr "Introduzca el codigo de verificacion"
 #: .\templates\users\verification.html:21
 msgid "Confirm"
 msgstr "Confirmar"
-
-#~ msgid "Password"
-#~ msgstr "Contraseña"
-
-#~ msgid "RepeatPassword"
-#~ msgstr "Repetir Contraseña"
-
-#~ msgid "ThePasswordsDoNotMatch"
-#~ msgstr "Las contraseñas son diferentes"
