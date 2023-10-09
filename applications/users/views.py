@@ -32,7 +32,7 @@ class UserRegisterView(FormView):
             )
             if user:
                 User.objects.create_user_profile_image(user, form.cleaned_data['profile_image'])
-            # # enviar el codigo al email del user
+            # # enviar el codigo al email del user  #todo Mail Send
             # subject = 'Confrimacion d eemail'
             # message = 'Codigo de verificacion: ' + code
             # email_remitente = 'neunapp.cursos@gmail.com'
@@ -55,6 +55,7 @@ class CodeVerificationView(FormView):
     form_class = VerificationForm
     # success_url = reverse_lazy('users_app:user-login')
     success_url = '/'
+    context_object_name = 'user'
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
@@ -62,6 +63,11 @@ class CodeVerificationView(FormView):
             'pk': self.kwargs['pk'],
         })
         return kwargs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user'] = User.objects.get(id=self.kwargs['pk'])
+        return context
 
     def form_valid(self, form):
         User.objects.filter(

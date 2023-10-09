@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-08 22:06-0600\n"
-"PO-Revision-Date: 2023-10-08 20:53+0000\n"
+"POT-Creation-Date: 2023-10-09 02:26-0600\n"
+"PO-Revision-Date: 2023-10-09 02:59+0000\n"
 "Last-Translator:   <yunipgdes@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -39,7 +39,13 @@ msgstr "Genero"
 msgid "ProfileImage"
 msgstr "Foto de perfil."
 
-#: .\applications\users\forms.py:59 .\applications\users\forms.py:61
+#: .\applications\users\forms.py:45
+#, fuzzy
+#| msgid "Email Verification"
+msgid "Code Verification"
+msgstr "Verificacion de Email"
+
+#: .\applications\users\forms.py:60 .\applications\users\forms.py:62
 msgid "TheCodeIsIncorrect"
 msgstr "El código es incorrecto"
 
@@ -68,8 +74,8 @@ msgid ""
 "  Here you can use rows and columns to organize your footer content. Lorem "
 "ipsumdolor sit amet, consectetur adipisicing elit."
 msgstr ""
-"  Aquí puede utilizar filas y columnas para organizar el contenido de su pie "
-"de página. Lorem ipsumdolor sit amet, consectetur adipisicing elit."
+"  Aquí puede utilizar filas y columnas para organizar el contenido de su pie"
+" de página. Lorem ipsumdolor sit amet, consectetur adipisicing elit."
 
 #: .\templates\includes\footer.html:60
 msgid "Products"
@@ -145,14 +151,21 @@ msgstr "Términos y Condiciones."
 msgid "Verificaton Code"
 msgstr "Codigo de Verificacion"
 
-#: .\templates\users\verification.html:17
+#: .\templates\users\verification.html:38
 msgid "Email Verification"
 msgstr "Verificacion de Email"
 
-#: .\templates\users\verification.html:18
-msgid "Enter the verification code"
-msgstr "Introduzca el codigo de verificacion"
+#: .\templates\users\verification.html:41
+msgid "You didn't receive the email?"
+msgstr "No recibiste el email?"
 
-#: .\templates\users\verification.html:21
+#: .\templates\users\verification.html:45
+msgid "Send"
+msgstr "Mandar"
+
+#: .\templates\users\verification.html:48
 msgid "Confirm"
 msgstr "Confirmar"
+
+#~ msgid "Enter the verification code"
+#~ msgstr "Introduzca el codigo de verificacion"

@@ -23,7 +23,7 @@ class User(AbstractBaseUser, PermissionsMixin, TimeStampedModel):
     email = models.EmailField(unique=True)
     first_name = models.CharField(max_length=50, blank=True)
     last_name = models.CharField(max_length=50, blank=True)
-    status = models.BooleanField(default=True)  # todo maybe change the name to is_delete
+    status = models.BooleanField(default=True)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
     code_verification = models.CharField(max_length=6, blank=True)
     phone_number = PhoneNumberField(blank=True) #todo make unique phone

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-08 22:06-0600\n"
+"POT-Creation-Date: 2023-10-09 02:26-0600\n"
 "PO-Revision-Date: 2023-10-08 20:51+0000\n"
 "Last-Translator:   <yunipgdes@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +39,11 @@ msgstr ""
 msgid "ProfileImage"
 msgstr "Profile Image"
 
-#: .\applications\users\forms.py:59 .\applications\users\forms.py:61
+#: .\applications\users\forms.py:45
+msgid "Code Verification"
+msgstr ""
+
+#: .\applications\users\forms.py:60 .\applications\users\forms.py:62
 msgid "TheCodeIsIncorrect"
 msgstr "The Code Is Incorrect"
 
@@ -141,15 +145,19 @@ msgstr ""
 msgid "Verificaton Code"
 msgstr ""
 
-#: .\templates\users\verification.html:17
+#: .\templates\users\verification.html:38
 msgid "Email Verification"
 msgstr ""
 
-#: .\templates\users\verification.html:18
-msgid "Enter the verification code"
+#: .\templates\users\verification.html:41
+msgid "You didn't receive the email?"
 msgstr ""
 
-#: .\templates\users\verification.html:21
+#: .\templates\users\verification.html:45
+msgid "Send"
+msgstr ""
+
+#: .\templates\users\verification.html:48
 msgid "Confirm"
 msgstr ""
 

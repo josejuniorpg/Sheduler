@@ -14,11 +14,48 @@
 
 {% block content %}
     <main class="_main-home">
-        <h1>{% trans "Email Verification" %}</h1>
-        <h3>{% trans "Enter the verification code" %}:</h3>
-        <form method="post">{% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">{% trans "Confirm" %}</button>
-        </form>
+
+        <section style="background-color: #eeeeee;  height: 100%; width: 100% ">
+            <div class="container my-5 py-5 text-dark">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-6">
+                        <div class="card">
+                            <form method="post" enctype="multipart/form-data"> {% csrf_token %}
+                                <div class="card-body p-4">
+                                    <div class="d-flex flex-start w-100">
+                                        {% if user.profile_image %}
+                                            <img class="rounded-circle shadow-1-strong me-3"
+                                                 src="{{ user.profile_image.url }}" alt="avatar"
+                                                 width="65"
+                                                 height="65"/>
+                                        {% else %}
+                                            <img class="rounded-circle shadow-1-strong me-3"
+                                                 src="{% static "img/Anon_profile.png" %}" alt="avatar"
+                                                 width="65"
+                                                 height="65"/>
+                                        {% endif %}
+                                        <div class="w-100">
+                                            <h5>{% trans "Email Verification" %}</h5>
+                                            <div class="form-outline">
+                                                {{ form.as_p }}
+                                                <label class="form-label" for="textAreaExample">{% trans "You didn't receive the email?" %}</label>
+                                            </div>
+                                            <div class="d-flex justify-content-between mt-3">
+                                                <button type="button" class="btn btn-success">
+                                                    {% trans "Send" %}
+                                                    <i class="fas fa-long-arrow-alt-right ms-1"></i>
+                                                </button>
+                                                <button class="btn _button-register" type="submit">{% trans "Confirm" %}<i
+                                                        class="fas fa-solid fa-check-circle ms-1"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 {% endblock content %}

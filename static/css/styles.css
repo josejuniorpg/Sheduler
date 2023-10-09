@@ -14,7 +14,7 @@
 /*Body class*/
 ._main-home {
     margin-top: 5rem;
-    margin-left: 1rem;
+    /*margin-left: 1rem;*/
     flex: 1;
 }
 
@@ -82,7 +82,7 @@
     position: absolute;
     width: 100%;
     overflow: auto;
-    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.4);
     background-color: #048ABF;
 }
 
