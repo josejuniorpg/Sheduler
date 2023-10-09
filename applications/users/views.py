@@ -7,10 +7,11 @@ from django.urls import reverse_lazy
 # Local imports
 from applications.users.forms import UserRegisterForm, VerificationForm
 from applications.users.functions import code_generator
+from applications.users.mixins import AnonymousRequiredMixin
 from applications.users.models import User
 
 
-class UserRegisterView(FormView):
+class UserRegisterView(AnonymousRequiredMixin, FormView):
     template_name = 'users/register.html'
     form_class = UserRegisterForm
     success_url = '/'
