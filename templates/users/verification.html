@@ -19,13 +19,36 @@
             <div class="container my-5 py-5 text-dark">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-6">
-                        <div class="card">
+                        {% if user.is_active %}
+                            <div class="congratulation-area text-center mt-5">
+                                <div class="container">
+                                    <div class="congratulation-wrapper">
+                                        <div class="congratulation-contents center-text">
+                                            <div class="congratulation-contents-icon">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                            <h1 class="congratulation-contents-title"
+                                                style="color: rgba(105,197,139,0.89)"> {{ user.first_name }} </h1><br>
+                                            <h4 class="congratulation-contents-title"> {% trans "Congratulations" %}!</h4>
+                                            <p class="congratulation-contents-para"> {% trans "Your account has been successfully verified" %}. </p>
+                                            <div class="btn-wrapper mt-4">
+                                                <a href="/"
+                                                   class="btn btn-bg-1 _button-register"> {% trans "Go to Home" %} </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="card">
+                            <h1 class="congratulation-contents-title"
+                                style="margin: auto; color: rgba(70,79,75,0.89)"> {% trans "Hi" %}! {{ user.first_name }}</h1>
                             <form method="post" enctype="multipart/form-data"> {% csrf_token %}
                                 <div class="card-body p-4">
                                     <div class="d-flex flex-start w-100">
                                         {% if user.profile_image %}
                                             <img class="rounded-circle shadow-1-strong me-3"
-                                                 src="{{ user.profile_image.url }}" alt="avatar"
+                                                 src="/media/{{ user.profile_image }}" alt="avatar"
                                                  width="65"
                                                  height="65"/>
                                         {% else %}
@@ -36,22 +59,28 @@
                                         {% endif %}
                                         <div class="w-100">
                                             <h5>{% trans "Email Verification" %}</h5>
+                                            {% if form.errors.code_verification %}
+                                                <strong style="color: #ff5959">{{ form.errors.code_verification }}</strong>
+                                            {% endif %}
                                             <div class="form-outline">
-                                                {{ form.as_p }}
-                                                <label class="form-label" for="textAreaExample">{% trans "You didn't receive the email?" %}</label>
+                                                {{ form.code_verification }}
+                                                <label class="form-label"
+                                                       for="textAreaExample">{% trans "You didn't receive the email?" %}</label>
                                             </div>
                                             <div class="d-flex justify-content-between mt-3">
                                                 <button type="button" class="btn btn-success">
                                                     {% trans "Send" %}
                                                     <i class="fas fa-long-arrow-alt-right ms-1"></i>
                                                 </button>
-                                                <button class="btn _button-register" type="submit">{% trans "Confirm" %}<i
+                                                <button class="btn _button-register"
+                                                        type="submit">{% trans "Confirm" %}<i
                                                         class="fas fa-solid fa-check-circle ms-1"></i></button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </form>
+                        {% endif %}
                         </div>
                     </div>
                 </div>

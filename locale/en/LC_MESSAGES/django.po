@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-09 02:26-0600\n"
+"POT-Creation-Date: 2023-10-09 19:58-0600\n"
 "PO-Revision-Date: 2023-10-08 20:51+0000\n"
 "Last-Translator:   <yunipgdes@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -145,19 +145,35 @@ msgstr ""
 msgid "Verificaton Code"
 msgstr ""
 
-#: .\templates\users\verification.html:38
-msgid "Email Verification"
+#: .\templates\users\verification.html:32
+msgid "Congratulations"
 msgstr ""
 
-#: .\templates\users\verification.html:41
-msgid "You didn't receive the email?"
+#: .\templates\users\verification.html:33
+msgid "Your account has been successfully verified"
+msgstr ""
+
+#: .\templates\users\verification.html:36
+msgid "Go to Home"
 msgstr ""
 
 #: .\templates\users\verification.html:45
+msgid "Hi"
+msgstr ""
+
+#: .\templates\users\verification.html:61
+msgid "Email Verification"
+msgstr ""
+
+#: .\templates\users\verification.html:68
+msgid "You didn't receive the email?"
+msgstr ""
+
+#: .\templates\users\verification.html:72
 msgid "Send"
 msgstr ""
 
-#: .\templates\users\verification.html:48
+#: .\templates\users\verification.html:76
 msgid "Confirm"
 msgstr ""
 

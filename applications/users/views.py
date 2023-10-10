@@ -1,6 +1,7 @@
 # Django imports
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect, HttpResponse
+from django.shortcuts import get_object_or_404
 from django.views.generic import FormView, TemplateView
 from django.urls import reverse_lazy
 
@@ -55,7 +56,7 @@ class CodeVerificationView(FormView):
     template_name = 'users/verification.html'
     form_class = VerificationForm
     # success_url = reverse_lazy('users_app:user-login')
-    success_url = '/'
+    # success_url = '/'
     context_object_name = 'user'
 
     def get_form_kwargs(self):
@@ -67,7 +68,9 @@ class CodeVerificationView(FormView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['user'] = User.objects.get(id=self.kwargs['pk'])
+        user = get_object_or_404(User, id=self.kwargs['pk'])
+        context['user'] = User.objects.filter(pk=user.pk).values('first_name', 'profile_image', 'is_active').first()
+
         return context
 
     def form_valid(self, form):
@@ -76,3 +79,9 @@ class CodeVerificationView(FormView):
             is_active=True
         )
         return super().form_valid(form)
+
+    def get_success_url(self):
+        # Obtener la URL actual usando reverse
+        current_url = reverse_lazy('users_app:verification-user', kwargs={'pk': self.kwargs['pk']})
+        return current_url
+

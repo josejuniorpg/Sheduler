@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-09 02:26-0600\n"
-"PO-Revision-Date: 2023-10-09 02:59+0000\n"
+"POT-Creation-Date: 2023-10-09 19:58-0600\n"
+"PO-Revision-Date: 2023-10-09 19:36+0000\n"
 "Last-Translator:   <yunipgdes@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -40,10 +40,8 @@ msgid "ProfileImage"
 msgstr "Foto de perfil."
 
 #: .\applications\users\forms.py:45
-#, fuzzy
-#| msgid "Email Verification"
 msgid "Code Verification"
-msgstr "Verificacion de Email"
+msgstr "Verificación del código"
 
 #: .\applications\users\forms.py:60 .\applications\users\forms.py:62
 msgid "TheCodeIsIncorrect"
@@ -74,8 +72,8 @@ msgid ""
 "  Here you can use rows and columns to organize your footer content. Lorem "
 "ipsumdolor sit amet, consectetur adipisicing elit."
 msgstr ""
-"  Aquí puede utilizar filas y columnas para organizar el contenido de su pie"
-" de página. Lorem ipsumdolor sit amet, consectetur adipisicing elit."
+"  Aquí puede utilizar filas y columnas para organizar el contenido de su pie "
+"de página. Lorem ipsumdolor sit amet, consectetur adipisicing elit."
 
 #: .\templates\includes\footer.html:60
 msgid "Products"
@@ -151,21 +149,40 @@ msgstr "Términos y Condiciones."
 msgid "Verificaton Code"
 msgstr "Codigo de Verificacion"
 
-#: .\templates\users\verification.html:38
+#: .\templates\users\verification.html:32
+msgid "Congratulations"
+msgstr "Felicidades"
+
+#: .\templates\users\verification.html:33
+msgid "Your account has been successfully verified"
+msgstr "Su cuenta ya ha sido verificada correctamente"
+
+#: .\templates\users\verification.html:36
+msgid "Go to Home"
+msgstr "Ir al menu"
+
+#: .\templates\users\verification.html:45
+msgid "Hi"
+msgstr "Hola"
+
+#: .\templates\users\verification.html:61
 msgid "Email Verification"
 msgstr "Verificacion de Email"
 
-#: .\templates\users\verification.html:41
+#: .\templates\users\verification.html:68
 msgid "You didn't receive the email?"
 msgstr "No recibiste el email?"
 
-#: .\templates\users\verification.html:45
+#: .\templates\users\verification.html:72
 msgid "Send"
 msgstr "Mandar"
 
-#: .\templates\users\verification.html:48
+#: .\templates\users\verification.html:76
 msgid "Confirm"
 msgstr "Confirmar"
+
+#~ msgid "Your account is ready to submit proposals and get work"
+#~ msgstr "Su cuenta ya ha sido verificada correctamente"
 
 #~ msgid "Enter the verification code"
 #~ msgstr "Introduzca el codigo de verificacion"

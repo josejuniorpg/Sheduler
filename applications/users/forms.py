@@ -43,7 +43,7 @@ class UserRegisterForm(UserCreationForm):
 
 class VerificationForm(forms.Form):
     code_verification = forms.CharField(label=_('Code Verification'), required=True,
-                                        widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+                                        widget=forms.TextInput(attrs={'class': 'form-control'}))
 
     def __init__(self, pk, *args, **kwargs):
         self.id_user = pk
