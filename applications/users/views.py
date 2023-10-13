@@ -7,7 +7,7 @@ from django.urls import reverse_lazy
 
 # Local imports
 from applications.users.forms import UserRegisterForm, VerificationForm
-from applications.users.functions import code_generator
+from applications.users.functions import code_generator, send_email_verify_code_by_user_id
 from applications.users.mixins import AnonymousRequiredMixin
 from applications.users.models import User
 
@@ -33,14 +33,10 @@ class UserRegisterView(AnonymousRequiredMixin, FormView):
                 code_verification=code
             )
             if user:
+                # Add Profile Image
                 User.objects.create_user_profile_image(user, form.cleaned_data['profile_image'])
-            # # enviar el codigo al email del user  #todo Mail Send
-            # subject = 'Confrimacion d eemail'
-            # message = 'Codigo de verificacion: ' + code
-            # email_remitente = 'neunapp.cursos@gmail.com'
-            # #
-            # send_mail(asunto, mensaje, email_remitente, [form.cleaned_data['email'], ])
-            # # redirigir a pantalla de valdiacion
+                # Send email
+                send_email_verify_code_by_user_id(user.id)
 
             return HttpResponseRedirect(
                 reverse_lazy(
@@ -48,7 +44,7 @@ class UserRegisterView(AnonymousRequiredMixin, FormView):
                     kwargs={'pk': user.id}
                 )
             )
-        except Exception as e:
+        except Exception as e:  # todo Configure the page error,
             return HttpResponse(f"Error;    {e}", status=500)
 
 
@@ -70,7 +66,7 @@ class CodeVerificationView(FormView):
         context = super().get_context_data(**kwargs)
         user = get_object_or_404(User, id=self.kwargs['pk'])
         context['user'] = User.objects.filter(pk=user.pk).values('first_name', 'profile_image', 'is_active').first()
-
+        # todo hacer la oruebas sub ek user.
         return context
 
     def form_valid(self, form):
@@ -84,4 +80,3 @@ class CodeVerificationView(FormView):
         # Obtener la URL actual usando reverse
         current_url = reverse_lazy('users_app:verification-user', kwargs={'pk': self.kwargs['pk']})
         return current_url
-
