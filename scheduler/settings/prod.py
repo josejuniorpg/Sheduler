@@ -21,9 +21,13 @@ DATABASES = {
     }
 }
 
+LINK_BASE_URL = ''
+
 # EMAIL SETTINGS
-# EMAIL_USE_TLS = True   #Activate the emails' sender.
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_HOST_USER = get_secret('EMAIL') #Mail Sender
-# EMAIL_HOST_PASSWORD = get_secret('PASS_EMAIL') #Mail's password.
-# EMAIL_PORT = 587
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_SSL = True
+# EMAIL_USE_TLS = True
+EMAIL_HOST = env.str('EMAIL_SENDER_HOST')
+EMAIL_HOST_USER = env.str('EMAIL_USER_SENDER')
+EMAIL_HOST_PASSWORD = env.str('EMAIL_SENDER_PASSWORD') # Mail's password.
+EMAIL_PORT = env.str('EMAIL_SENDER_PORT')
