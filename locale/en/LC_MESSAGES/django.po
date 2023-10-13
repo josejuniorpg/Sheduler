@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-12 20:51-0600\n"
-"PO-Revision-Date: 2023-10-08 20:51+0000\n"
+"POT-Creation-Date: 2023-10-12 21:56-0600\n"
+"PO-Revision-Date: 2023-10-12 21:58+0000\n"
 "Last-Translator:   <yunipgdes@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -47,14 +47,13 @@ msgstr ""
 msgid "TheCodeIsIncorrect"
 msgstr "The Code Is Incorrect"
 
-#: .\applications\users\views.py:42 .\applications\users\views.py:43
-#: .\templates\users\verification.html:8
+#: .\applications\users\functions.py:19 .\templates\users\verification.html:8
 msgid "Verification Code"
 msgstr ""
 
-#: .\applications\users\views.py:42 .\applications\users\views.py:43
-msgid "For"
-msgstr ""
+#: .\applications\users\functions.py:19
+msgid "ForEmail"
+msgstr "For"
 
 #: .\scheduler\settings\base.py:135 .\templates\includes\header.html:35
 msgid "English"
