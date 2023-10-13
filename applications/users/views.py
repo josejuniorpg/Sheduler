@@ -66,7 +66,6 @@ class CodeVerificationView(FormView):
         context = super().get_context_data(**kwargs)
         user = get_object_or_404(User, id=self.kwargs['pk'])
         context['user'] = User.objects.filter(pk=user.pk).values('first_name', 'profile_image', 'is_active').first()
-        # todo hacer la oruebas sub ek user.
         return context
 
     def form_valid(self, form):
