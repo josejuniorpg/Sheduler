@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-09 19:58-0600\n"
+"POT-Creation-Date: 2023-10-12 20:51-0600\n"
 "PO-Revision-Date: 2023-10-08 20:51+0000\n"
 "Last-Translator:   <yunipgdes@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,6 +46,15 @@ msgstr ""
 #: .\applications\users\forms.py:60 .\applications\users\forms.py:62
 msgid "TheCodeIsIncorrect"
 msgstr "The Code Is Incorrect"
+
+#: .\applications\users\views.py:42 .\applications\users\views.py:43
+#: .\templates\users\verification.html:8
+msgid "Verification Code"
+msgstr ""
+
+#: .\applications\users\views.py:42 .\applications\users\views.py:43
+msgid "For"
+msgstr ""
 
 #: .\scheduler\settings\base.py:135 .\templates\includes\header.html:35
 msgid "English"
@@ -139,10 +148,6 @@ msgstr ""
 
 #: .\templates\users\register.html:140
 msgid "Terms of service"
-msgstr ""
-
-#: .\templates\users\verification.html:8
-msgid "Verificaton Code"
 msgstr ""
 
 #: .\templates\users\verification.html:32

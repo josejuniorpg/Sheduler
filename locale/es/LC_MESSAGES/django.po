@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-09 19:58-0600\n"
-"PO-Revision-Date: 2023-10-09 19:36+0000\n"
+"POT-Creation-Date: 2023-10-12 20:51-0600\n"
+"PO-Revision-Date: 2023-10-12 20:52+0000\n"
 "Last-Translator:   <yunipgdes@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -47,6 +47,16 @@ msgstr "Verificación del código"
 msgid "TheCodeIsIncorrect"
 msgstr "El código es incorrecto"
 
+#: .\applications\users\views.py:42 .\applications\users\views.py:43
+#: .\templates\users\verification.html:8
+#| msgid "Verificaton Code"
+msgid "Verification Code"
+msgstr "Codigo de Verificacion"
+
+#: .\applications\users\views.py:42 .\applications\users\views.py:43
+msgid "For"
+msgstr ""
+
 #: .\scheduler\settings\base.py:135 .\templates\includes\header.html:35
 msgid "English"
 msgstr "Ingles"
@@ -72,8 +82,8 @@ msgid ""
 "  Here you can use rows and columns to organize your footer content. Lorem "
 "ipsumdolor sit amet, consectetur adipisicing elit."
 msgstr ""
-"  Aquí puede utilizar filas y columnas para organizar el contenido de su pie "
-"de página. Lorem ipsumdolor sit amet, consectetur adipisicing elit."
+"  Aquí puede utilizar filas y columnas para organizar el contenido de su pie"
+" de página. Lorem ipsumdolor sit amet, consectetur adipisicing elit."
 
 #: .\templates\includes\footer.html:60
 msgid "Products"
@@ -108,7 +118,6 @@ msgid "Your Username"
 msgstr "Tu Username"
 
 #: .\templates\users\register.html:48
-#, fuzzy
 #| msgid "Email"
 msgid "Email"
 msgstr "Correo"
@@ -144,10 +153,6 @@ msgstr "Estoy de acuerdo y he leído los"
 #: .\templates\users\register.html:140
 msgid "Terms of service"
 msgstr "Términos y Condiciones."
-
-#: .\templates\users\verification.html:8
-msgid "Verificaton Code"
-msgstr "Codigo de Verificacion"
 
 #: .\templates\users\verification.html:32
 msgid "Congratulations"
