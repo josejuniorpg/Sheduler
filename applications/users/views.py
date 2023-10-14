@@ -1,17 +1,18 @@
 # Django imports
-from django.core.mail import send_mail
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404
-from django.views.generic import FormView, TemplateView
+from django.views.generic import FormView
 from django.urls import reverse_lazy
 
 # Local imports
 from applications.users.forms import UserRegisterForm, VerificationForm
-from applications.users.functions import code_generator, send_email_verify_code_by_user_id
+from applications.users.functions import (code_generator,send_again_email_verify_code,
+                                          send_email_verify_code)
 from applications.users.mixins import AnonymousRequiredMixin
 from applications.users.models import User
 
 
+# View Classes
 class UserRegisterView(AnonymousRequiredMixin, FormView):
     template_name = 'users/register.html'
     form_class = UserRegisterForm
@@ -30,13 +31,14 @@ class UserRegisterView(AnonymousRequiredMixin, FormView):
                 last_name=form.cleaned_data['last_name'],
                 gender=form.cleaned_data['gender'],
                 phone_number=form.cleaned_data['phone_number'],
-                code_verification=code
             )
             if user:
                 # Add Profile Image
                 User.objects.create_user_profile_image(user, form.cleaned_data['profile_image'])
+                # Add Verification Code
+                User.objects.create_user_code_verification(user, code)
                 # Send email
-                send_email_verify_code_by_user_id(user.id)
+                send_email_verify_code(user.id)
 
             return HttpResponseRedirect(
                 reverse_lazy(
@@ -51,8 +53,6 @@ class UserRegisterView(AnonymousRequiredMixin, FormView):
 class CodeVerificationView(FormView):
     template_name = 'users/verification.html'
     form_class = VerificationForm
-    # success_url = reverse_lazy('users_app:user-login')
-    # success_url = '/'
     context_object_name = 'user'
 
     def get_form_kwargs(self):
@@ -65,7 +65,8 @@ class CodeVerificationView(FormView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         user = get_object_or_404(User, id=self.kwargs['pk'])
-        context['user'] = User.objects.filter(pk=user.pk).values('first_name', 'profile_image', 'is_active').first()
+        context['user'] = User.objects.filter(pk=user.pk).values('first_name', 'profile_image', 'is_active',
+                                                                 'id').first()
         return context
 
     def form_valid(self, form):
@@ -76,6 +77,16 @@ class CodeVerificationView(FormView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        # Obtener la URL actual usando reverse
         current_url = reverse_lazy('users_app:verification-user', kwargs={'pk': self.kwargs['pk']})
         return current_url
+
+
+# View Functions
+def send_again_email_view(request, pk=None):
+    send_again_email_verify_code(pk)
+    return HttpResponseRedirect(
+        reverse_lazy(
+            'users_app:verification-user',
+            kwargs={'pk': pk}
+        )
+    )
