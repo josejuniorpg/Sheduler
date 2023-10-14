@@ -1,8 +1,12 @@
 # Django imports
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404
+from django.utils.decorators import method_decorator
 from django.views.generic import FormView
 from django.urls import reverse_lazy
+
+# Packages imports
+from django_ratelimit.decorators import ratelimit
 
 # Local imports
 from applications.users.forms import UserRegisterForm, VerificationForm
@@ -17,6 +21,19 @@ class UserRegisterView(AnonymousRequiredMixin, FormView):
     template_name = 'users/register.html'
     form_class = UserRegisterForm
     success_url = '/'
+
+    @method_decorator(ratelimit(key='user_or_ip', rate='5/m', block=True))
+    def get(self, request):
+        return super().get(request) # todo Configure the page error
+
+    @method_decorator(ratelimit(key='user_or_ip', rate='5/m', block=True))
+    def post(self, request, *args, **kwargs):
+        form = self.get_form()
+
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form) # todo Configure the page error
 
     def form_valid(self, form):
         try:
@@ -82,6 +99,7 @@ class CodeVerificationView(FormView):
 
 
 # View Functions
+@ratelimit(key='user_or_ip', rate='5/m', block=True)
 def send_again_email_view(request, pk=None):
     send_again_email_verify_code(pk)
     return HttpResponseRedirect(

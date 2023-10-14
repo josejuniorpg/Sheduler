@@ -14,6 +14,7 @@ django-rosetta = "*"
 django-bootstrap5 = "*"
 sentry-sdk = "*"
 fontawesomefree = "*"
+django-ratelimit = "*"
 
 [dev-packages]
 
