@@ -44,6 +44,7 @@ THIRD_PARTY_APPS = [
     'rosetta',
     "django_bootstrap5",
     'fontawesomefree',
+    'captcha',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
@@ -139,9 +140,8 @@ LOCALE_PATHS = os.path.join(BASE_DIR, 'locale'),
 LANGUAGE_COOKIE_NAME = 'my_language'
 
 # Sentry
-
 sentry_sdk.init(
-    dsn= env.str('DNS_SENTRY'),
+    dsn=env.str('DNS_SENTRY'),
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
     traces_sample_rate=1.0,
@@ -150,3 +150,7 @@ sentry_sdk.init(
     # We recommend adjusting this value in production.
     profiles_sample_rate=1.0,
 )
+
+# Django captcha
+RECAPTCHA_PUBLIC_KEY = env.str('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = env.str('RECAPTCHA_PRIVATE_KEY')

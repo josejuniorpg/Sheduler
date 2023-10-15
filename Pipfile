@@ -15,6 +15,7 @@ django-bootstrap5 = "*"
 sentry-sdk = "*"
 fontawesomefree = "*"
 django-ratelimit = "*"
+django-recaptcha = "*"
 
 [dev-packages]
 

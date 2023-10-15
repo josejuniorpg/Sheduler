@@ -34,11 +34,9 @@
                                                            for="form3Example1c">{% trans "Your Username" %}</label>
                                                 </div>
                                             </div>
-                                            {% if form.errors %}
                                                 {% if form.errors.username %}
                                                     <strong style="color: #ff5959">{{ form.errors.username }}</strong>
                                                 {% endif %}
-                                            {% endif %}
 
                                             <div class="d-flex flex-row align-items-center mb-2">
                                                 <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
@@ -84,11 +82,9 @@
                                                            for="form3Example3c">{% trans "PhoneNumber" %}</label>
                                                 </div>
                                             </div>
-                                            {% if form.errors %}
                                                 {% if form.errors.phone_number %}
                                                     <strong style="color: #ff5959">{{ form.errors.phone_number }}</strong>
                                                 {% endif %}
-                                            {% endif %}
 
                                             <div class="d-flex flex-row align-items-center mb-4">
                                                 <i class="fa-solid fa-image fa-lg me-3 fa-fw"></i>
@@ -98,11 +94,9 @@
                                                     {{ form.profile_image }}
                                                 </div>
                                             </div>
-                                            {% if form.errors %}
                                                 {% if form.errors.profile_image %}
                                                     <strong style="color: #ff5959">{{ form.errors.profile_image }}</strong>
                                                 {% endif %}
-                                            {% endif %}
 
                                             <div class="d-flex flex-row align-items-center mb-2">
                                                 <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
@@ -112,11 +106,6 @@
                                                            for="form3Example4c">{% trans "Password" %}</label>
                                                 </div>
                                             </div>
-                                            {% if form.errors %}
-                                                {% if form.errors.password1 %}
-                                                    <strong style="color: #ff5959">{{ form.errors.password1 }}</strong>
-                                                {% endif %}
-                                            {% endif %}
 
                                             <div class="d-flex flex-row align-items-center mb-4">
                                                 <i class="fas fa-key fa-lg me-3 fa-fw"></i>
@@ -126,11 +115,14 @@
                                                            for="form3Example4cd">{% trans "RepeatYourPassword" %}</label>
                                                 </div>
                                             </div>
-                                            {% if form.errors %}
                                                 {% if form.errors.password2 %}
                                                     <strong style="color: #ff5959">{{ form.errors.password2 }}</strong>
                                                 {% endif %}
-                                            {% endif %}
+
+                                            <div>{{ form.captcha }}</div>
+                                                {% if form.errors.captcha %}
+                                                    <strong style="color: #ff5959">{{ form.errors.captcha }}</strong>
+                                                {% endif %}
 
                                             <div class="form-check d-flex justify-content-center mb-4">
                                                 <input required class="form-check-input me-2" type="checkbox" value=""

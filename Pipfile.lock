@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a846a12db72c9ac556cb4c3e0b7e89b38d89dd7a24086103b7fe41b17c636b4a"
+            "sha256": "83ff836abf1268512de5c890fe4afc0128cd0ef4dc979344a7191a022461d8c5"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -181,6 +181,14 @@
             "index": "pypi",
             "markers": "python_version >= '3.7'",
             "version": "==4.1.0"
+        },
+        "django-recaptcha": {
+            "hashes": [
+                "sha256:1aed69fd6ac8fd9e99e52665392ae6748f8b6339ace656fad779fe0c6c915a52",
+                "sha256:253197051288923cae675d7eff91b619e3775311292a5dbaf27a8a55ffebc670"
+            ],
+            "index": "pypi",
+            "version": "==3.0.0"
         },
         "django-rosetta": {
             "hashes": [

@@ -4,6 +4,9 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.utils.translation import gettext_lazy as _
 
+# Package imports
+from captcha.fields import ReCaptchaField
+
 # Local imports
 from .models import User
 
@@ -23,7 +26,7 @@ class UserRegisterForm(UserCreationForm):
     profile_image = forms.ImageField(label=_('ProfileImage'), required=False)
     password1 = forms.CharField(required=True, widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     password2 = forms.CharField(required=True, widget=forms.PasswordInput(attrs={'class': 'form-control'}))
-
+    captcha = ReCaptchaField()
     class Meta:
         """Meta definition for Userform."""
 
