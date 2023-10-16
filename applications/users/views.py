@@ -48,12 +48,11 @@ class UserRegisterView(AnonymousRequiredMixin, FormView):
                 last_name=form.cleaned_data['last_name'],
                 gender=form.cleaned_data['gender'],
                 phone_number=form.cleaned_data['phone_number'],
+                code_verification=code,
             )
             if user:
                 # Add Profile Image
                 User.objects.create_user_profile_image(user, form.cleaned_data['profile_image'])
-                # Add Verification Code
-                User.objects.create_user_code_verification(user, code)
                 # Send email
                 send_email_verify_code(user.id)
 

@@ -29,11 +29,6 @@ class UserManager(BaseUserManager, models.Manager):
         user.save(using=self.db)
         return user
 
-    def create_user_code_verification(self, user, code):
-        user.code_verification = code
-        user.save(using=self.db)
-        return user
-
     def cod_validation(self, id_user, code):
         if self.filter(id=id_user, code_verification=code).exists():
             return True
