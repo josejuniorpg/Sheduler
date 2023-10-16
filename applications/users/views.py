@@ -100,7 +100,7 @@ class CodeVerificationView(FormView):
         return current_url
 
 
-class UserLoginView(LoginView):
+class UserLoginView(AnonymousRequiredMixin,LoginView):
     template_name = 'users/login.html'
     form_class = UserLoginForm
 

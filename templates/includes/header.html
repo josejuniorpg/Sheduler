@@ -46,7 +46,7 @@
                                 type="submit">{% trans "Logout" %}</button>
                     </form>
                 {% else %}
-                    <form method="post" action="{% url 'users_app:login' %}">  {% csrf_token %}
+                    <form method="get" action="{% url 'users_app:login' %}">  {% csrf_token %}
                         <button class="btn  my-2 my-sm-0 _button-header-login" type="submit">Login</button>
                     </form>
                 {% endif %}
