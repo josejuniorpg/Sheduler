@@ -1,6 +1,6 @@
 {% load i18n %}
 {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 <header class="_my-header">
     <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #048ABF; padding: 1rem">
         <a class="navbar-brand" href="#" style="margin-left: 1rem">Scheduler</a>
@@ -41,9 +41,14 @@
                 </form>
 
                 {% if user.is_authenticated %}
-                    <button class="btn  my-2 my-sm-0 _button-header-logout" type="submit">{% trans "Logout" %}</button>
+                    <form method="post" action="{% url 'users_app:logout' %}">  {% csrf_token %}
+                        <button class="btn  my-2 my-sm-0 _button-header-logout"
+                                type="submit">{% trans "Logout" %}</button>
+                    </form>
                 {% else %}
-                    <button class="btn  my-2 my-sm-0 _button-header-login" type="submit">Login</button>
+                    <form method="post" action="{% url 'users_app:login' %}">  {% csrf_token %}
+                        <button class="btn  my-2 my-sm-0 _button-header-login" type="submit">Login</button>
+                    </form>
                 {% endif %}
             </div>
         </div>
