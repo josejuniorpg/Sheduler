@@ -100,14 +100,23 @@ class CodeVerificationView(FormView):
         return current_url
 
 
-class UserLoginView(AnonymousRequiredMixin,LoginView):
+class UserLoginView(LoginView):
     template_name = 'users/login.html'
     form_class = UserLoginForm
+    redirect_authenticated_user = True
 
     def form_invalid(self, form):
-        response = super().form_invalid(form)
+        user = User.objects.filter(email=form.cleaned_data['username']).first()
+        if user and not user.is_active:
+            messages.error(self.request, _('User Inactive. Please Verify your account'))
+            return HttpResponseRedirect(
+                reverse_lazy(
+                    'users_app:verification-user',
+                    kwargs={'pk': user.id}
+                )
+            )
         messages.error(self.request, _('Invalid credentials. Please try again.'))
-        return response
+        return super().form_invalid(form)
 
     def get_success_url(self):
         return reverse_lazy('home_app:home')
