@@ -1,7 +1,6 @@
 # Django imports
 from django import forms
-# from django.contrib.auth import authenticate
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.utils.translation import gettext_lazy as _
 
 # Package imports
@@ -43,7 +42,6 @@ class UserRegisterForm(UserCreationForm):
             'password2',
         )
 
-
 class VerificationForm(forms.Form):
     code_verification = forms.CharField(label=_('Code Verification'), required=True,
                                         widget=forms.TextInput(attrs={'class': 'form-control'}))
@@ -64,3 +62,7 @@ class VerificationForm(forms.Form):
         else:
             raise forms.ValidationError(_('TheCodeIsIncorrect'))
         return code
+
+class UserLoginForm(AuthenticationForm):
+    username = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control' , 'placeholder': 'Email'}))
+    password = forms.CharField(required=True, widget=forms.PasswordInput(attrs={'class': 'form-control' , 'placeholder': _('Password')}))

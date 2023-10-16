@@ -1,4 +1,5 @@
 # Django imports
+from django.contrib.auth.views import LoginView
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404
 from django.utils.decorators import method_decorator
@@ -9,7 +10,7 @@ from django.urls import reverse_lazy
 from django_ratelimit.decorators import ratelimit
 
 # Local imports
-from applications.users.forms import UserRegisterForm, VerificationForm
+from applications.users.forms import UserRegisterForm, VerificationForm, UserLoginForm
 from applications.users.functions import (code_generator,send_again_email_verify_code,
                                           send_email_verify_code)
 from applications.users.mixins import AnonymousRequiredMixin
@@ -95,6 +96,13 @@ class CodeVerificationView(FormView):
     def get_success_url(self):
         current_url = reverse_lazy('users_app:verification-user', kwargs={'pk': self.kwargs['pk']})
         return current_url
+
+class UserLoginView(LoginView):
+    template_name = 'users/login.html'
+    form_class = UserLoginForm
+    # success_url = reverse_lazy('home_app:home')
+    def get_success_url(self):
+        return reverse_lazy('home_app:home')
 
 
 # View Functions
