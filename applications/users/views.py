@@ -5,13 +5,15 @@ from django.shortcuts import get_object_or_404
 from django.utils.decorators import method_decorator
 from django.views.generic import FormView
 from django.urls import reverse_lazy
+from django.contrib import messages
+from django.utils.translation import gettext_lazy as _
 
 # Packages imports
 from django_ratelimit.decorators import ratelimit
 
 # Local imports
 from applications.users.forms import UserRegisterForm, VerificationForm, UserLoginForm
-from applications.users.functions import (code_generator,send_again_email_verify_code,
+from applications.users.functions import (code_generator, send_again_email_verify_code,
                                           send_email_verify_code)
 from applications.users.mixins import AnonymousRequiredMixin
 from applications.users.models import User
@@ -25,7 +27,7 @@ class UserRegisterView(AnonymousRequiredMixin, FormView):
 
     @method_decorator(ratelimit(key='user_or_ip', rate='5/m', block=True))
     def get(self, request):
-        return super().get(request) # todo Configure the page error
+        return super().get(request)  # todo Configure the page error
 
     @method_decorator(ratelimit(key='user_or_ip', rate='5/m', block=True))
     def post(self, request, *args, **kwargs):
@@ -34,7 +36,7 @@ class UserRegisterView(AnonymousRequiredMixin, FormView):
         if form.is_valid():
             return self.form_valid(form)
         else:
-            return self.form_invalid(form) # todo Configure the page error
+            return self.form_invalid(form)  # todo Configure the page error
 
     def form_valid(self, form):
         try:
@@ -97,10 +99,16 @@ class CodeVerificationView(FormView):
         current_url = reverse_lazy('users_app:verification-user', kwargs={'pk': self.kwargs['pk']})
         return current_url
 
+
 class UserLoginView(LoginView):
     template_name = 'users/login.html'
     form_class = UserLoginForm
-    # success_url = reverse_lazy('home_app:home')
+
+    def form_invalid(self, form):
+        response = super().form_invalid(form)
+        messages.error(self.request, _('Invalid credentials. Please try again.'))
+        return response
+
     def get_success_url(self):
         return reverse_lazy('home_app:home')
 

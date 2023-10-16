@@ -31,21 +31,26 @@
 
                                         <form method="post">{% csrf_token %}
                                             <p>Please login to your account</p>
-
                                             <div class="form-outline mb-4">
-{#                                                <input type="email" id="form2Example11" class="form-control"#}
-{#                                                       placeholder="Phone number or email address"/>#}
                                                 {{ form.username }}
                                             </div>
-
                                             <div class="form-outline mb-4">
-{#                                                <input type="password" id="form2Example22" class="form-control"/>#}
                                                 {{ form.password }}
                                             </div>
-
+                                            {% if messages %}
+                                                <ul class="messages">
+                                                    {% for message in messages %}
+                                                        {% if message.tags == 'error' %}
+                                                            <li class="{{ message.tags }}"
+                                                                style="color: #ff5959">{{ message }}</li>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </ul>
+                                            {% endif %}
                                             <div class="text-center pt-1 mb-5 pb-1">
                                                 <button class="btn btn-block fa-lg gradient-custom-2 mb-3"
-                                                        type="submit">Log in </button>
+                                                        type="submit">Log in
+                                                </button>
                                                 <a class="text-muted" href="#!">Forgot password?</a>
                                             </div>
 
