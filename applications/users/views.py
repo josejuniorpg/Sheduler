@@ -1,5 +1,5 @@
 # Django imports
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, PasswordResetView
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404
 from django.utils.decorators import method_decorator
@@ -7,12 +7,13 @@ from django.views.generic import FormView
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
-
+from django.conf import settings
 # Packages imports
 from django_ratelimit.decorators import ratelimit
 
 # Local imports
-from applications.users.forms import UserRegisterForm, VerificationForm, UserLoginForm
+from applications.users.forms import (UserRegisterForm, VerificationForm, UserLoginForm,
+                                      UserPasswordResetForm)
 from applications.users.functions import (code_generator, send_again_email_verify_code,
                                           send_email_verify_code)
 from applications.users.mixins import AnonymousRequiredMixin
@@ -120,6 +121,16 @@ class UserLoginView(LoginView):
 
     def get_success_url(self):
         return reverse_lazy('home_app:home')
+
+
+class UserResetPasswordView(PasswordResetView):
+    template_name = 'users/password_reset.html',
+    html_email_template_name = 'users/password_reset_email.html'
+    from_email = settings.EMAIL_HOST_USER
+    form_class = UserPasswordResetForm
+    success_url = reverse_lazy('users_app:password-reset-done')
+    email_template_name = 'users/password_reset_email.html',
+
 
 
 # View Functions
