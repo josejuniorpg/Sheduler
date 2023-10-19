@@ -131,6 +131,19 @@ class UserResetPasswordView(PasswordResetView):
     success_url = reverse_lazy('users_app:password-reset-done')
     email_template_name = 'users/password_reset_email.html',
 
+    @method_decorator(ratelimit(key='user_or_ip', rate='5/m', block=True))
+    def get(self, request):
+        return super().get(request)  # todo Configure the page error
+
+    @method_decorator(ratelimit(key='user_or_ip', rate='2/m', block=True))
+    def post(self, request, *args, **kwargs):
+        form = self.get_form()
+
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)  # todo Configure the page error
+
 
 # View Functions
 @ratelimit(key='user_or_ip', rate='5/m', block=True)
