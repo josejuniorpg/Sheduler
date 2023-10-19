@@ -91,3 +91,42 @@ border-bottom-right-radius: .3rem;
     color: #ffffff;
     background: linear-gradient(to right, rgb(84, 177, 250), rgb(79, 175, 250), rgb(30, 155, 250), rgb(0, 107, 199));
 }
+
+/*Forgot Password  Done Template*/
+
+        ._h1-password-done {
+            color: #88B04B;
+            font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+            font-weight: 800;
+            font-size: 3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        ._p-password-done {
+            color: #404F5E;
+            font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+            font-size: 20px;
+            margin: 0;
+        }
+
+        ._i-password-done {
+            color: #9ABC66;
+            font-size: 100px;
+            line-height: 200px;
+            margin-left: -15px;
+        }
+
+        ._password-done-card {
+            background: white;
+            padding: 60px;
+            border-radius: 4px;
+            box-shadow: 0 2px 3px #C8D0D8;
+            display: inline-block;
+            margin: 0 auto;
+            text-align: center;
+        }
+        ._password-done-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }

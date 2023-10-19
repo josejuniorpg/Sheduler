@@ -77,7 +77,8 @@ class UserLoginForm(AuthenticationForm):
 
 class UserResetPasswordForm(PasswordResetForm):
     email = forms.EmailField(
+        label='',
         max_length=254,
-        widget=forms.EmailInput(attrs={"autocomplete": "email"}),
+        widget=forms.EmailInput(attrs={"autocomplete": "email", 'class': 'form-control', 'placeholder': 'Email'}),
     )
-    captcha = ReCaptchaField()
+    captcha = ReCaptchaField(label='')
