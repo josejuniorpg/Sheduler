@@ -1,7 +1,7 @@
 # Django imports
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, UserModel, _unicode_ci_compare, \
-    PasswordResetForm
+    PasswordResetForm, SetPasswordForm
 from django.utils.translation import gettext_lazy as _
 
 # Package imports
@@ -75,10 +75,24 @@ class UserLoginForm(AuthenticationForm):
     captcha = ReCaptchaField()
 
 
-class UserResetPasswordForm(PasswordResetForm):
+class UserPasswordResetForm(PasswordResetForm):
     email = forms.EmailField(
         label='',
         max_length=254,
         widget=forms.EmailInput(attrs={"autocomplete": "email", 'class': 'form-control', 'placeholder': 'Email'}),
+    )
+    captcha = ReCaptchaField(label='')
+
+
+class UserPasswordRestConfirmForm(SetPasswordForm):
+    new_password1 = forms.CharField(
+        label=_("New password"),
+        widget=forms.PasswordInput(attrs={"autocomplete": "new-password", 'class': 'form-control', 'placeholder': _('Password')}),
+        strip=False,
+    )
+    new_password2 = forms.CharField(
+        label=_("New password confirmation"),
+        strip=False,
+        widget=forms.PasswordInput(attrs={"autocomplete": "new-password", 'class': 'form-control' , 'placeholder': _('ConfirmPassword')}),
     )
     captcha = ReCaptchaField(label='')

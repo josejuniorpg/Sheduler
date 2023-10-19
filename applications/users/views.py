@@ -1,5 +1,5 @@
 # Django imports
-from django.contrib.auth.views import LoginView, PasswordResetView
+from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetConfirmView
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404
 from django.utils.decorators import method_decorator
@@ -13,7 +13,7 @@ from django_ratelimit.decorators import ratelimit
 
 # Local imports
 from applications.users.forms import (UserRegisterForm, VerificationForm, UserLoginForm,
-                                      UserResetPasswordForm)
+                                      UserPasswordResetForm, UserPasswordRestConfirmForm)
 from applications.users.functions import (code_generator, send_again_email_verify_code,
                                           send_email_verify_code)
 from applications.users.mixins import AnonymousRequiredMixin
@@ -123,11 +123,11 @@ class UserLoginView(LoginView):
         return reverse_lazy('home_app:home')
 
 
-class UserResetPasswordView(PasswordResetView):
+class UserPasswordResetView(PasswordResetView):
     template_name = 'users/password_reset.html',
     html_email_template_name = 'users/password_reset_email.html'
     from_email = settings.EMAIL_HOST_USER
-    form_class = UserResetPasswordForm
+    form_class = UserPasswordResetForm
     success_url = reverse_lazy('users_app:password-reset-done')
     email_template_name = 'users/password_reset_email.html',
 
@@ -143,6 +143,14 @@ class UserResetPasswordView(PasswordResetView):
             return self.form_valid(form)
         else:
             return self.form_invalid(form)  # todo Configure the page error
+
+
+class UserPasswordResetConfirmView(PasswordResetConfirmView):
+    form_class = UserPasswordRestConfirmForm
+    post_reset_login = False
+    post_reset_login_backend = None
+    reset_url_token = "set-password"
+    title = _("Enter new password")
 
 
 # View Functions
