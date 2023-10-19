@@ -1,92 +1,103 @@
-._button-register{
+._button-register {
     background-color: #039cd9;
     color: #ffffff
 }
 
-._button-register:hover{
+._button-register:hover {
     background-color: #1c668d;
     color: #ffffff
 }
 
 /*Verification  Template*/
 
-  .congratulation-wrapper {
-        max-width: 550px;
-        margin-inline: auto;
-        -webkit-box-shadow: 0 0 20px #f3f3f3;
-        box-shadow: 0 0 20px #f3f3f3;
-        padding: 30px 20px;
-        background-color: #fff;
-        border-radius: 10px;
-    }
+.congratulation-wrapper {
+    max-width: 550px;
+    margin-inline: auto;
+    -webkit-box-shadow: 0 0 20px #f3f3f3;
+    box-shadow: 0 0 20px #f3f3f3;
+    padding: 30px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
 
-    .congratulation-contents.center-text .congratulation-contents-icon {
-        margin-inline: auto;
-    }
-    .congratulation-contents-icon {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        height: 100px;
-        width: 100px;
-        background-color: #65c18c;
-        color: #fff;
-        font-size: 50px;
-        border-radius: 50%;
-        margin-bottom: 30px;
-    }
-    .congratulation-contents-title {
-        font-size: 32px;
-        line-height: 36px;
-        margin: -6px 0 0;
-    }
-    .congratulation-contents-para {
-        font-size: 16px;
-        line-height: 24px;
-        margin-top: 15px;
-    }
-    .btn-wrapper {
-        display: block;
-    }
-    .cmn-btn.btn-bg-1 {
-        background: #6176f6;
-        color: #fff;
-        border: 2px solid transparent;
-        border-radius:3px;
-        text-decoration: none;
-        padding:5px;
-    }
+.congratulation-contents.center-text .congratulation-contents-icon {
+    margin-inline: auto;
+}
+
+.congratulation-contents-icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+    background-color: #65c18c;
+    color: #fff;
+    font-size: 50px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+
+.congratulation-contents-title {
+    font-size: 32px;
+    line-height: 36px;
+    margin: -6px 0 0;
+}
+
+.congratulation-contents-para {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 15px;
+}
+
+.btn-wrapper {
+    display: block;
+}
+
+.cmn-btn.btn-bg-1 {
+    background: #6176f6;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 5px;
+}
 
 /*Login Template*/
 .gradient-custom-2 {
-/* fallback for old browsers */
-background: #fccb90;
-/* Chrome 10-25, Safari 5.1-6 */
-background: -webkit-linear-gradient(to right,#5eaeeb, #5eaeeb, #289ef7, rgba(0, 107, 199, 0.87));
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: linear-gradient(to right, #5eaeeb, #5eaeeb, #289ef7, rgba(0, 107, 199, 0.87));}
+    /* fallback for old browsers */
+    background: #fccb90;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #5eaeeb, #5eaeeb, #289ef7, rgba(0, 107, 199, 0.87));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #5eaeeb, #5eaeeb, #289ef7, rgba(0, 107, 199, 0.87));
+}
+
 @media (min-width: 768px) {
-.gradient-form {
-height: 100vh !important;
-}}
+    .gradient-form {
+        height: 100vh !important;
+    }
+}
+
 @media (min-width: 769px) {
-.gradient-custom-2 {
-border-top-right-radius: .3rem;
-border-bottom-right-radius: .3rem;
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
 }
-}
-._btn-block-login  {
+
+._btn-block-login {
     --mdb-btn-margin-top: 0.5rem;
     display: block;
     width: 100%;
     color: #ffffff;
 }
+
 ._btn-block-login:hover {
     color: #ffffff;
     background: linear-gradient(to right, rgb(84, 177, 250), rgb(79, 175, 250), rgb(30, 155, 250), rgb(0, 107, 199));
@@ -94,39 +105,48 @@ border-bottom-right-radius: .3rem;
 
 /*Forgot Password  Done Template*/
 
-        ._h1-password-done {
-            color: #88B04B;
-            font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-            font-weight: 800;
-            font-size: 3rem;
-            margin-bottom: 0.3rem;
-        }
+._h1-password-done {
+    color: rgba(58, 167, 255, 0.91);
+    font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    margin-bottom: 0.3rem;
+}
 
-        ._p-password-done {
-            color: #404F5E;
-            font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-            font-size: 20px;
-            margin: 0;
-        }
+._p-password-done {
+    color: #404F5E;
+    font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+    font-size: 20px;
+    margin: 0;
+}
 
-        ._i-password-done {
-            color: #9ABC66;
-            font-size: 100px;
-            line-height: 200px;
-            margin-left: -15px;
-        }
+._i-password-done {
+    color: rgba(61, 158, 255, 0.84);
+    font-size: 100px;
+    line-height: 200px;
+    margin-left: -15px;
+}
 
-        ._password-done-card {
-            background: white;
-            padding: 60px;
-            border-radius: 4px;
-            box-shadow: 0 2px 3px #C8D0D8;
-            display: inline-block;
-            margin: 0 auto;
-            text-align: center;
-        }
-        ._password-done-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+._password-done-card {
+    background: white;
+    padding: 60px;
+    border-radius: 4px;
+    box-shadow: 0 2px 3px #5f9fec;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+._password-done-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+._circle-done-card {
+    border-radius: 200px;
+    height: 200px;
+    width: 200px;
+    background: rgba(241, 253, 253, 0.96);
+    margin: 0 auto;
+}
