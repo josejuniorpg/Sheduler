@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-12 22:10-0600\n"
-"PO-Revision-Date: 2023-10-12 21:57+0000\n"
+"POT-Creation-Date: 2023-10-19 02:58-0600\n"
+"PO-Revision-Date: 2023-10-19 03:00+0000\n"
 "Last-Translator:   <yunipgdes@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -19,47 +19,76 @@ msgstr ""
 "X-Generator: Poedit 3.3.2\n"
 "X-Translated-Using: django-rosetta 0.9.9\n"
 
-#: .\applications\users\forms.py:12
+#: .\applications\users\forms.py:15
 msgid "Men"
 msgstr "Hombre"
 
-#: .\applications\users\forms.py:12
+#: .\applications\users\forms.py:15
 msgid "Female"
 msgstr "Mujer"
 
-#: .\applications\users\forms.py:12
+#: .\applications\users\forms.py:15
 msgid "Others"
 msgstr "Otro"
 
-#: .\applications\users\forms.py:20
+#: .\applications\users\forms.py:23
 msgid "Gender"
 msgstr "Genero"
 
-#: .\applications\users\forms.py:23
+#: .\applications\users\forms.py:26
 msgid "ProfileImage"
 msgstr "Foto de perfil."
 
-#: .\applications\users\forms.py:45
+#: .\applications\users\forms.py:49
 msgid "Code Verification"
 msgstr "Verificación del código"
 
-#: .\applications\users\forms.py:60 .\applications\users\forms.py:62
+#: .\applications\users\forms.py:64 .\applications\users\forms.py:66
 msgid "TheCodeIsIncorrect"
 msgstr "El código es incorrecto"
 
-#: .\applications\users\functions.py:19 .\templates\users\verification.html:8
+#: .\applications\users\forms.py:74 .\applications\users\forms.py:90
+#: .\templates\users\register.html:106
+msgid "Password"
+msgstr "Contraseña"
+
+#: .\applications\users\forms.py:89
+msgid "New password"
+msgstr "Nueva contraseña"
+
+#: .\applications\users\forms.py:94
+msgid "New password confirmation"
+msgstr "Confirmar Nueva Contraseña "
+
+#: .\applications\users\forms.py:96
+msgid "ConfirmPassword"
+msgstr "Confirmar  Contraseña"
+
+#: .\applications\users\functions.py:20 .\templates\users\verification.html:8
 msgid "Verification Code"
 msgstr "Codigo De Verificacion"
 
-#: .\applications\users\functions.py:19
+#: .\applications\users\functions.py:20
 msgid "ForEmail"
 msgstr "Para"
 
-#: .\scheduler\settings\base.py:135 .\templates\includes\header.html:35
+#: .\applications\users\views.py:112
+msgid "User Inactive. Please Verify your account"
+msgstr "Usuario Inactivo. Por favor verifique su cuenta. "
+
+#: .\applications\users\views.py:119
+msgid "Invalid credentials. Please try again."
+msgstr "Credenciales invalidas. Inténtelo otra vez "
+
+#: .\applications\users\views.py:153
+msgid "Enter new password"
+msgstr "Introduzca nueva contraseña"
+
+#: .\scheduler\settings\base.py:136 .\templates\includes\header.html:35
 msgid "English"
 msgstr "Ingles"
 
-#: .\scheduler\settings\base.py:136 .\templates\includes\header.html:32
+#: .\scheduler\settings\base.py:137 .\templates\includes\header.html:32
 msgid "Spanish"
 msgstr "Español"
 
@@ -80,8 +109,8 @@ msgid ""
 "  Here you can use rows and columns to organize your footer content. Lorem "
 "ipsumdolor sit amet, consectetur adipisicing elit."
 msgstr ""
-"  Aquí puede utilizar filas y columnas para organizar el contenido de su pie "
-"de página. Lorem ipsumdolor sit amet, consectetur adipisicing elit."
+"  Aquí puede utilizar filas y columnas para organizar el contenido de su pie"
+" de página. Lorem ipsumdolor sit amet, consectetur adipisicing elit."
 
 #: .\templates\includes\footer.html:60
 msgid "Products"
@@ -99,11 +128,65 @@ msgstr "Contacto"
 msgid "Language"
 msgstr "Idioma"
 
-#: .\templates\includes\header.html:44
+#: .\templates\includes\header.html:46
 msgid "Logout"
 msgstr "Salir"
 
-#: .\templates\users\register.html:8 .\templates\users\register.html:146
+#: .\templates\users\login.html:8
+msgid "Login"
+msgstr "Login"
+
+#: .\templates\users\password_reset.html:8
+#: .\templates\users\password_reset.html:33
+msgid "Send Email"
+msgstr "Enviar Correo"
+
+#: .\templates\users\password_reset.html:24
+#: .\templates\users\password_reset_confirm.html:7
+#: .\templates\users\password_reset_confirm.html:23
+msgid "Reset Password"
+msgstr "Restablecer  Contraseña"
+
+#: .\templates\users\password_reset_complete.html:8
+#: .\templates\users\password_reset_confirm.html:29
+msgid "Confirm Password"
+msgstr "Confirmar Contraseña"
+
+#: .\templates\users\password_reset_complete.html:23
+#: .\templates\users\password_reset_done.html:23
+msgid "Success"
+msgstr "Completado"
+
+#: .\templates\users\password_reset_complete.html:24
+#| msgid "Your email has been successfully sent"
+msgid "Your password has been successfully reset"
+msgstr "Su contraseña  ha sido restablecida correctamente"
+
+#: .\templates\users\password_reset_complete.html:24
+msgid "You can log in again "
+msgstr "Puede iniciar session otra vez "
+
+#: .\templates\users\password_reset_confirm.html:24
+msgid "New Password"
+msgstr "Nueva contraseña"
+
+#: .\templates\users\password_reset_confirm.html:38
+msgid "Save"
+msgstr "Guardar"
+
+#: .\templates\users\password_reset_done.html:8
+msgid "Sent mail"
+msgstr "Enviar Correo"
+
+#: .\templates\users\password_reset_done.html:24
+msgid "Your email has been successfully sent"
+msgstr "Su email ha sido enviado correctamente"
+
+#: .\templates\users\password_reset_done.html:24
+msgid "It may take a few minutes to arrive"
+msgstr "Podría tardar unos minutos en llegar"
+
+#: .\templates\users\register.html:8 .\templates\users\register.html:138
 msgid "Register"
 msgstr "Registrar"
 
@@ -115,39 +198,35 @@ msgstr "Registrarse"
 msgid "Your Username"
 msgstr "Tu Username"
 
-#: .\templates\users\register.html:48
+#: .\templates\users\register.html:46
 msgid "Email"
 msgstr "Correo"
 
-#: .\templates\users\register.html:57
+#: .\templates\users\register.html:55
 msgid "First Name"
 msgstr "Nombre/s"
 
-#: .\templates\users\register.html:67
+#: .\templates\users\register.html:65
 msgid "LastName"
 msgstr "Apellidos"
 
-#: .\templates\users\register.html:84
+#: .\templates\users\register.html:82
 msgid "PhoneNumber"
 msgstr "Numero Telefonico"
 
-#: .\templates\users\register.html:97
+#: .\templates\users\register.html:93
 msgid "Picture"
 msgstr "Imagen"
 
-#: .\templates\users\register.html:112
-msgid "Password"
-msgstr "Contraseña"
-
-#: .\templates\users\register.html:126
+#: .\templates\users\register.html:115
 msgid "RepeatYourPassword"
 msgstr "Repetir Contraseña"
 
-#: .\templates\users\register.html:139
+#: .\templates\users\register.html:131
 msgid "I agree all statements in"
 msgstr "Estoy de acuerdo y he leído los"
 
-#: .\templates\users\register.html:140
+#: .\templates\users\register.html:132
 msgid "Terms of service"
 msgstr "Términos y Condiciones."
 
@@ -175,13 +254,19 @@ msgstr "Verificacion de Email"
 msgid "You didn't receive the email?"
 msgstr "No recibiste el email?"
 
-#: .\templates\users\verification.html:72
+#: .\templates\users\verification.html:73
 msgid "Send"
-msgstr "Mandar"
+msgstr "Enviar "
 
-#: .\templates\users\verification.html:76
+#: .\templates\users\verification.html:78
 msgid "Confirm"
 msgstr "Confirmar"
+
+#~ msgid "Repeat Password"
+#~ msgstr "Confirmar  Contraseña"
+
+#~ msgid "Email Send"
+#~ msgstr "Enviar"
 
 #~ msgid "Your account is ready to submit proposals and get work"
 #~ msgstr "Su cuenta ya ha sido verificada correctamente"
