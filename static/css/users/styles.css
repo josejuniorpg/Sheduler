@@ -8,7 +8,7 @@
     color: #ffffff
 }
 
-/*Verificartion  Template*/
+/*Verification  Template*/
 
   .congratulation-wrapper {
         max-width: 550px;
@@ -63,26 +63,31 @@
         padding:5px;
     }
 
-    /*Login Template*/
+/*Login Template*/
 .gradient-custom-2 {
 /* fallback for old browsers */
 background: #fccb90;
-
 /* Chrome 10-25, Safari 5.1-6 */
-background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
-
+background: -webkit-linear-gradient(to right,#5eaeeb, #5eaeeb, #289ef7, rgba(0, 107, 199, 0.87));
 /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
-}
-
+background: linear-gradient(to right, #5eaeeb, #5eaeeb, #289ef7, rgba(0, 107, 199, 0.87));}
 @media (min-width: 768px) {
 .gradient-form {
 height: 100vh !important;
-}
-}
+}}
 @media (min-width: 769px) {
 .gradient-custom-2 {
 border-top-right-radius: .3rem;
 border-bottom-right-radius: .3rem;
 }
+}
+._btn-block-login  {
+    --mdb-btn-margin-top: 0.5rem;
+    display: block;
+    width: 100%;
+    color: #ffffff;
+}
+._btn-block-login:hover {
+    color: #ffffff;
+    background: linear-gradient(to right, rgb(84, 177, 250), rgb(79, 175, 250), rgb(30, 155, 250), rgb(0, 107, 199));
 }

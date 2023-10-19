@@ -26,7 +26,8 @@
                                         <div class="text-center">
                                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
                                                  style="width: 185px;" alt="logo">
-                                            <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
+                                            <h4 class="mt-1 mb-5 pb-1 _pruebass" style="font-weight: bold;">We are The
+                                                Lotus Team</h4>
                                         </div>
 
                                         <form method="post">{% csrf_token %}
@@ -49,16 +50,17 @@
                                             {% endif %}
                                             <div> {{ form.captcha }}</div>
                                             <div class="text-center pt-1 mb-5 pb-1">
-                                                <button class="btn btn-block fa-lg gradient-custom-2 mb-3"
+                                                <button class="btn _btn-block-login fa-lg gradient-custom-2 mb-3"
                                                         type="submit">Log in
                                                 </button>
-                                                <a class="text-muted" href="#!">Forgot password?</a>
+                                                <a class="text-muted" style="text-decoration:none;" href="{% url 'users_app:password-reset' %}">Forgot
+                                                    password?</a>
                                             </div>
                                         </form>
                                         <div class="d-flex align-items-center justify-content-center pb-4">
                                             <form method="get" action="{% url 'users_app:register' %}">
-                                                <p class="mb-0 me-2">Don't have an account?</p>
-                                                <button type="submit" class="btn btn-outline-danger">Create new
+                                                <p class="mb-0 me-2" style="    display: inline;">Don't have an account?</p>
+                                                <button type="submit" class="btn btn-outline-primary">Create new
                                                 </button>
                                             </form>
                                         </div>
