@@ -1,9 +1,10 @@
 # Django imports
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetConfirmView
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404
 from django.utils.decorators import method_decorator
-from django.views.generic import FormView
+from django.views.generic import FormView, UpdateView
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
@@ -13,7 +14,7 @@ from django_ratelimit.decorators import ratelimit
 
 # Local imports
 from applications.users.forms import (UserRegisterForm, VerificationForm, UserLoginForm,
-                                      UserPasswordResetForm, UserPasswordRestConfirmForm)
+                                      UserPasswordResetForm, UserPasswordRestConfirmForm, ProfileUpdateForm)
 from applications.users.functions import (code_generator, send_again_email_verify_code,
                                           send_email_verify_code)
 from applications.users.mixins import AnonymousRequiredMixin
@@ -163,3 +164,26 @@ def send_again_email_view(request, pk=None):
             kwargs={'pk': pk}
         )
     )
+
+
+class ProfileUpdateView(LoginRequiredMixin, UpdateView):
+    template_name = 'users/profile_update.html'
+    context_object_name = 'profile'
+    model = User
+    form_class = ProfileUpdateForm
+    # login_url = '/'
+    def get_object(self, queryset=None):
+        return self.request.user
+
+    def form_valid(self, form):
+        user = User.objects.filter(pk=self.request.user.id).first()
+        if form.cleaned_data['profile_image']:
+            if user.profile_image:
+                user.profile_image.delete()
+            user.profile_image = form.cleaned_data['profile_image']
+        user.last_name = form.cleaned_data['last_name']
+        user.first_name = form.cleaned_data['first_name']
+        user.gender = form.cleaned_data['gender']
+        user.phone_number = form.cleaned_data['phone_number']
+        user.save()
+        return HttpResponseRedirect(reverse_lazy('users_app:profile-update'))

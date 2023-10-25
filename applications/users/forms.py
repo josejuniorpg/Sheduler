@@ -87,12 +87,27 @@ class UserPasswordResetForm(PasswordResetForm):
 class UserPasswordRestConfirmForm(SetPasswordForm):
     new_password1 = forms.CharField(
         label=_("New password"),
-        widget=forms.PasswordInput(attrs={"autocomplete": "new-password", 'class': 'form-control', 'placeholder': _('Password')}),
+        widget=forms.PasswordInput(
+            attrs={"autocomplete": "new-password", 'class': 'form-control', 'placeholder': _('Password')}),
         strip=False,
     )
     new_password2 = forms.CharField(
         label=_("New password confirmation"),
         strip=False,
-        widget=forms.PasswordInput(attrs={"autocomplete": "new-password", 'class': 'form-control' , 'placeholder': _('ConfirmPassword')}),
+        widget=forms.PasswordInput(
+            attrs={"autocomplete": "new-password", 'class': 'form-control', 'placeholder': _('ConfirmPassword')}),
     )
     captcha = ReCaptchaField(label='')
+
+
+class ProfileUpdateForm(forms.ModelForm):
+    first_name = forms.CharField(max_length=32, required=False)
+    last_name = forms.CharField(max_length=32, required=False)
+    profile_image = forms.ImageField(required=False)
+    phone_number = forms.CharField(max_length=32, required=False)
+    gender = forms.TextInput()
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'gender', 'phone_number']
+        exclude = '__all__'

@@ -1,0 +1,25 @@
+<!-- head para PC -->
+{% extends "users/base_users.html" %}
+{% load  static %}
+{% load i18n %}
+
+
+{% block title %}
+    {% trans "Profile Update" %}
+{% endblock %}
+
+
+{% block description %}
+{% endblock %}
+
+{% block content %}
+    <main class="_main-home">
+        <section class="h-100 gradient-form" style="background-color: #eee;">
+            <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Login</button>
+            </form>
+            {{ user }}
+        </section>
+    </main>
+{% endblock content %}
