@@ -24,4 +24,9 @@ urlpatterns = [
          name='password-reset-confirm'),
     path('password-reset-complete/',auth_views. PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'),
          name='password-reset-complete'),
+
+    # Change Password
+    path('password-change/', views.UserPasswordChangeView.as_view(success_url=reverse_lazy('users_app:password-change-done')),
+         name='password-change'),
+    path('password-change/done', auth_views.PasswordChangeDoneView.as_view(template_name = 'users/password_change_done.html'), name='password-change-done')
 ]

@@ -1,7 +1,7 @@
 # Django imports
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, UserModel, _unicode_ci_compare, \
-    PasswordResetForm, SetPasswordForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, \
+    PasswordResetForm, SetPasswordForm, PasswordChangeForm
 from django.utils.translation import gettext_lazy as _
 
 # Package imports
@@ -100,13 +100,35 @@ class UserPasswordRestConfirmForm(SetPasswordForm):
     captcha = ReCaptchaField(label='')
 
 
+class UserPasswordChangeForm(PasswordChangeForm):
+    old_password = forms.CharField(
+        label=_("Old password"),
+        strip=False,
+        widget=forms.PasswordInput(
+            attrs={"autocomplete": "current-password", 'class': 'form-control', 'placeholder': _('OldPassword')}),
+    )
+    new_password1 = forms.CharField(
+        label=_("New password"),
+        widget=forms.PasswordInput(
+            attrs={"autocomplete": "new-password", 'class': 'form-control', 'placeholder': _('Password')}),
+        strip=False,
+    )
+    new_password2 = forms.CharField(
+        label=_("New password confirmation"),
+        strip=False,
+        widget=forms.PasswordInput(
+            attrs={"autocomplete": "new-password", 'class': 'form-control', 'placeholder': _('ConfirmPassword')}),
+    )
+
+
 class ProfileUpdateForm(forms.ModelForm):
     GENDER_CHOICES_TRANSLATED = [('1', _('Men')), ('2', _('Female')), ('3', _('Others')), ]
 
     first_name = forms.CharField(max_length=32, required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
     last_name = forms.CharField(max_length=32, required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
     profile_image = forms.ImageField(required=False, widget=forms.FileInput(attrs={'class': 'form-control'}))
-    phone_number = forms.CharField(max_length=32, required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    phone_number = forms.CharField(max_length=32, required=False,
+                                   widget=forms.TextInput(attrs={'class': 'form-control'}))
     gender = forms.ChoiceField(choices=GENDER_CHOICES_TRANSLATED, widget=forms.Select(attrs={'class': 'form-select'}))
 
     class Meta:

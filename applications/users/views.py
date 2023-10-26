@@ -1,6 +1,6 @@
 # Django imports
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetConfirmView
+from django.contrib.auth.views import (LoginView, PasswordResetView, PasswordResetConfirmView, PasswordChangeView,)
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404
 from django.utils.decorators import method_decorator
@@ -14,7 +14,8 @@ from django_ratelimit.decorators import ratelimit
 
 # Local imports
 from applications.users.forms import (UserRegisterForm, VerificationForm, UserLoginForm,
-                                      UserPasswordResetForm, UserPasswordRestConfirmForm, ProfileUpdateForm)
+                                      UserPasswordResetForm, UserPasswordRestConfirmForm, ProfileUpdateForm,
+                                      UserPasswordChangeForm)
 from applications.users.functions import (code_generator, send_again_email_verify_code,
                                           send_email_verify_code)
 from applications.users.mixins import AnonymousRequiredMixin
@@ -154,16 +155,10 @@ class UserPasswordResetConfirmView(PasswordResetConfirmView):
     title = _("Enter new password")
 
 
-# View Functions
-@ratelimit(key='user_or_ip', rate='5/m', block=True)
-def send_again_email_view(request, pk=None):
-    send_again_email_verify_code(pk)
-    return HttpResponseRedirect(
-        reverse_lazy(
-            'users_app:verification-user',
-            kwargs={'pk': pk}
-        )
-    )
+class UserPasswordChangeView(LoginRequiredMixin, PasswordChangeView):
+    template_name = 'users/password_change.html'
+    form_class = UserPasswordChangeForm
+    success_url = reverse_lazy('users_app:password-change-done')
 
 
 class ProfileUpdateView(LoginRequiredMixin, UpdateView):
@@ -171,6 +166,7 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     context_object_name = 'profile'
     model = User
     form_class = ProfileUpdateForm
+
     # login_url = '/'
     def get_object(self, queryset=None):
         return self.request.user
@@ -187,3 +183,15 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
         user.phone_number = form.cleaned_data['phone_number']
         user.save()
         return HttpResponseRedirect(reverse_lazy('users_app:profile-update'))
+
+    # View Functions
+@ratelimit(key='user_or_ip', rate='5/m', block=True)
+def send_again_email_view(request, pk=None):
+    send_again_email_verify_code(pk)
+    return HttpResponseRedirect(
+        reverse_lazy(
+            'users_app:verification-user',
+            kwargs={'pk': pk}
+        )
+    )
+
