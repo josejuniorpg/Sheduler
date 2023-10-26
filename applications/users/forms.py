@@ -23,7 +23,7 @@ class UserRegisterForm(UserCreationForm):
     gender = forms.ChoiceField(choices=GENDER_CHOICES_TRANSLATED, label=_('Gender'),
                                widget=forms.Select(attrs={'class': 'form-select'}))
     phone_number = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    profile_image = forms.ImageField(label=_('ProfileImage'), required=False)
+    profile_image = forms.ImageField(required=False, widget=forms.FileInput(attrs={'class': 'form-control'}))
     password1 = forms.CharField(required=True, widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     password2 = forms.CharField(required=True, widget=forms.PasswordInput(attrs={'class': 'form-control'}))
     captcha = ReCaptchaField()
