@@ -150,3 +150,9 @@
     background: rgba(241, 253, 253, 0.96);
     margin: 0 auto;
 }
+
+/*Profile Uopdate tempalate*/
+
+._card-box-shadow-blue{
+   box-shadow: 5px 5px 5px 5px #5f9fec;
+}
