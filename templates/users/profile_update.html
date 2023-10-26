@@ -16,18 +16,18 @@
     <main class="_main-home">
         <section style="background-color: rgba(174,212,252,0.92);">
             <div class="container py-5">
-{#                <div class="row">#}
-{#                    <div class="col">#}
-{#                        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">#}
-{#                            <ol class="breadcrumb mb-0">#}
-{#                                <li class="breadcrumb-item"><a href="#">Home</a></li>#}
-{#                                <li class="breadcrumb-item"><a href="#">User</a></li>#}
-{#                                <li class="breadcrumb-item active" aria-current="page">User Profile</li>#}
-{#                            </ol>#}
-{#                        </nav>#}
-{#                    </div>#}
-{#                </div>#}
-
+                {#                <div class="row">#}
+                {#                    <div class="col">#}
+                {#                        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">#}
+                {#                            <ol class="breadcrumb mb-0">#}
+                {#                                <li class="breadcrumb-item"><a href="#">Home</a></li>#}
+                {#                                <li class="breadcrumb-item"><a href="#">User</a></li>#}
+                {#                                <li class="breadcrumb-item active" aria-current="page">User Profile</li>#}
+                {#                            </ol>#}
+                {#                        </nav>#}
+                {#                    </div>#}
+                {#                </div>#}
+                {{ profile }}
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="card mb-4 _card-box-shadow-blue">
@@ -35,11 +35,13 @@
                                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
                                      alt="avatar"
                                      class="rounded-circle img-fluid" style="width: 150px;">
-                                <h5 class="my-3">John Smith</h5>
+                                <h5 class="my-3">{{ profile.first_name }} {{ profile.last_name }}</h5>
                                 <p class="text-muted mb-1">Full Stack Developer</p>
                                 <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
                                 <div class="d-flex justify-content-center mb-2">
-                                    <button type="button" class="btn btn-primary">Follow</button>
+                                    <button type="button" class="btn btn-primary"
+                                            onclick="document.getElementById('submitFormButton').click();">Save
+                                    </button>
                                     <button type="button" class="btn btn-outline-primary ms-1">Message</button>
                                 </div>
                             </div>
@@ -72,57 +74,61 @@
                         </div>
                     </div>
                     <div class="col-lg-8">
-                        <div class="card mb-4 _card-box-shadow-blue">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <p class="mb-0">Full Name</p>
+                        <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                            <div class="card mb-4 _card-box-shadow-blue">
+                                <div class="card-body">
+                                    <div class="row" style="margin:1rem 1rem 1rem 1rem">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">First Name</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            {{ form.first_name }}
+                                        </div>
                                     </div>
-                                    <div class="col-sm-9">
-                                        <p class="text-muted mb-0">Johnatan Smith</p>
+                                    <hr>
+                                    <div class="row" style="margin:1rem 1rem 1rem 1rem">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Last Name</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            {{ form.last_name }}
+                                        </div>
                                     </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <p class="mb-0">Email</p>
+                                    <hr>
+                                    <div class="row" style="margin:1rem 1rem 1rem 1rem">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0"> Profile Image</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            {{ form.profile_image }}
+                                        </div>
                                     </div>
-                                    <div class="col-sm-9">
-                                        <p class="text-muted mb-0">example@example.com</p>
+                                    <hr>
+                                    <div class="row" style="margin:1rem 1rem 1rem 1rem">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Phone Number</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            {{ form.phone_number }}
+                                        </div>
                                     </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <p class="mb-0">Phone</p>
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <p class="text-muted mb-0">(097) 234-5678</p>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <p class="mb-0">Mobile</p>
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <p class="text-muted mb-0">(098) 765-4321</p>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <p class="mb-0">Address</p>
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+                                    <hr>
+                                    <div class="row" style="margin:1rem 1rem 1rem 1rem">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Gender</p>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            {{ form.gender }}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <button type="submit" id="submitFormButton" style="display: none;">Pruebas</button>
+                            {#                              <input type="submit" id="submitFormButton" style="display: none;">#}
+                        </form>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="card mb-4 mb-md-0 _card-box-shadow-blue" >
+                                <div class="card mb-4 mb-md-0 _card-box-shadow-blue">
                                     <div class="card-body">
                                         <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span>
                                             Project Status
