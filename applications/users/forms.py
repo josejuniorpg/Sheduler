@@ -105,20 +105,21 @@ class UserPasswordChangeForm(PasswordChangeForm):
         label=_("Old password"),
         strip=False,
         widget=forms.PasswordInput(
-            attrs={"autocomplete": "current-password", 'class': 'form-control', 'placeholder': _('OldPassword')}),
+            attrs={"autocomplete": "current-password", 'class': 'form-control form-control-lg', 'placeholder': _('OldPassword')}),
     )
     new_password1 = forms.CharField(
         label=_("New password"),
         widget=forms.PasswordInput(
-            attrs={"autocomplete": "new-password", 'class': 'form-control', 'placeholder': _('Password')}),
+            attrs={"autocomplete": "new-password", 'class': 'form-control form-control-lg', 'placeholder': _('Password')}),
         strip=False,
     )
     new_password2 = forms.CharField(
         label=_("New password confirmation"),
         strip=False,
         widget=forms.PasswordInput(
-            attrs={"autocomplete": "new-password", 'class': 'form-control', 'placeholder': _('ConfirmPassword')}),
+            attrs={"autocomplete": "new-password", 'class': 'form-control form-control-lg', 'placeholder': _('ConfirmPassword')}),
     )
+    captcha = ReCaptchaField()
 
 
 class ProfileUpdateForm(forms.ModelForm):
