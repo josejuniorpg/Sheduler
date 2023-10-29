@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-19 02:58-0600\n"
-"PO-Revision-Date: 2023-10-19 03:00+0000\n"
-"Last-Translator:   <yunipgdes@gmail.com>\n"
+"POT-Creation-Date: 2023-10-29 17:31-0600\n"
+"PO-Revision-Date: 2023-10-29 17:33+0000\n"
+"Last-Translator: Jose Perez <yunipgdes@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -19,25 +19,21 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.9\n"
 
-#: .\applications\users\forms.py:15
+#: .\applications\users\forms.py:15 .\applications\users\forms.py:126
 msgid "Men"
 msgstr ""
 
-#: .\applications\users\forms.py:15
+#: .\applications\users\forms.py:15 .\applications\users\forms.py:126
 msgid "Female"
 msgstr ""
 
-#: .\applications\users\forms.py:15
+#: .\applications\users\forms.py:15 .\applications\users\forms.py:126
 msgid "Others"
 msgstr ""
 
 #: .\applications\users\forms.py:23
 msgid "Gender"
 msgstr ""
-
-#: .\applications\users\forms.py:26
-msgid "ProfileImage"
-msgstr "Profile Image"
 
 #: .\applications\users\forms.py:49
 msgid "Code Verification"
@@ -47,22 +43,32 @@ msgstr ""
 msgid "TheCodeIsIncorrect"
 msgstr "The Code Is Incorrect"
 
-#: .\applications\users\forms.py:74 .\applications\users\forms.py:90
-#: .\templates\users\register.html:106
+#: .\applications\users\forms.py:74 .\applications\users\forms.py:91
+#: .\applications\users\forms.py:113 .\templates\users\register.html:104
 msgid "Password"
 msgstr "Password"
 
-#: .\applications\users\forms.py:89
+#: .\applications\users\forms.py:89 .\applications\users\forms.py:111
 msgid "New password"
 msgstr "New Password"
 
-#: .\applications\users\forms.py:94
+#: .\applications\users\forms.py:95 .\applications\users\forms.py:117
 msgid "New password confirmation"
 msgstr ""
 
-#: .\applications\users\forms.py:96
+#: .\applications\users\forms.py:98 .\applications\users\forms.py:120
 msgid "ConfirmPassword"
 msgstr "Confirm Password"
+
+#: .\applications\users\forms.py:105
+#| msgid "New password"
+msgid "Old password"
+msgstr "Old Password"
+
+#: .\applications\users\forms.py:108
+#| msgid "Password"
+msgid "OldPassword"
+msgstr "Old Password"
 
 #: .\applications\users\functions.py:20 .\templates\users\verification.html:8
 msgid "Verification Code"
@@ -72,15 +78,15 @@ msgstr ""
 msgid "ForEmail"
 msgstr "For"
 
-#: .\applications\users\views.py:112
+#: .\applications\users\views.py:114
 msgid "User Inactive. Please Verify your account"
 msgstr ""
 
-#: .\applications\users\views.py:119
+#: .\applications\users\views.py:121
 msgid "Invalid credentials. Please try again."
 msgstr ""
 
-#: .\applications\users\views.py:153
+#: .\applications\users\views.py:155
 msgid "Enter new password"
 msgstr ""
 
@@ -134,6 +140,32 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
+#: .\templates\users\password_change.html:8
+#| msgid "New Password"
+msgid "Change Password"
+msgstr "Change Password"
+
+#: .\templates\users\password_change_done.html:8
+#| msgid "Password"
+msgid "Password Changed"
+msgstr "Password Changed"
+
+#: .\templates\users\password_change_done.html:23
+#: .\templates\users\password_reset_complete.html:23
+#: .\templates\users\password_reset_done.html:23
+msgid "Success"
+msgstr ""
+
+#: .\templates\users\password_change_done.html:24
+#: .\templates\users\password_reset_done.html:24
+msgid "Your email has been successfully sent"
+msgstr ""
+
+#: .\templates\users\password_change_done.html:24
+#: .\templates\users\password_reset_done.html:24
+msgid "It may take a few minutes to arrive"
+msgstr ""
+
 #: .\templates\users\password_reset.html:8
 #: .\templates\users\password_reset.html:33
 msgid "Send Email"
@@ -150,11 +182,6 @@ msgstr "Reset Password"
 msgid "Confirm Password"
 msgstr "Confirm Password"
 
-#: .\templates\users\password_reset_complete.html:23
-#: .\templates\users\password_reset_done.html:23
-msgid "Success"
-msgstr ""
-
 #: .\templates\users\password_reset_complete.html:24
 msgid "Your password has been successfully reset"
 msgstr ""
@@ -164,7 +191,6 @@ msgid "You can log in again "
 msgstr ""
 
 #: .\templates\users\password_reset_confirm.html:24
-#| msgid "New password"
 msgid "New Password"
 msgstr "New Password"
 
@@ -176,15 +202,31 @@ msgstr ""
 msgid "Sent mail"
 msgstr ""
 
-#: .\templates\users\password_reset_done.html:24
-msgid "Your email has been successfully sent"
+#: .\templates\users\password_reset_email.html:2
+#: .\templates\users\verification.html:45
+msgid "Hi"
 msgstr ""
 
-#: .\templates\users\password_reset_done.html:24
-msgid "It may take a few minutes to arrive"
+#: .\templates\users\password_reset_email.html:4
+msgid ""
+"You're receiving this email because you requested a password reset for your "
+"user account at"
 msgstr ""
 
-#: .\templates\users\register.html:8 .\templates\users\register.html:138
+#: .\templates\users\password_reset_email.html:6
+msgid "Please click the following link to reset your password:"
+msgstr ""
+
+#: .\templates\users\password_reset_email.html:10
+msgid "Thanks"
+msgstr ""
+
+#: .\templates\users\profile_update.html:8
+#| msgid "ProfileImage"
+msgid "Profile Update"
+msgstr "Profile Update"
+
+#: .\templates\users\register.html:8 .\templates\users\register.html:136
 msgid "Register"
 msgstr ""
 
@@ -212,19 +254,15 @@ msgstr "Last Name"
 msgid "PhoneNumber"
 msgstr "Phone Number"
 
-#: .\templates\users\register.html:93
-msgid "Picture"
-msgstr ""
-
-#: .\templates\users\register.html:115
+#: .\templates\users\register.html:113
 msgid "RepeatYourPassword"
 msgstr "Repeat You Password"
 
-#: .\templates\users\register.html:131
+#: .\templates\users\register.html:129
 msgid "I agree all statements in"
 msgstr ""
 
-#: .\templates\users\register.html:132
+#: .\templates\users\register.html:130
 msgid "Terms of service"
 msgstr ""
 
@@ -238,10 +276,6 @@ msgstr ""
 
 #: .\templates\users\verification.html:36
 msgid "Go to Home"
-msgstr ""
-
-#: .\templates\users\verification.html:45
-msgid "Hi"
 msgstr ""
 
 #: .\templates\users\verification.html:61
