@@ -41,14 +41,29 @@
                 </form>
 
                 {% if user.is_authenticated %}
+                    <div>
+                        {% if user.profile_image %}
+                            <a href="{% url 'users_app:profile-update' %}">
+                                <img class="rounded-circle shadow-1-strong me-2"
+                                     src="/media/{{ user.profile_image }}" alt="avatar"
+                                     width="45"
+                                     height="45"/>
+                            </a>
+                        {% else %}
+                            <a href="{% url 'users_app:profile-update' %}">
+                                <img class="rounded-circle shadow-1-strong me-3"
+                                     src="{% static "img/users/Anon_profile.png" %}" alt="avatar"
+                                     width="45"
+                                     height="45"/>
+                            </a>
+                        {% endif %}
+                    </div>
                     <form method="post" action="{% url 'users_app:logout' %}">  {% csrf_token %}
                         <button class="btn  my-2 my-sm-0 _button-header-logout"
                                 type="submit">{% trans "Logout" %}</button>
                     </form>
                 {% else %}
-                    <form method="get" action="{% url 'users_app:login' %}">  {% csrf_token %}
-                        <button class="btn  my-2 my-sm-0 _button-header-login" type="submit">Login</button>
-                    </form>
+                    <a href="{% url 'users_app:login' %}" class="btn my-2 my-sm-0 _button-header-login">Login</a>
                 {% endif %}
             </div>
         </div>

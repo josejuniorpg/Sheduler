@@ -52,8 +52,10 @@
 }
 
 ._button-header-logout {
-    margin-left: 0.1rem;
+    margin-left: 0.5rem;
     color: white;
+    height: 2.8rem;
+    width: 5rem;
     background: rgba(255, 31, 65, 0.74);
 }
 
