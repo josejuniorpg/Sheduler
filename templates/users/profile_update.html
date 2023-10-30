@@ -94,16 +94,18 @@
                                         <div class="col-sm-3">
                                             <p class="mb-0">{% trans "First Name" %}</p>
                                         </div>
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-6 d-flex align-items-center">
+                                            <i class="fa-solid fa-address-book fa-lg me-3 fa-fw"></i>
                                             {{ form.first_name }}
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="row" style="margin:1rem 1rem 1rem 1rem">
                                         <div class="col-sm-3">
-                                            <p class="mb-0">{%  trans "Last Name" %}</p>
+                                            <p class="mb-0">{% trans "Last Name" %}</p>
                                         </div>
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-6 d-flex align-items-center">
+                                            <i class="fa-solid fa-address-card fa-lg me-3 fa-fw"></i>
                                             {{ form.last_name }}
                                         </div>
                                     </div>
@@ -112,16 +114,18 @@
                                         <div class="col-sm-3">
                                             <p class="mb-0">{% trans "Profile Image" %}</p>
                                         </div>
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-6 d-flex align-items-center">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                             {{ form.profile_image }}
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="row" style="margin:1rem 1rem 1rem 1rem">
                                         <div class="col-sm-3">
-                                            <p class="mb-0">{%  trans "Phone Number" %}</p>
+                                            <p class="mb-0">{% trans "Phone Number" %}</p>
                                         </div>
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-6 d-flex align-items-center">
+                                            <i class="fa-solid fa-phone fa-lg me-3 fa-fw"></i>
                                             {{ form.phone_number }}
                                         </div>
                                     </div>
@@ -130,7 +134,8 @@
                                         <div class="col-sm-3">
                                             <p class="mb-0">{% trans "Gender" %}</p>
                                         </div>
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-6 d-flex align-items-center">
+                                            <i class="fa-solid fa-users fa-lg me-3 fa-fw"></i>
                                             {{ form.gender }}
                                         </div>
                                     </div>
