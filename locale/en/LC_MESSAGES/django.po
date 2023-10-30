@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-29 17:31-0600\n"
+"POT-Creation-Date: 2023-10-29 19:38-0600\n"
 "PO-Revision-Date: 2023-10-29 17:33+0000\n"
 "Last-Translator: Jose Perez <yunipgdes@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgstr ""
 msgid "Others"
 msgstr ""
 
-#: .\applications\users\forms.py:23
+#: .\applications\users\forms.py:23 .\templates\users\profile_update.html:131
 msgid "Gender"
 msgstr ""
 
@@ -61,12 +61,10 @@ msgid "ConfirmPassword"
 msgstr "Confirm Password"
 
 #: .\applications\users\forms.py:105
-#| msgid "New password"
 msgid "Old password"
 msgstr "Old Password"
 
 #: .\applications\users\forms.py:108
-#| msgid "Password"
 msgid "OldPassword"
 msgstr "Old Password"
 
@@ -132,7 +130,7 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
-#: .\templates\includes\header.html:46
+#: .\templates\includes\header.html:63
 msgid "Logout"
 msgstr ""
 
@@ -141,12 +139,11 @@ msgid "Login"
 msgstr ""
 
 #: .\templates\users\password_change.html:8
-#| msgid "New Password"
+#: .\templates\users\profile_update.html:58
 msgid "Change Password"
 msgstr "Change Password"
 
 #: .\templates\users\password_change_done.html:8
-#| msgid "Password"
 msgid "Password Changed"
 msgstr "Password Changed"
 
@@ -195,6 +192,7 @@ msgid "New Password"
 msgstr "New Password"
 
 #: .\templates\users\password_reset_confirm.html:38
+#: .\templates\users\profile_update.html:55
 msgid "Save"
 msgstr ""
 
@@ -222,9 +220,30 @@ msgid "Thanks"
 msgstr ""
 
 #: .\templates\users\profile_update.html:8
-#| msgid "ProfileImage"
 msgid "Profile Update"
 msgstr "Profile Update"
+
+#: .\templates\users\profile_update.html:95 .\templates\users\register.html:55
+msgid "First Name"
+msgstr "First Name"
+
+#: .\templates\users\profile_update.html:104
+#, fuzzy
+#| msgid "LastName"
+msgid "Last Name"
+msgstr "Last Name"
+
+#: .\templates\users\profile_update.html:113
+#, fuzzy
+#| msgid "Profile Update"
+msgid "Profile Image"
+msgstr "Profile Update"
+
+#: .\templates\users\profile_update.html:122
+#, fuzzy
+#| msgid "PhoneNumber"
+msgid "Phone Number"
+msgstr "Phone Number"
 
 #: .\templates\users\register.html:8 .\templates\users\register.html:136
 msgid "Register"
@@ -241,10 +260,6 @@ msgstr ""
 #: .\templates\users\register.html:46
 msgid "Email"
 msgstr ""
-
-#: .\templates\users\register.html:55
-msgid "First Name"
-msgstr "First Name"
 
 #: .\templates\users\register.html:65
 msgid "LastName"

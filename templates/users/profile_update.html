@@ -27,22 +27,35 @@
                 {#                        </nav>#}
                 {#                    </div>#}
                 {#                </div>#}
-                {{ profile }}
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="card mb-4 _card-box-shadow-blue">
                             <div class="card-body text-center">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                                     alt="avatar"
-                                     class="rounded-circle img-fluid" style="width: 150px;">
+                                {% if user.profile_image %}
+                                    <a href="/media/{{ user.profile_image }}" target="_blank">
+                                        <img class="rounded-circle shadow-1-strong me-2"
+                                             src="/media/{{ user.profile_image }}"
+                                             alt="avatar"
+                                             width="170"
+                                             height="170"/>
+                                    </a>
+                                {% else %}
+                                    <a href="{% static "img/users/Anon_profile.png" %}" target="_blank">
+                                        <img class="rounded-circle shadow-1-strong me-3"
+                                             src="{% static "img/users/Anon_profile.png" %}" alt="avatar"
+                                             width="170"
+                                             height="170"/>
+                                    </a>
+                                {% endif %}
                                 <h5 class="my-3">{{ profile.first_name }} {{ profile.last_name }}</h5>
                                 <p class="text-muted mb-1">Full Stack Developer</p>
                                 <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
                                 <div class="d-flex justify-content-center mb-2">
                                     <button type="button" class="btn btn-primary"
-                                            onclick="document.getElementById('submitFormButton').click();">Save
+                                            onclick="document.getElementById('submitFormButton').click();">{% trans "Save" %}
                                     </button>
-                                    <a class="btn btn-outline-primary ms-1" href="{% url 'users_app:password-change' %}">Change Password</a>
+                                    <a class="btn btn-outline-primary ms-1"
+                                       href="{% url 'users_app:password-change' %}">{% trans "Change Password" %}</a>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +92,7 @@
                                 <div class="card-body">
                                     <div class="row" style="margin:1rem 1rem 1rem 1rem">
                                         <div class="col-sm-3">
-                                            <p class="mb-0">First Name</p>
+                                            <p class="mb-0">{% trans "First Name" %}</p>
                                         </div>
                                         <div class="col-sm-6">
                                             {{ form.first_name }}
@@ -88,7 +101,7 @@
                                     <hr>
                                     <div class="row" style="margin:1rem 1rem 1rem 1rem">
                                         <div class="col-sm-3">
-                                            <p class="mb-0">Last Name</p>
+                                            <p class="mb-0">{%  trans "Last Name" %}</p>
                                         </div>
                                         <div class="col-sm-6">
                                             {{ form.last_name }}
@@ -97,7 +110,7 @@
                                     <hr>
                                     <div class="row" style="margin:1rem 1rem 1rem 1rem">
                                         <div class="col-sm-3">
-                                            <p class="mb-0"> Profile Image</p>
+                                            <p class="mb-0">{% trans "Profile Image" %}</p>
                                         </div>
                                         <div class="col-sm-6">
                                             {{ form.profile_image }}
@@ -106,7 +119,7 @@
                                     <hr>
                                     <div class="row" style="margin:1rem 1rem 1rem 1rem">
                                         <div class="col-sm-3">
-                                            <p class="mb-0">Phone Number</p>
+                                            <p class="mb-0">{%  trans "Phone Number" %}</p>
                                         </div>
                                         <div class="col-sm-6">
                                             {{ form.phone_number }}
@@ -115,7 +128,7 @@
                                     <hr>
                                     <div class="row" style="margin:1rem 1rem 1rem 1rem">
                                         <div class="col-sm-3">
-                                            <p class="mb-0">Gender</p>
+                                            <p class="mb-0">{% trans "Gender" %}</p>
                                         </div>
                                         <div class="col-sm-6">
                                             {{ form.gender }}

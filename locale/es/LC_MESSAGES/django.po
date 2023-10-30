@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-29 17:31-0600\n"
-"PO-Revision-Date: 2023-10-29 17:33+0000\n"
-"Last-Translator: Jose Perez <yunipgdes@gmail.com>\n"
+"POT-Creation-Date: 2023-10-29 19:38-0600\n"
+"PO-Revision-Date: 2023-10-29 19:38+0000\n"
+"Last-Translator: Jose Alberto Perez Gutierrez <yunipgdes@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr "Mujer"
 msgid "Others"
 msgstr "Otro"
 
-#: .\applications\users\forms.py:23
+#: .\applications\users\forms.py:23 .\templates\users\profile_update.html:131
 msgid "Gender"
 msgstr "Genero"
 
@@ -61,12 +61,10 @@ msgid "ConfirmPassword"
 msgstr "Confirmar  Contraseña"
 
 #: .\applications\users\forms.py:105
-#| msgid "New password"
 msgid "Old password"
 msgstr "Vieja Contraseña"
 
 #: .\applications\users\forms.py:108
-#| msgid "Password"
 msgid "OldPassword"
 msgstr "Vieja Contraseña"
 
@@ -134,7 +132,7 @@ msgstr "Contacto"
 msgid "Language"
 msgstr "Idioma"
 
-#: .\templates\includes\header.html:46
+#: .\templates\includes\header.html:63
 msgid "Logout"
 msgstr "Salir"
 
@@ -143,12 +141,11 @@ msgid "Login"
 msgstr "Login"
 
 #: .\templates\users\password_change.html:8
-#| msgid "New Password"
+#: .\templates\users\profile_update.html:58
 msgid "Change Password"
 msgstr "Cambiar Contraseña"
 
 #: .\templates\users\password_change_done.html:8
-#| msgid "Password"
 msgid "Password Changed"
 msgstr "Contraseña Cambiada"
 
@@ -197,6 +194,7 @@ msgid "New Password"
 msgstr "Nueva contraseña"
 
 #: .\templates\users\password_reset_confirm.html:38
+#: .\templates\users\profile_update.html:55
 msgid "Save"
 msgstr "Guardar"
 
@@ -226,9 +224,27 @@ msgid "Thanks"
 msgstr "Gracias"
 
 #: .\templates\users\profile_update.html:8
-#| msgid "ProfileImage"
 msgid "Profile Update"
 msgstr "Foto de perfil."
+
+#: .\templates\users\profile_update.html:95 .\templates\users\register.html:55
+msgid "First Name"
+msgstr "Nombre/s"
+
+#: .\templates\users\profile_update.html:104
+#| msgid "LastName"
+msgid "Last Name"
+msgstr "Apellidos"
+
+#: .\templates\users\profile_update.html:113
+#| msgid "Profile Update"
+msgid "Profile Image"
+msgstr "Foto de perfil."
+
+#: .\templates\users\profile_update.html:122
+#| msgid "PhoneNumber"
+msgid "Phone Number"
+msgstr "Numero Telefonico"
 
 #: .\templates\users\register.html:8 .\templates\users\register.html:136
 msgid "Register"
@@ -245,10 +261,6 @@ msgstr "Tu Username"
 #: .\templates\users\register.html:46
 msgid "Email"
 msgstr "Correo"
-
-#: .\templates\users\register.html:55
-msgid "First Name"
-msgstr "Nombre/s"
 
 #: .\templates\users\register.html:65
 msgid "LastName"
