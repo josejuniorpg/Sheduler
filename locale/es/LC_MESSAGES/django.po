@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-29 19:38-0600\n"
-"PO-Revision-Date: 2023-10-29 19:38+0000\n"
+"POT-Creation-Date: 2023-10-29 19:55-0600\n"
+"PO-Revision-Date: 2023-10-29 20:01+0000\n"
 "Last-Translator: Jose Alberto Perez Gutierrez <yunipgdes@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -31,7 +31,7 @@ msgstr "Mujer"
 msgid "Others"
 msgstr "Otro"
 
-#: .\applications\users\forms.py:23 .\templates\users\profile_update.html:131
+#: .\applications\users\forms.py:23 .\templates\users\profile_update.html:135
 msgid "Gender"
 msgstr "Genero"
 
@@ -140,6 +140,32 @@ msgstr "Salir"
 msgid "Login"
 msgstr "Login"
 
+#: .\templates\users\login.html:29
+msgid "We are Xibal Team"
+msgstr "Somos Xibal Team"
+
+#: .\templates\users\login.html:33
+#| msgid "User Inactive. Please Verify your account"
+msgid "Please login to your account"
+msgstr "Por favor inicie sesión"
+
+#: .\templates\users\login.html:55
+#| msgid "New password"
+msgid "Forgot password"
+msgstr "Contraseña Olvidada"
+
+#: .\templates\users\login.html:60
+msgid "Don't have an account"
+msgstr "No tienes cuenta"
+
+#: .\templates\users\login.html:61
+msgid "Create new"
+msgstr "Registrarse"
+
+#: .\templates\users\login.html:68
+msgid "We are more than just a company"
+msgstr "Somos mas que una compañia "
+
 #: .\templates\users\password_change.html:8
 #: .\templates\users\profile_update.html:58
 msgid "Change Password"
@@ -231,24 +257,21 @@ msgstr "Foto de perfil."
 msgid "First Name"
 msgstr "Nombre/s"
 
-#: .\templates\users\profile_update.html:104
-#| msgid "LastName"
+#: .\templates\users\profile_update.html:105
 msgid "Last Name"
 msgstr "Apellidos"
 
-#: .\templates\users\profile_update.html:113
-#| msgid "Profile Update"
+#: .\templates\users\profile_update.html:115
 msgid "Profile Image"
 msgstr "Foto de perfil."
 
-#: .\templates\users\profile_update.html:122
-#| msgid "PhoneNumber"
+#: .\templates\users\profile_update.html:125
 msgid "Phone Number"
 msgstr "Numero Telefonico"
 
 #: .\templates\users\register.html:8 .\templates\users\register.html:136
 msgid "Register"
-msgstr "Registrar"
+msgstr "Registrarse"
 
 #: .\templates\users\register.html:26
 msgid "Sign up"

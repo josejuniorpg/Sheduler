@@ -26,12 +26,11 @@
                                         <div class="text-center">
                                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
                                                  style="width: 185px;" alt="logo">
-                                            <h4 class="mt-1 mb-5 pb-1 _pruebass" style="font-weight: bold;">We are The
-                                                Lotus Team</h4>
+                                            <h4 class="mt-1 mb-5 pb-1 _pruebass" style="font-weight: bold;">{% trans "We are Xibal Team" %}</h4>
                                         </div>
 
                                         <form method="post">{% csrf_token %}
-                                            <p>Please login to your account</p>
+                                            <p>{% trans "Please login to your account" %}</p>
                                             <div class="form-outline mb-4">
                                                 {{ form.username }}
                                             </div>
@@ -51,24 +50,22 @@
                                             <div> {{ form.captcha }}</div>
                                             <div class="text-center pt-1 mb-5 pb-1">
                                                 <button class="btn _btn-block-login fa-lg gradient-custom-2 mb-3"
-                                                        type="submit">Log in
+                                                        type="submit">Login
                                                 </button>
-                                                <a class="text-muted" style="text-decoration:none;" href="{% url 'users_app:password-reset' %}">Forgot
-                                                    password?</a>
+                                                <a class="text-muted" style="text-decoration:none;" href="{% url 'users_app:password-reset' %}">{% trans "Forgot password" %}?</a>
                                             </div>
                                         </form>
                                         <div class="d-flex align-items-center justify-content-center pb-4">
                                             <form method="get" action="{% url 'users_app:register' %}">
-                                                <p class="mb-0 me-2" style="    display: inline;">Don't have an account?</p>
-                                                <button type="submit" class="btn btn-outline-primary">Create new
-                                                </button>
+                                                <p class="mb-0 me-2" style="    display: inline;">{% trans "Don't have an account" %}?</p>
+                                                <button type="submit" class="btn btn-outline-primary">{% trans "Register" %}</button>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                     <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                        <h4 class="mb-4">We are more than just a company</h4>
+                                        <h4 class="mb-4">{% trans "We are more than just a company" %}</h4>
                                         <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                             sed do eiusmod
                                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

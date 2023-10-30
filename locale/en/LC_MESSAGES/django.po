@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-29 19:38-0600\n"
+"POT-Creation-Date: 2023-10-29 19:55-0600\n"
 "PO-Revision-Date: 2023-10-29 17:33+0000\n"
 "Last-Translator: Jose Perez <yunipgdes@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgstr ""
 msgid "Others"
 msgstr ""
 
-#: .\applications\users\forms.py:23 .\templates\users\profile_update.html:131
+#: .\applications\users\forms.py:23 .\templates\users\profile_update.html:135
 msgid "Gender"
 msgstr ""
 
@@ -138,6 +138,32 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
+#: .\templates\users\login.html:29
+msgid "We are Xibal Team"
+msgstr ""
+
+#: .\templates\users\login.html:33
+msgid "Please login to your account"
+msgstr ""
+
+#: .\templates\users\login.html:55
+#, fuzzy
+#| msgid "New password"
+msgid "Forgot password"
+msgstr "New Password"
+
+#: .\templates\users\login.html:60
+msgid "Don't have an account"
+msgstr ""
+
+#: .\templates\users\login.html:61
+msgid "Create new"
+msgstr ""
+
+#: .\templates\users\login.html:68
+msgid "We are more than just a company"
+msgstr ""
+
 #: .\templates\users\password_change.html:8
 #: .\templates\users\profile_update.html:58
 msgid "Change Password"
@@ -227,19 +253,19 @@ msgstr "Profile Update"
 msgid "First Name"
 msgstr "First Name"
 
-#: .\templates\users\profile_update.html:104
+#: .\templates\users\profile_update.html:105
 #, fuzzy
 #| msgid "LastName"
 msgid "Last Name"
 msgstr "Last Name"
 
-#: .\templates\users\profile_update.html:113
+#: .\templates\users\profile_update.html:115
 #, fuzzy
 #| msgid "Profile Update"
 msgid "Profile Image"
 msgstr "Profile Update"
 
-#: .\templates\users\profile_update.html:122
+#: .\templates\users\profile_update.html:125
 #, fuzzy
 #| msgid "PhoneNumber"
 msgid "Phone Number"
