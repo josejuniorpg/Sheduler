@@ -106,6 +106,13 @@
     background-color: #048ABF;
 }
 
+._image-header{
+    transition: filter 0.3s ease;
+}
+._image-header:hover{
+    filter: blur(1px) grayscale(50%);
+}
+
 /*Footer Styles*/
 
 ._my-footer {

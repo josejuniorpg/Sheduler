@@ -44,14 +44,14 @@
                     <div>
                         {% if user.profile_image %}
                             <a href="{% url 'users_app:profile-update' %}">
-                                <img class="rounded-circle shadow-1-strong me-2"
+                                <img class="rounded-circle shadow-1-strong me-2 _image-header"
                                      src="/media/{{ user.profile_image }}" alt="avatar"
                                      width="45"
                                      height="45"/>
                             </a>
                         {% else %}
                             <a href="{% url 'users_app:profile-update' %}">
-                                <img class="rounded-circle shadow-1-strong me-3"
+                                <img class="rounded-circle shadow-1-strong me-3 _image-header"
                                      src="{% static "img/users/Anon_profile.png" %}" alt="avatar"
                                      width="45"
                                      height="45"/>
