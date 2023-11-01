@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-29 19:55-0600\n"
-"PO-Revision-Date: 2023-10-29 20:01+0000\n"
+"POT-Creation-Date: 2023-10-31 20:51-0600\n"
+"PO-Revision-Date: 2023-10-31 20:45+0000\n"
 "Last-Translator: Jose Alberto Perez Gutierrez <yunipgdes@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -88,17 +88,42 @@ msgstr "Credenciales invalidas. Inténtelo otra vez "
 msgid "Enter new password"
 msgstr "Introduzca nueva contraseña"
 
-#: .\scheduler\settings\base.py:136 .\templates\includes\header.html:35
+#: .\scheduler\settings\base.py:138 .\templates\includes\header.html:35
 msgid "English"
 msgstr "Ingles"
 
-#: .\scheduler\settings\base.py:137 .\templates\includes\header.html:32
+#: .\scheduler\settings\base.py:139 .\templates\includes\header.html:32
 msgid "Spanish"
 msgstr "Español"
 
 #: .\templates\home\index.html:8
 msgid "Welcome | Home Page"
 msgstr "Bienvenido | Inicio"
+
+#: .\templates\home\many_attempts_login.html:8
+#: .\templates\home\many_attempts_login.html:26
+msgid "User Blocked"
+msgstr "Usuario Bloqueado"
+
+#: .\templates\home\many_attempts_login.html:27
+msgid "Please contact support "
+msgstr "Por favor contacte con soporte"
+
+#: .\templates\home\many_attempts_login.html:30
+msgid ""
+"\n"
+"                                There have been many login attempts on her "
+"account, so it has been blocked.\n"
+"                                It will be restored automatically in a "
+"couple of days.\n"
+"                                You can also contact support at\n"
+"                            "
+msgstr ""
+"\n"
+"Ha habido muchos intentos de inicios de session en su cuenta, asique a sido "
+"bloqueada. Se restaurata automaticamente en un par de dias. \n"
+"\n"
+"Tambien puede ponerse en contacto con el soporte al correo de "
 
 #: .\templates\includes\footer.html:10
 msgid "Get connected with us on social networks:"
@@ -113,8 +138,8 @@ msgid ""
 "  Here you can use rows and columns to organize your footer content. Lorem "
 "ipsumdolor sit amet, consectetur adipisicing elit."
 msgstr ""
-"  Aquí puede utilizar filas y columnas para organizar el contenido de su pie"
-" de página. Lorem ipsumdolor sit amet, consectetur adipisicing elit."
+"  Aquí puede utilizar filas y columnas para organizar el contenido de su pie "
+"de página. Lorem ipsumdolor sit amet, consectetur adipisicing elit."
 
 #: .\templates\includes\footer.html:60
 msgid "Products"
@@ -145,12 +170,10 @@ msgid "We are Xibal Team"
 msgstr "Somos Xibal Team"
 
 #: .\templates\users\login.html:33
-#| msgid "User Inactive. Please Verify your account"
 msgid "Please login to your account"
 msgstr "Por favor inicie sesión"
 
 #: .\templates\users\login.html:55
-#| msgid "New password"
 msgid "Forgot password"
 msgstr "Contraseña Olvidada"
 
@@ -158,8 +181,9 @@ msgstr "Contraseña Olvidada"
 msgid "Don't have an account"
 msgstr "No tienes cuenta"
 
-#: .\templates\users\login.html:61
-msgid "Create new"
+#: .\templates\users\login.html:61 .\templates\users\register.html:8
+#: .\templates\users\register.html:136
+msgid "Register"
 msgstr "Registrarse"
 
 #: .\templates\users\login.html:68
@@ -269,10 +293,6 @@ msgstr "Foto de perfil."
 msgid "Phone Number"
 msgstr "Numero Telefonico"
 
-#: .\templates\users\register.html:8 .\templates\users\register.html:136
-msgid "Register"
-msgstr "Registrarse"
-
 #: .\templates\users\register.html:26
 msgid "Sign up"
 msgstr "Registrarse"
@@ -332,6 +352,9 @@ msgstr "Enviar "
 #: .\templates\users\verification.html:78
 msgid "Confirm"
 msgstr "Confirmar"
+
+#~ msgid "Create new"
+#~ msgstr "Registrarse"
 
 #~ msgid "Picture"
 #~ msgstr "Imagen"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-29 19:55-0600\n"
+"POT-Creation-Date: 2023-10-31 20:45-0600\n"
 "PO-Revision-Date: 2023-10-29 17:33+0000\n"
 "Last-Translator: Jose Perez <yunipgdes@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -88,16 +88,36 @@ msgstr ""
 msgid "Enter new password"
 msgstr ""
 
-#: .\scheduler\settings\base.py:136 .\templates\includes\header.html:35
+#: .\scheduler\settings\base.py:138 .\templates\includes\header.html:35
 msgid "English"
 msgstr ""
 
-#: .\scheduler\settings\base.py:137 .\templates\includes\header.html:32
+#: .\scheduler\settings\base.py:139 .\templates\includes\header.html:32
 msgid "Spanish"
 msgstr ""
 
 #: .\templates\home\index.html:8
 msgid "Welcome | Home Page"
+msgstr ""
+
+#: .\templates\home\many_attempts_login.html:8
+#: .\templates\home\many_attempts_login.html:26
+msgid "User Blocked"
+msgstr ""
+
+#: .\templates\home\many_attempts_login.html:27
+msgid "Please contact support "
+msgstr ""
+
+#: .\templates\home\many_attempts_login.html:30
+msgid ""
+"\n"
+"                                There have been many login attempts on her "
+"account, so it has been blocked.\n"
+"                                It will be restored automatically in a "
+"couple of days.\n"
+"                                You can also contact support at\n"
+"                            "
 msgstr ""
 
 #: .\templates\includes\footer.html:10
@@ -156,8 +176,9 @@ msgstr "New Password"
 msgid "Don't have an account"
 msgstr ""
 
-#: .\templates\users\login.html:61
-msgid "Create new"
+#: .\templates\users\login.html:61 .\templates\users\register.html:8
+#: .\templates\users\register.html:136
+msgid "Register"
 msgstr ""
 
 #: .\templates\users\login.html:68
@@ -270,10 +291,6 @@ msgstr "Profile Update"
 #| msgid "PhoneNumber"
 msgid "Phone Number"
 msgstr "Phone Number"
-
-#: .\templates\users\register.html:8 .\templates\users\register.html:136
-msgid "Register"
-msgstr ""
 
 #: .\templates\users\register.html:26
 msgid "Sign up"

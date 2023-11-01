@@ -162,3 +162,5 @@ AUTHENTICATION_BACKENDS = [
     'axes.backends.AxesStandaloneBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
+
+AXES_LOCKOUT_TEMPLATE = 'home/many_attempts_login.html'
