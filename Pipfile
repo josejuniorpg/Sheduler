@@ -16,6 +16,7 @@ sentry-sdk = "*"
 fontawesomefree = "*"
 django-ratelimit = "*"
 django-recaptcha = "*"
+django-axes = {extras = ["ipware"], version = "*"}
 
 [dev-packages]
 
