@@ -1,7 +1,5 @@
 # Django Imports
 from django.urls import path, reverse_lazy
-from . import views
-
 
 # Local Imports
 from . import views
