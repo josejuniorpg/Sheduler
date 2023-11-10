@@ -80,3 +80,29 @@ class Scheduler(TimeStampedModel):
     def __str__(self):
         return ('Start time: ' + str(self.start_time) + ' ,End time: ' + str(self.end_time)
                 + ' ,Description: ' + str(self.description) + ' ,Status: ' + str(self.status))
+
+
+class Assistance(TimeStampedModel):
+    CHOICES = ((0, 'did not assist'), (1, 'assisted '), (2, 'assisted but left early'),
+               (4, 'arrived late'), (5, 'arrived late and left early'))  # todo Ver si se me ocurren mas opciones
+    daily_scheduler = models.ForeignKey(DailyScheduler, on_delete=models.CASCADE)
+    is_vacations = models.BooleanField(default=False)
+    date = models.DateField()
+    has_assisted = models.PositiveSmallIntegerField(choices=CHOICES, default=0)
+
+    class Meta:
+        verbose_name = 'Assistance'
+        verbose_name_plural = 'Assistances'
+        ordering = ['-date']
+        unique_together = ('daily_scheduler', 'date')
+
+    def __str__(self):
+        return (('User: ' + str(self.daily_scheduler.shift.user.first_name)) + ' ,Date: ' + str(self.date)
+                + ' ,Has assisted: ' + str(self.has_assisted))
+
+
+class Missing(TimeStampedModel):
+    assistance = models.OneToOneField(Assistance, on_delete=models.CASCADE)
+    is_justified = models.BooleanField(default=False)
+    reason = models.CharField(max_length=50, blank=True)
+    # todo terminar este modelo.
