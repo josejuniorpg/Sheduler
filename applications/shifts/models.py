@@ -1,4 +1,5 @@
 # Django imports
+from django.core.exceptions import ValidationError
 from django.db import models
 
 # Package imports
@@ -36,6 +37,20 @@ class Shift(TimeStampedModel):
         verbose_name_plural = 'Shifts'
         ordering = ['-user', '-created']
 
+    def clean(self):
+        super().clean()
+        if self.status:
+            if Shift.objects.filter(user=self.user, status=True).exclude(pk=self.pk).exists():
+                raise ValidationError(
+                    'Solo puede haber un shift activo por usuario. Si desea crear un nuevo shift, desactive el anterior')
+        else:
+            # allow any combination
+            pass
+
+    def save(self, *args, **kwargs):
+        self.clean()
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return (str(self.user.first_name) + ' ' + str(self.user.last_name) + ' ,Shift: ' + str(self.shift_category.name)
                 + ' ,Status: ' + str(self.status) + ' ,Is temporal: ' + str(self.is_temporal)
@@ -59,6 +74,20 @@ class DailyScheduler(TimeStampedModel):
         verbose_name_plural = 'Daily Schedulers'
         ordering = ['-created']
         db_table = 'shifts_daily_scheduler'
+        unique_together = ('shift', 'day_of_the_week')
+
+    # def clean(self):
+    #     super().clean()
+    #     if self.status:
+    #         if DailyScheduler.objects.filter(shift=self.shift, day_of_the_week=self.day_of_the_week, status=True).exclude(pk=self.pk).exists():
+    #             raise ValidationError('Solo puede haber una combinación única de shift y day_of_the_week cuando is_true=True')
+    #     else:
+    #         # permitir cualquier combinación
+    #         pass
+    #
+    # def save(self, *args, **kwargs):
+    #     self.clean()
+    #     super().save(*args, **kwargs)
 
     def __str__(self):
         return ('Day: ' + str(self.day_of_the_week) + ' ,Status: ' + str(self.status) +
