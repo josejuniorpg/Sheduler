@@ -72,7 +72,7 @@ class DailyScheduler(TimeStampedModel):
     class Meta:
         verbose_name = 'Daily Scheduler'
         verbose_name_plural = 'Daily Schedulers'
-        ordering = ['-created']
+        ordering = ['-day_of_the_week', '-created']
         db_table = 'shifts_daily_scheduler'
         unique_together = ('shift', 'day_of_the_week')
 
@@ -90,8 +90,8 @@ class DailyScheduler(TimeStampedModel):
     #     super().save(*args, **kwargs)
 
     def __str__(self):
-        return ('Day: ' + str(self.day_of_the_week) + ' ,Status: ' + str(self.status) +
-                ' ,Description: ' + str(self.description) + ' ,Group: ' + str(self.group))
+        return ('Day: ' + str(self.day_of_the_week) + ' ' + str(self.shift.user.first_name) + ' ,Status: ' + str(self.status) +
+                ' ,Description: ' + str(self.description) + ' ,Group: ' + str(self.group)) + ' ,ShiftStatus: ' + str(self.shift.status)
 
 
 class Scheduler(TimeStampedModel):
