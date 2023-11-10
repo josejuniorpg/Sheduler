@@ -2,8 +2,11 @@
 from django.contrib import admin
 
 # Local imports
-from .models import Shift, Category
+from .models import Shift, ShiftCategory, Scheduler, DailyScheduler
 
 # Register your models here.
 admin.site.register(Shift)
-admin.site.register(Category)
+admin.site.register(ShiftCategory)
+admin.site.register(Scheduler)
+admin.site.register(DailyScheduler)
+
