@@ -87,7 +87,7 @@ class Shift(TimeStampedModel):
                 + ' ,Duration: ' + str(self.duration))
 
 
-class ShiftDaily(TimeStampedModel):  # todo change to DalyShift
+class ShiftDaily(TimeStampedModel):
     DAYS_OF_THE_WEEK = (
         (1, 'Monday'), (2, 'Tuesday'), (3, 'Wednesday'),
         (4, 'Thursday'), (5, 'Friday'), (6, 'Saturday'),
@@ -118,7 +118,7 @@ class ShiftDaily(TimeStampedModel):  # todo change to DalyShift
 class Assistance(TimeStampedModel):
     CHOICES = ((0, 'did not assist'), (1, 'assisted '), (2, 'assisted but left early'),
                (4, 'arrived late'), (5, 'arrived late and left early'))  # todo Ver si se me ocurren mas opciones
-    daily_scheduler = models.ForeignKey(ShiftDaily, limit_choices_to={'status': True},  on_delete=models.CASCADE) # todo  Filter to true status
+    daily_scheduler = models.ForeignKey(ShiftDaily, limit_choices_to={'status': True},  on_delete=models.CASCADE)
     is_vacations = models.BooleanField(default=False)
     date = models.DateField()
     has_assisted = models.PositiveSmallIntegerField(choices=CHOICES, default=0)
