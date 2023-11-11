@@ -81,20 +81,6 @@ class Shift(TimeStampedModel):
         verbose_name_plural = 'Shifts'
         ordering = ['-user', '-created']
 
-    def clean(self):
-        super().clean()
-        if self.status:
-            if Shift.objects.filter(user=self.user, status=True).exclude(pk=self.pk).exists():
-                raise ValidationError(
-                    'Solo puede haber un shift activo por usuario. Si desea crear un nuevo shift, desactive el anterior')
-        else:
-            # allow any combination
-            pass
-
-    def save(self, *args, **kwargs):
-        self.clean()
-        super().save(*args, **kwargs)
-
     def __str__(self):
         return (str(self.user.first_name) + ' ' + str(self.user.last_name) + ' ,Shift: ' + str(self.shift_category.name)
                 + ' ,Status: ' + str(self.status) + ' ,Is temporal: ' + str(self.is_temporal)
