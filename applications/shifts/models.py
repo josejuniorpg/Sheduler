@@ -39,6 +39,20 @@ class MissingCategory(TimeStampedModel):
         return self.name
 
 
+class JustificationCategory(TimeStampedModel):
+    name = models.CharField(max_length=50)
+    description = models.CharField(max_length=50, blank=True)
+
+    class Meta:
+        verbose_name = 'Justification Category'
+        verbose_name_plural = 'Justification Categories'
+        ordering = ['-created']
+        db_table = 'shifts_justification_category'
+
+    def __str__(self):
+        return self.name
+
+
 class Scheduler(TimeStampedModel):
     status = models.BooleanField(default=True)
     description = models.CharField(max_length=50, blank=True)
@@ -153,3 +167,19 @@ class Missing(TimeStampedModel):
         return (('Is justified: ' + str(self.is_justified) + ' ,Reason: ' + str(self.reason)
                  + ' ,Worked hours: ' + str(self.worked_hours)) + ' ,Date: ' + str(self.assistance.date)
                 + ' ,User: ' + str(self.assistance.daily_scheduler.shift.user.first_name))
+
+
+class Justification(TimeStampedModel):
+    missing = models.OneToOneField(Missing, on_delete=models.CASCADE)
+    status = models.BooleanField(default=True)
+    description = models.CharField(max_length=50, blank=True)
+    category = models.ForeignKey(JustificationCategory, on_delete=models.CASCADE, null=True, blank=True)
+    document = models.FileField(upload_to='shifts/justificationsDocuments', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Justification'
+        verbose_name_plural = 'Justifications'
+        ordering = ['-created']
+
+    def __str__(self):
+        return ('Missing: ' + str(self.missing)) + ' ,Description: ' + str(self.description)
