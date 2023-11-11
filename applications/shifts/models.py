@@ -118,12 +118,11 @@ class ShiftDaily(TimeStampedModel):
 class Assistance(TimeStampedModel):
     CHOICES = ((0, 'did not assist'), (1, 'assisted '), (2, 'assisted but left early'),
                (4, 'arrived late'), (5, 'arrived late and left early'))  # todo Ver si se me ocurren mas opciones
-    daily_scheduler = models.ForeignKey(ShiftDaily, limit_choices_to={'status': True},  on_delete=models.CASCADE)
+    daily_scheduler = models.ForeignKey(ShiftDaily, limit_choices_to={'status': True}, on_delete=models.CASCADE)
     is_vacations = models.BooleanField(default=False)
     date = models.DateField()
     has_assisted = models.PositiveSmallIntegerField(choices=CHOICES, default=0)
 
-    # todo Validation for  not repeat the same date.
     class Meta:
         verbose_name = 'Assistance'
         verbose_name_plural = 'Assistances'
@@ -131,8 +130,24 @@ class Assistance(TimeStampedModel):
         unique_together = ('daily_scheduler', 'date')
 
     def __str__(self):
-        return ((str(self.daily_scheduler.shift.user.first_name)) + ' ,Date: ' + str(self.date)
+        return (('Day: ' + str(self.daily_scheduler.day_of_the_week) + ' ' +
+                 str(self.daily_scheduler.shift.user.first_name)) + ' ,Date: ' + str(self.date)
                 + ' ,Has assisted: ' + str(self.has_assisted))
+
+    def clean(self):
+        super().clean()
+        if self.pk:
+            asistance = Assistance.objects.filter(date=self.date,
+                                                  daily_scheduler__shift__user=self.daily_scheduler.shift.user).exclude(
+                pk=self.pk)
+        else:
+            asistance = Assistance.objects.filter(date=self.date,
+                                                  daily_scheduler__shift__user=self.daily_scheduler.shift.user)
+        if asistance.exists():
+            raise ValidationError('There is already an assistance  for this day')
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
 
 
 class Missing(TimeStampedModel):
