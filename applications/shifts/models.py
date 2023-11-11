@@ -123,6 +123,7 @@ class Assistance(TimeStampedModel):
     date = models.DateField()
     has_assisted = models.PositiveSmallIntegerField(choices=CHOICES, default=0)
 
+    # todo Validation for  not repeat the same date.
     class Meta:
         verbose_name = 'Assistance'
         verbose_name_plural = 'Assistances'
