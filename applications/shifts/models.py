@@ -70,7 +70,7 @@ class Scheduler(TimeStampedModel):
 
 
 class Shift(TimeStampedModel):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     shift_category = models.ForeignKey(ShiftCategory, on_delete=models.CASCADE)
     is_temporal = models.BooleanField(default=False)
     duration = models.PositiveSmallIntegerField()
@@ -101,13 +101,13 @@ class Shift(TimeStampedModel):
                 + ' ,Duration: ' + str(self.duration))
 
 
-class DailyScheduler(TimeStampedModel):  # todo change to DalyShift
+class ShiftDaily(TimeStampedModel):  # todo change to DalyShift
     DAYS_OF_THE_WEEK = (
         (1, 'Monday'), (2, 'Tuesday'), (3, 'Wednesday'),
         (4, 'Thursday'), (5, 'Friday'), (6, 'Saturday'),
         (7, 'Sunday'))
 
-    shift = models.ForeignKey(Shift, on_delete=models.CASCADE)
+    shift = models.ForeignKey(Shift, on_delete=models.CASCADE, limit_choices_to={'status': True})
     status = models.BooleanField(default=True)
     description = models.CharField(max_length=50, blank=True)
     day_of_the_week = models.PositiveSmallIntegerField(choices=DAYS_OF_THE_WEEK)
@@ -116,23 +116,23 @@ class DailyScheduler(TimeStampedModel):  # todo change to DalyShift
 
     # todo An Clean to hours
     class Meta:
-        verbose_name = 'Daily Scheduler'
-        verbose_name_plural = 'Daily Schedulers'
+        verbose_name = 'Shift Daily'
+        verbose_name_plural = 'Shifts Daily'
         ordering = ['-day_of_the_week', '-created']
-        db_table = 'shifts_daily_scheduler'
+        db_table = 'shifts_shift_daily'
         unique_together = ('shift', 'day_of_the_week')
 
     def __str__(self):
         return ('Day: ' + str(self.day_of_the_week) + ' ' + str(self.shift.user.first_name) + ' ,Status: ' + str(
             self.status) +
-                ' ,Description: ' + str(self.description) + ' ,Group: ' + str(self.group)) + ' ,ShiftStatus: ' + str(
+                ' ,Description: ' + str(self.description) + ' ,Group: ' + str(self.group)) + ' ,Shift Status: ' + str(
             self.shift.status)
 
 
 class Assistance(TimeStampedModel):
     CHOICES = ((0, 'did not assist'), (1, 'assisted '), (2, 'assisted but left early'),
                (4, 'arrived late'), (5, 'arrived late and left early'))  # todo Ver si se me ocurren mas opciones
-    daily_scheduler = models.ForeignKey(DailyScheduler, on_delete=models.CASCADE)
+    daily_scheduler = models.ForeignKey(ShiftDaily, limit_choices_to={'status': True},  on_delete=models.CASCADE) # todo  Filter to true status
     is_vacations = models.BooleanField(default=False)
     date = models.DateField()
     has_assisted = models.PositiveSmallIntegerField(choices=CHOICES, default=0)
@@ -144,7 +144,7 @@ class Assistance(TimeStampedModel):
         unique_together = ('daily_scheduler', 'date')
 
     def __str__(self):
-        return (('User: ' + str(self.daily_scheduler.shift.user.first_name)) + ' ,Date: ' + str(self.date)
+        return ((str(self.daily_scheduler.shift.user.first_name)) + ' ,Date: ' + str(self.date)
                 + ' ,Has assisted: ' + str(self.has_assisted))
 
 
