@@ -15,6 +15,10 @@
     <main class="_main-home">
         <section class="h-100 gradient-form" style="background-color: #eee;">
             <h1 class="_pruebas"> Pronano</h1>
+            <form method="post"> {% csrf_token %}
+                  {{ form.as_p }}
+                <button type="submit" class="btn btn-primary btn-rounded btn-block z-depth-1a">Create</button>
+            </form>
         </section>
     </main>
 {% endblock content %}

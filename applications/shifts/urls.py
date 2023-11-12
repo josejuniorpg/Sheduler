@@ -7,5 +7,5 @@ from . import views
 app_name = 'shifts_app'
 
 urlpatterns = [
-    path('create/', views.HomePageView.as_view(), name='create'),
+    path('create/', views.ShiftCreateView.as_view(), name='create'),
 ]
