@@ -13,12 +13,59 @@
 
 {% block content %}
     <main class="_main-home">
-        <section class="h-100 gradient-form" style="background-color: #eee;">
-            <h1 class="_pruebas"> Pronano</h1>
-            <form method="post"> {% csrf_token %}
-                  {{ form.as_p }}
-                <button type="submit" class="btn btn-primary btn-rounded btn-block z-depth-1a">Create</button>
-            </form>
+        <section class="h-100 h-custom" style="background-color: #8fc4b7;">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-lg-8 col-xl-6">
+                        <div class="card rounded-3">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+                                 class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+                                 alt="Sample photo">
+                            <div class="card-body p-4 p-md-5">
+                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Create Shift</h3>
+                                <form method="post" class="px-md-2"> {% csrf_token %}
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form3Example1q"><strong>User</strong></label>
+                                        {{ form.user }}
+                                    </div>
+                                    {% if form.errors.user %}
+                                        <strong style="color: #ff5959">{{ form.errors.user }}</strong>
+                                    {% endif %}
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline datepicker">
+                                                <label for="exampleDatepicker1"
+                                                       class="form-label"><strong>Category</strong></label>
+                                                {{ form.shift_category }}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-4">
+                                            <label for="exampleDatepicker1" class="form-label"><strong>Is
+                                                temporal?</strong></label></br>
+                                            {{ form.is_temporal }}
+                                        </div>
+                                    </div>
+                                    <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                        <div class="col-md-6">
+                                            <div class="form-outline">
+                                                <label class="form-label" for="form3Example1w"><strong>Duration</strong></label>
+                                                {{ form.duration }}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-4">
+                                            <label for="exampleDatepicker1"
+                                                   class="form-label"><strong>Status</strong></label></br>
+                                            {{ form.status }}
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 {% endblock content %}
