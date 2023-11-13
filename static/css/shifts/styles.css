@@ -1,0 +1,9 @@
+._button-save {
+    background-color: #039cd9;
+    color: #ffffff
+}
+
+._button-save:hover {
+    background-color: #1c668d;
+    color: #ffffff
+}
