@@ -31,3 +31,9 @@ class ShiftCreateView(CreateView):
         return render(request, self.template_name, {'form': form})
 
 
+class ShiftListView(ListView):
+    template_name = "shifts/list_shifts.html"
+    model = Shift
+    context_object_name = 'shifts'
+    paginate_by = 10
+
