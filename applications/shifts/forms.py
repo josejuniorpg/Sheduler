@@ -8,7 +8,7 @@ from .models import Shift, ShiftCategory
 from ..users.models import User
 
 
-class ShiftForm(forms.ModelForm):
+class CreateShiftForm(forms.ModelForm):
     user = forms.ModelChoiceField(queryset=User.objects.all(), required=True,
                                   widget=forms.Select(attrs={'class': 'form-control'}))
     # user = forms.ChoiceField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))

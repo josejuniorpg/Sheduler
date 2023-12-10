@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, UpdateView
 
-from applications.shifts.forms import ShiftForm
+from applications.shifts.forms import CreateShiftForm
 from applications.shifts.models import Shift
 
 
@@ -13,7 +13,7 @@ from applications.shifts.models import Shift
 class ShiftCreateView(CreateView):
     template_name = "shifts/create_shifts.html"
     model = Shift
-    form_class = ShiftForm
+    form_class = CreateShiftForm
     success_url = reverse_lazy('home_app:home')
 
     def get(self, request, *args, **kwargs):
