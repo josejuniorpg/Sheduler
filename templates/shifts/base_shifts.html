@@ -6,4 +6,24 @@
 {% endblock css %}
 
 {% block js %}
+    <script type="text/javascript">
+        function open_modal_filters(url) {
+            let $ = jQuery.noConflict();
+            $('#filters-shifts').load(url, function () {
+                $(this).modal('show');
+            });
+        }
+
+        function close_modal_filters() {
+            let $ = jQuery.noConflict();
+            $('#filters-shifts').modal('hide');
+        }
+
+        function submitFormWithoutInput() {
+            let form = document.getElementById('searchForm');
+            form['search-shifts'].value = '';
+            form.submit();
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 {% endblock js %}
