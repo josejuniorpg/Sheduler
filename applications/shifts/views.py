@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, UpdateView
 
-from applications.shifts.forms import CreateShiftForm
+from applications.shifts.forms import CreateShiftForm, FiltersShiftForm
 from applications.shifts.models import Shift
 
 
@@ -46,20 +46,22 @@ class ShiftListView(ListView):
             Q(user__last_name__icontains=kwargs))
         return queryset
 
+    def post(self, request, *args, **kwargs):
+        print(request.POST)
+        queryset = self.get_queryset()
+        print(queryset)
+        return render(request, self.template_name, {'shifts': queryset})
+
 
 class FilterListView(ListView):
     template_name = "shifts/filter_shifts.html"
-    # model = Shift
     context_object_name = 'filters'
     paginate_by = 10
+    form_class = FiltersShiftForm
 
-    def get_queryset(self):
-        kwargs = self.request.GET.get('search-shifts', '')
-        print(kwargs)
-        queryset = Shift.objects.filter(
-            Q(user__first_name__icontains=kwargs) |
-            Q(user__last_name__icontains=kwargs))
-        return queryset
+    def get(self, request, *args, **kwargs):
+        form = self.form_class()
+        return render(request, self.template_name, {'form': form})
 
 
 class ShiftDetailsView(UpdateView):
