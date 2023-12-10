@@ -82,6 +82,8 @@
                 </tbody>
             </table>
         </section>
+        <div class="modal fade" id="filters-shifts" role="dialog"></div>
+        <button type="button" onclick="open_modal_filters('{% url 'shifts_app:filter-shifts' %}')">Filters</button>
     </main>
 
     <script>
@@ -91,4 +93,19 @@
             form.submit();
         }
     </script>
+    <script type="text/javascript">
+
+        function open_modal_filters(url) {
+            let $ = jQuery.noConflict();
+            $('#filters-shifts').load(url, function () {
+                $(this).modal('show');
+            });
+        }
+
+        function close_modal_filters() {
+            let $ = jQuery.noConflict();
+            $('#filters-shifts').modal('hide');
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {% endblock content %}

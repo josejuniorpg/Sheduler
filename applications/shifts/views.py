@@ -47,5 +47,20 @@ class ShiftListView(ListView):
         return queryset
 
 
+class FilterListView(ListView):
+    template_name = "shifts/filter_shifts.html"
+    # model = Shift
+    context_object_name = 'filters'
+    paginate_by = 10
+
+    def get_queryset(self):
+        kwargs = self.request.GET.get('search-shifts', '')
+        print(kwargs)
+        queryset = Shift.objects.filter(
+            Q(user__first_name__icontains=kwargs) |
+            Q(user__last_name__icontains=kwargs))
+        return queryset
+
+
 class ShiftDetailsView(UpdateView):
     template_name = "shifts/update_shifts.html"
