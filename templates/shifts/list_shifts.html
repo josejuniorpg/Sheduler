@@ -18,7 +18,7 @@
                 <div class="container-fluid">
                     <a class="navbar-brand">Shifts</a>
                     <form method="get" class="d-flex input-group w-auto" id="searchForm">
-                        <button type="button" onclick="submitFormWithoutInput()"
+                        <button type="button" onclick="cleanShiftFilters()"
                                 style="margin-left: 1rem; margin-right: 1rem; color: rgba(255,255,255,0.85); background: #be3b61"
                                 class="input-group-text border-0" id="search-addon">
                             <i class="fa-solid fa-trash"></i></button>
@@ -84,6 +84,6 @@
             </table>
         </section>
         <div class="modal fade" id="filters-shifts" role="dialog"></div>
-        <button type="button" onclick="open_modal_filters('{% url 'shifts_app:filter-shifts' %}')">Filters</button>
+        <button type="button" onclick="openModalFilters('{% url 'shifts_app:filter-shifts' %}')">Filters</button>
     </main>
 {% endblock content %}

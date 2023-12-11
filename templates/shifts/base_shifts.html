@@ -7,19 +7,19 @@
 
 {% block js %}
     <script type="text/javascript">
-        function open_modal_filters(url) {
+        function openModalFilters(url) {
             let $ = jQuery.noConflict();
             $('#filters-shifts').load(url, function () {
                 $(this).modal('show');
             });
         }
 
-        function close_modal_filters() {
+        function closeModalFilters() {
             let $ = jQuery.noConflict();
             $('#filters-shifts').modal('hide');
         }
 
-        function submitFormWithoutInput() {
+        function cleanShiftFilters() {
             let form = document.getElementById('searchForm');
             form['search-shifts'].value = '';
             form.submit();
