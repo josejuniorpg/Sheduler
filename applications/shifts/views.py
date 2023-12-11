@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, UpdateView
 
 from applications.shifts.forms import CreateShiftForm, FiltersShiftForm
-from applications.shifts.models import Shift
+from applications.shifts.models import Shift, ShiftCategory
 
 
 # Create your views here.
@@ -40,17 +40,32 @@ class ShiftListView(ListView):
 
     def get_queryset(self):
         kwargs = self.request.GET.get('search-shifts', '')
-        print(kwargs)
         queryset = Shift.objects.filter(
             Q(user__first_name__icontains=kwargs) |
             Q(user__last_name__icontains=kwargs))
         return queryset
 
     def post(self, request, *args, **kwargs):
-        print(request.POST)
-        queryset = self.get_queryset()
-        print(queryset)
-        return render(request, self.template_name, {'shifts': queryset})
+        status = True if request.POST.get('status') == 'on' else False
+        is_temporal = True if request.POST.get('is_temporal') == 'on' else False
+
+        category = list(ShiftCategory.objects.filter(id__in=request.POST.getlist('shift_category'))
+                        .values_list('name', flat=True))
+        filters = ("Status: " + str(status) + " ,Temporal: " + str(is_temporal) + " ,Categories: "
+                   + str(category))
+
+        min_duration = request.POST.get('min_duration') if request.POST.get('min_duration') else 0
+        max_duration = request.POST.get('max_duration') if request.POST.get('max_duration') else 100
+
+        queryset = Shift.objects.filter(
+            Q(shift_category__in=request.POST.getlist('shift_category'),
+              status=status, is_temporal=is_temporal, duration__range=(min_duration, max_duration)))
+        if not queryset:
+            queryset = Shift.objects.filter(
+                Q(status=status, is_temporal=is_temporal)
+                & Q(duration__range=(min_duration, max_duration)))
+        return render(request, self.template_name, {'shifts': queryset, 'filters': filters})
+        # Because Filter don't existed before, won't save when I use method Get
 
 
 class FilterListView(ListView):
