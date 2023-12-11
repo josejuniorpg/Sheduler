@@ -49,10 +49,9 @@ class ShiftListView(ListView):
         status = True if request.POST.get('status') == 'on' else False
         is_temporal = True if request.POST.get('is_temporal') == 'on' else False
 
-        category = list(ShiftCategory.objects.filter(id__in=request.POST.getlist('shift_category'))
-                        .values_list('name', flat=True))
         filters = ("Status: " + str(status) + " ,Temporal: " + str(is_temporal) + " ,Categories: "
-                   + str(category))
+                   + str(list(ShiftCategory.objects.filter(id__in=request.POST.getlist('shift_category'))
+                        .values_list('name', flat=True))))
 
         min_duration = request.POST.get('min_duration') if request.POST.get('min_duration') else 0
         max_duration = request.POST.get('max_duration') if request.POST.get('max_duration') else 100
