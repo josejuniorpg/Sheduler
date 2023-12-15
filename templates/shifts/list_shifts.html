@@ -124,9 +124,9 @@
                 </nav>
             {% endif %}
 
-        {{ mi_diccionario }}
+        {{ my_dictionary }}
 {#        <h1>{{ mi_diccionario.elements_in_queryset }}</h1>#}
-        {% for shift in mi_diccionario.elements_in_page %}
+        {% for shift in my_dictionary.elements_in_page %}
             <h1>{{ shift.shift_category.name }}</h1>
             <h1>{{ shift.shift_category.description }}</h1>
         {% endfor %}

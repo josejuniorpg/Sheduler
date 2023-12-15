@@ -67,13 +67,10 @@ class ShiftListView(ListView):
 
         # Pagination
         def paginate_elements(page_size, current_page, elements_list):
-            page_size = page_size
-            current_page = current_page
             incomplete_page = None
             has_previous = True
             has_next = True
             total_pages = 0
-            elements_list = elements_list
             total_elements = elements_list.count()
             elements_in_page = []
 
@@ -129,10 +126,11 @@ class ShiftListView(ListView):
             }
 
         # Todo create the cookie for the filters.
-        resultado = paginate_elements(1, 3, queryset)  # La del Post debe estar siempre en`1.
+        result = paginate_elements(10, 1, queryset)  # La del Post debe estar siempre en`1.
 
         return render(request, self.template_name,
-                      {'shifts': queryset, 'filters': filters, 'mi_diccionario': resultado})
+                      {'shifts': queryset, 'filters': filters, 'my_dictionary': result})
+
 
 
 class FilterListView(ListView):
