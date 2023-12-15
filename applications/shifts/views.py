@@ -60,10 +60,11 @@ class ShiftListView(ListView):
 
         min_duration = request.POST.get('min_duration') if request.POST.get('min_duration') else 0
         max_duration = request.POST.get('max_duration') if request.POST.get('max_duration') else 100
+        category = request.POST.getlist('shift_category')
 
         # todo Hacer esto una funcion, para asi reutilizarlo con la funcion de cookie.
         queryset = Shift.objects.filter(
-            Q(shift_category__in=request.POST.getlist('shift_category'),
+            Q(shift_category__in=category,
               status=status, is_temporal=is_temporal, duration__range=(min_duration, max_duration)))
         if not queryset:
             queryset = Shift.objects.filter(
