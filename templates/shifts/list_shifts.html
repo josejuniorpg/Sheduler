@@ -82,27 +82,45 @@
                 {% endfor %}
                 </tbody>
             </table>
-            <nav aria-label="...">
-                <ul class="pagination">
-                    <li class="page-item disabled">
-                        <a class="page-link">Previous</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active" aria-current="page">
-                        <a class="page-link" href="#">2 <span class="visually-hidden">(current)</span></a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
+            {% if is_paginated %}
+                <nav>
+                    <ul class="pagination">
+                        {% if page_obj.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                                    Previous</a>
+                            </li>
+                        {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link">Previous</a>
+                            </li>
+                        {% endif %}
+                        {% for page in paginator.page_range %}
+                            {% if page == page_obj.number %}
+                                <li class="page-item active"><a class="page-link" href="?page={{ page }}">{{ page }}</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if page_obj.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                            </li>
+                        {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link">Next</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            {% endif %}
 
-            {% if is_paginated %} {# Validacion extra #}
+            {% if is_paginated %}
                 <nav aria-label="Pagination">
                     <ul class="pagination">
                         {% if page_obj.has_previous %}
-                            <li class="pagination-previous"><a
+                            <li class="page-item disabled"><a
                                     href="?page={{ page_obj.previous_page_number }}">Atras</a>
                             </li>
                         {% endif %}
@@ -124,12 +142,12 @@
                 </nav>
             {% endif %}
 
-        {{ my_dictionary }}
-{#        <h1>{{ mi_diccionario.elements_in_queryset }}</h1>#}
-        {% for shift in my_dictionary.elements_in_page %}
-            <h1>{{ shift.shift_category.name }}</h1>
-            <h1>{{ shift.shift_category.description }}</h1>
-        {% endfor %}
+            {{ my_dictionary }}
+            {#        <h1>{{ mi_diccionario.elements_in_queryset }}</h1>#}
+            {% for shift in my_dictionary.elements_in_page %}
+                <h1>{{ shift.shift_category.name }}</h1>
+                <h1>{{ shift.shift_category.description }}</h1>
+            {% endfor %}
         </section>
         <div class="modal fade" id="filters-shifts" role="dialog"></div>
         <button type="button" onclick="openModalFilters('{% url 'shifts_app:filter-shifts' %}')">Filters</button>
