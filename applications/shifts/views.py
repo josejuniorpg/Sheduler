@@ -45,6 +45,11 @@ class ShiftListView(ListView):
             Q(user__last_name__icontains=kwargs))
         return queryset
 
+    def get_context_data(self, **kwargs):
+        kwargs['search'] = self.request.GET.get('search-shifts', '')
+        context = super().get_context_data(**kwargs)
+        return context
+
     def post(self, request, *args, **kwargs):
         status = True if request.POST.get('status') == 'on' else False
         is_temporal = True if request.POST.get('is_temporal') == 'on' else False
