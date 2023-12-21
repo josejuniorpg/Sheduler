@@ -3,7 +3,7 @@
         <div class="modal-header">
             <h1 class="modal-title">Filters</h1>
         </div>
-        <form method="POST" action="{% url 'shifts_app:list-shifts'%}"> {% csrf_token %}
+        <form method="GET" action="{% url 'shifts_app:list-shifts'%}">
             <div class="modal-body">
                 <h3>Please Select Your Filters</h3>
                 {{ form.shift_category.label_tag }}

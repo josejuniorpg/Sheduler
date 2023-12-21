@@ -115,41 +115,8 @@
                     </ul>
                 </nav>
             {% endif %}
-
-            {% if is_paginated %}
-                <nav aria-label="Pagination">
-                    <ul class="pagination">
-                        {% if page_obj.has_previous %}
-                            <li class="page-item disabled"><a
-                                    href="?page={{ page_obj.previous_page_number }}">Atras</a>
-                            </li>
-                        {% endif %}
-                        {% for pagina in paginator.page_range %}
-                            {% if pagina == page_obj.number %}
-                                <li class="current"><a href="?page={{ pagina }}" aria-label="Page 2">{{ pagina }}</a>
-                                </li>
-                            {% else %}
-                                <li><a href="?page={{ pagina }}" aria-label="Page 1">{{ pagina }}</a></li>
-                            {% endif %}
-                        {% endfor %}
-                        {% if page_obj.has_next %}
-                            <li class="pagination-next"><a href="?page={{ page_obj.next_page_number }}"
-                                                           aria-label="Next page">Next <span
-                                    class="show-for-sr">page</span></a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </nav>
-            {% endif %}
-
-            {{ my_dictionary }}
-            {#        <h1>{{ mi_diccionario.elements_in_queryset }}</h1>#}
-            {% for shift in my_dictionary.elements_in_page %}
-                <h1>{{ shift.shift_category.name }}</h1>
-                <h1>{{ shift.shift_category.description }}</h1>
-            {% endfor %}
         </section>
-        <div class="modal fade" id="filters-shifts" role="dialog"></div>
-        <button type="button" onclick="openModalFilters('{% url 'shifts_app:filter-shifts' %}')">Filters</button>
+{#        <div class="modal fade" id="filters-shifts" role="dialog"></div>#}
+{#        <button type="button" onclick="openModalFilters('{% url 'shifts_app:filter-shifts' %}')">Filters</button>#}
     </main>
 {% endblock content %}
