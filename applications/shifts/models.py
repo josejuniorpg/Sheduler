@@ -100,7 +100,6 @@ class ShiftDaily(TimeStampedModel):
     group = models.CharField(max_length=50, blank=True)
     shift_schedulers = models.ManyToManyField(Scheduler, limit_choices_to={'status': True})
 
-    # todo An Clean to hours
     class Meta:
         verbose_name = 'Shift Daily'
         verbose_name_plural = 'Shifts Daily'
@@ -116,12 +115,14 @@ class ShiftDaily(TimeStampedModel):
 
 
 class Assistance(TimeStampedModel):
-    CHOICES = ((0, 'did not assist'), (1, 'assisted '), (2, 'assisted but left early'),
-               (4, 'arrived late'), (5, 'arrived late and left early'))  # todo Ver si se me ocurren mas opciones
+    ASSISTANCE_CHOICES = (
+        (0, 'did not assist'), (1, 'assisted'), (2, 'assisted but left early'), (3, 'arrived late'),
+        (4, 'arrived late and left early'), (5, 'assisted, but had missing'), (6, 'arrived late and had missing'),
+    )
     daily_scheduler = models.ForeignKey(ShiftDaily, limit_choices_to={'status': True}, on_delete=models.CASCADE)
     is_vacations = models.BooleanField(default=False)
     date = models.DateField()
-    has_assisted = models.PositiveSmallIntegerField(choices=CHOICES, default=0)
+    has_assisted = models.PositiveSmallIntegerField(choices=ASSISTANCE_CHOICES, default=0)
 
     class Meta:
         verbose_name = 'Assistance'
@@ -157,8 +158,6 @@ class Missing(TimeStampedModel):
     worked_hours = models.PositiveSmallIntegerField(default=0)
     category = models.ForeignKey(MissingCategory, on_delete=models.CASCADE, null=True, blank=True)
     missing_hours = models.ManyToManyField(Scheduler)
-
-    # todo una validacion para que el missing coincida con el usuario
 
     class Meta:
         verbose_name = 'Missing'
