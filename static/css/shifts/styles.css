@@ -7,3 +7,13 @@
     background-color: #1c668d;
     color: #ffffff
 }
+
+._button-cancel {
+    background: #da4371;
+    color: white;
+}
+
+._button-cancel:hover {
+    background: #832741;
+    color: white;
+}
