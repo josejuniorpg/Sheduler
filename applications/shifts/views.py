@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, UpdateView
 
-from applications.shifts.forms import CreateShiftForm, FiltersShiftForm
+from applications.shifts.forms import CreateShiftForm, FiltersShiftForm, UpdateShiftForm
 from applications.shifts.models import Shift, ShiftCategory
 
 
@@ -63,5 +63,8 @@ class FilterListView(ListView):  # Maybe Change the name of this view
 
 
 class ShiftDetailsView(UpdateView):
+    model = Shift
     template_name = "shifts/update_shifts.html"
-# Todo Finish this view
+    success_url = reverse_lazy('shifts_app:list-shifts')
+    form_class = UpdateShiftForm
+    context_object_name = 'shift'

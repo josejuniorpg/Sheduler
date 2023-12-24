@@ -73,7 +73,7 @@
                         <td> {{ shift.duration }}</td>
                         <td> {{ shift.is_temporal }}</td>
                         <td>
-                            <a href="{% url 'users_app:profile-update' %}" type="button"
+                            <a href="{% url 'shifts_app:update-shifts' pk=shift.id %}" type="button"
                                class="btn btn-link btn-rounded btn-sm fw-bold"
                                data-mdb-ripple-color="dark">Edit
                             </a>
