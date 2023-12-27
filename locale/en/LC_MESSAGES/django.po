@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-31 20:45-0600\n"
-"PO-Revision-Date: 2023-10-29 17:33+0000\n"
-"Last-Translator: Jose Perez <yunipgdes@gmail.com>\n"
+"POT-Creation-Date: 2023-12-26 22:37-0600\n"
+"PO-Revision-Date: 2023-12-26 22:30+0000\n"
+"Last-Translator: Jose Alberto Perez BGutierrez <yunipgdes@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.9\n"
+
+#: .\applications\shifts\forms.py:36
+msgid "Select category"
+msgstr ""
+
+#: .\applications\shifts\forms.py:38 .\templates\shifts\create_shifts.html:43
+#: .\templates\shifts\list_shifts.html:42
+#: .\templates\shifts\update_shifts.html:44
+msgid "Is temporal"
+msgstr ""
+
+#: .\applications\shifts\forms.py:39
+msgid "Minimum Duration"
+msgstr ""
+
+#: .\applications\shifts\forms.py:40
+msgid "Maximum Duration"
+msgstr ""
 
 #: .\applications\users\forms.py:15 .\applications\users\forms.py:126
 msgid "Men"
@@ -88,11 +106,11 @@ msgstr ""
 msgid "Enter new password"
 msgstr ""
 
-#: .\scheduler\settings\base.py:138 .\templates\includes\header.html:35
+#: .\scheduler\settings\base.py:140 .\templates\includes\header.html:35
 msgid "English"
 msgstr ""
 
-#: .\scheduler\settings\base.py:139 .\templates\includes\header.html:32
+#: .\scheduler\settings\base.py:141 .\templates\includes\header.html:32
 msgid "Spanish"
 msgstr ""
 
@@ -101,15 +119,15 @@ msgid "Welcome | Home Page"
 msgstr ""
 
 #: .\templates\home\many_attempts_login.html:8
-#: .\templates\home\many_attempts_login.html:26
+#: .\templates\home\many_attempts_login.html:25
 msgid "User Blocked"
 msgstr ""
 
-#: .\templates\home\many_attempts_login.html:27
+#: .\templates\home\many_attempts_login.html:26
 msgid "Please contact support "
 msgstr ""
 
-#: .\templates\home\many_attempts_login.html:30
+#: .\templates\home\many_attempts_login.html:29
 msgid ""
 "\n"
 "                                There have been many login attempts on her "
@@ -154,6 +172,66 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
+#: .\templates\shifts\create_shifts.html:7
+#: .\templates\shifts\create_shifts.html:25
+msgid "Create Shift"
+msgstr ""
+
+#: .\templates\shifts\create_shifts.html:28
+#: .\templates\shifts\list_shifts.html:38
+#: .\templates\shifts\update_shifts.html:28
+msgid "User"
+msgstr ""
+
+#: .\templates\shifts\create_shifts.html:38
+#: .\templates\shifts\list_shifts.html:39
+#: .\templates\shifts\update_shifts.html:39
+msgid "Category"
+msgstr ""
+
+#: .\templates\shifts\create_shifts.html:50
+#: .\templates\shifts\list_shifts.html:41
+#: .\templates\shifts\update_shifts.html:51
+msgid "Duration"
+msgstr ""
+
+#: .\templates\shifts\create_shifts.html:60
+#: .\templates\shifts\update_shifts.html:61
+#: .\templates\users\password_reset_confirm.html:38
+#: .\templates\users\profile_update.html:55
+msgid "Save"
+msgstr ""
+
+#: .\templates\shifts\create_shifts.html:61
+msgid "Save And Add Another"
+msgstr ""
+
+#: .\templates\shifts\list_shifts.html:7
+msgid "List Shifts"
+msgstr ""
+
+#: .\templates\shifts\list_shifts.html:25
+msgid "Search"
+msgstr ""
+
+#: .\templates\shifts\list_shifts.html:40
+msgid "Status"
+msgstr ""
+
+#: .\templates\shifts\list_shifts.html:43
+#: .\templates\shifts\list_shifts.html:78
+msgid "Edit"
+msgstr ""
+
+#: .\templates\shifts\update_shifts.html:7
+#: .\templates\shifts\update_shifts.html:25
+msgid "Update Shift"
+msgstr ""
+
+#: .\templates\shifts\update_shifts.html:62
+msgid "Cancel"
+msgstr ""
+
 #: .\templates\users\login.html:8
 msgid "Login"
 msgstr ""
@@ -167,10 +245,8 @@ msgid "Please login to your account"
 msgstr ""
 
 #: .\templates\users\login.html:55
-#, fuzzy
-#| msgid "New password"
 msgid "Forgot password"
-msgstr "New Password"
+msgstr "Forgot password"
 
 #: .\templates\users\login.html:60
 msgid "Don't have an account"
@@ -238,11 +314,6 @@ msgstr ""
 msgid "New Password"
 msgstr "New Password"
 
-#: .\templates\users\password_reset_confirm.html:38
-#: .\templates\users\profile_update.html:55
-msgid "Save"
-msgstr ""
-
 #: .\templates\users\password_reset_done.html:8
 msgid "Sent mail"
 msgstr ""
@@ -275,20 +346,14 @@ msgid "First Name"
 msgstr "First Name"
 
 #: .\templates\users\profile_update.html:105
-#, fuzzy
-#| msgid "LastName"
 msgid "Last Name"
 msgstr "Last Name"
 
 #: .\templates\users\profile_update.html:115
-#, fuzzy
-#| msgid "Profile Update"
 msgid "Profile Image"
-msgstr "Profile Update"
+msgstr "Profile Image"
 
 #: .\templates\users\profile_update.html:125
-#, fuzzy
-#| msgid "PhoneNumber"
 msgid "Phone Number"
 msgstr "Phone Number"
 

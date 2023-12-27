@@ -22,10 +22,10 @@
                                  class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
                                  alt="Sample photo">
                             <div class="card-body p-4 p-md-5">
-                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Update Shift</h3>
+                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">{% trans "Update Shift" %}</h3>
                                 <form method="post" class="px-md-2"> {% csrf_token %}
                                     <div class="form-outline mb-4">
-                                        <label class="form-label" for="form3Example1q"><strong>User:</strong></label>
+                                        <label class="form-label" for="form3Example1q"><strong>{% trans "User" %}:</strong></label>
                                         {{ form.user }}
                                         {{ shift.user.first_name }} {{ shift.user.last_name }},  {{ shift.user.email }}
                                     </div>
@@ -36,20 +36,19 @@
                                         <div class="col-md-6 mb-4">
                                             <div class="form-outline datepicker">
                                                 <label for="exampleDatepicker1"
-                                                       class="form-label"><strong>Category</strong></label>
+                                                       class="form-label"><strong>{% trans "Category" %}</strong></label>
                                                 {{ form.shift_category }}
                                             </div>
                                         </div>
                                         <div class="col-md-3 mb-4">
-                                            <label for="exampleDatepicker1" class="form-label"><strong>Is
-                                                temporal?</strong></label></br>
+                                            <label for="exampleDatepicker1" class="form-label"><strong>{% trans "Is temporal" %}?</strong></label></br>
                                             {{ form.is_temporal }}
                                         </div>
                                     </div>
                                     <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
                                         <div class="col-md-6">
                                             <div class="form-outline">
-                                                <label class="form-label" for="form3Example1w"><strong>Duration</strong></label>
+                                                <label class="form-label" for="form3Example1w"><strong>{% trans "Duration" %}</strong></label>
                                                 {{ form.duration }}
                                             </div>
                                         </div>
@@ -59,8 +58,8 @@
                                             {{ form.status }}
                                         </div>
                                     </div>
-                                    <button type="submit" name="save" class="btn  btn-lg mb-1 _button-save">Save</button>
-                                    <a  class="btn  btn-lg mb-1 _button-cancel" href="{%  url 'shifts_app:list-shifts' %}" style="margin-left: 1.5rem">Cancel</a>
+                                    <button type="submit" name="save" class="btn  btn-lg mb-1 _button-save">{% trans "Save" %}</button>
+                                    <a  class="btn  btn-lg mb-1 _button-cancel" href="{%  url 'shifts_app:list-shifts' %}" style="margin-left: 1.5rem">{% trans "Cancel" %}</a>
                                 </form>
                             </div>
                         </div>
