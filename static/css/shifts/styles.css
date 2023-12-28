@@ -17,3 +17,10 @@
     background: #832741;
     color: white;
 }
+
+._nav-filters {
+    /*padding: 0.1rem;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
