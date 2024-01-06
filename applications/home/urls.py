@@ -8,5 +8,5 @@ app_name = 'home_app'
 
 urlpatterns = [
     path('', views.HomePageView.as_view(), name='home'),
-    path('change-language/<str:new_language>/', views.CambiarIdiomaView.as_view(), name='change-language'),
+    path('change-language/<str:new_language>/', views.ChangeLanguageView.as_view(), name='change-language'),
 ]

@@ -11,10 +11,12 @@ from django.views import View
 from scheduler.settings.base import LANGUAGE_COOKIE_NAME
 from scheduler import settings
 
+
 class HomePageView(TemplateView):
     template_name = "home/index.html"
 
-class CambiarIdiomaView(View):
+
+class ChangeLanguageView(View):
     def get(self, request, new_language):
         if new_language in [lang[0] for lang in settings.base.LANGUAGES]:
             response = HttpResponseRedirect(request.META.get('HTTP_REFERER', reverse('home_app:home')))
