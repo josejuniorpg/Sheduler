@@ -25,3 +25,7 @@ class ChangeLanguageView(View):
             return response
         else:
             return HttpResponseNotFound("Language not found")
+
+
+class TermsAndConditionsView(TemplateView):
+    template_name = "home/terms-conditions.html"
