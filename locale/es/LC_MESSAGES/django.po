@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-26 22:37-0600\n"
-"PO-Revision-Date: 2023-12-26 22:38+0000\n"
+"POT-Creation-Date: 2024-01-06 21:06-0600\n"
+"PO-Revision-Date: 2024-01-06 21:07+0000\n"
 "Last-Translator: Jose Alberto Perez BGutierrez <yunipgdes@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -139,6 +139,37 @@ msgstr ""
 "Ha habido muchos intentos de inicios de session en su cuenta, asique a sido bloqueada. Se restaurata automaticamente en un par de dias. \n"
 "\n"
 "Tambien puede ponerse en contacto con el soporte al correo de "
+
+#: .\templates\home\terms-conditions.html:8
+#: .\templates\home\terms-conditions.html:29
+msgid "Terms & Conditions"
+msgstr "Términos y condiciones"
+
+#: .\templates\home\terms-conditions.html:20
+#: .\templates\home\terms-conditions.html:33
+#| msgid "Terms of service"
+msgid "Terms of use"
+msgstr "Términos y Condiciones."
+
+#: .\templates\home\terms-conditions.html:21
+#: .\templates\home\terms-conditions.html:39
+msgid "Intellectual property rights"
+msgstr "Derechos de propiedad intelectual"
+
+#: .\templates\home\terms-conditions.html:22
+#: .\templates\home\terms-conditions.html:44
+msgid "Prohibited activities"
+msgstr "Actividades prohibidas"
+
+#: .\templates\home\terms-conditions.html:23
+#: .\templates\home\terms-conditions.html:49
+msgid "Termination clause"
+msgstr "Cláusula de rescisión"
+
+#: .\templates\home\terms-conditions.html:24
+#: .\templates\home\terms-conditions.html:53
+msgid "Governing law"
+msgstr "Legislación aplicable"
 
 #: .\templates\includes\footer.html:10
 msgid "Get connected with us on social networks:"
