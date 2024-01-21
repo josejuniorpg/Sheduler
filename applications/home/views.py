@@ -31,6 +31,6 @@ class TermsAndConditionsView(TemplateView):
     template_name = "home/terms-conditions.html"
 
 
-class ErrorPage404(TemplateView):
-    template_name = "home/Error404.html"
+def handler404(request, exception):
+    return render(request, "home/Error404.html", {})
 

@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from django.conf.urls.static import static
 from django.conf import settings
+import applications.home.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +27,8 @@ urlpatterns = [
     path('accounts/', include('applications.users.urls')),
     path('shifts/', include('applications.shifts.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = applications.home.views.handler404
 
 if 'rosetta' in settings.INSTALLED_APPS:
     urlpatterns += [
