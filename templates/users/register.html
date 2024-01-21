@@ -46,6 +46,9 @@
                                                            for="form3Example3c">{% trans "Email" %}</label>
                                                 </div>
                                             </div>
+                                            {% if form.errors.email %}
+                                                <strong style="color: #ff5959">{{ form.errors.email }}</strong>
+                                            {% endif %}
 
                                             <div class="d-flex flex-row align-items-center mb-2">
                                                 <i class="fa-solid fa-address-book fa-lg me-3 fa-fw"></i>

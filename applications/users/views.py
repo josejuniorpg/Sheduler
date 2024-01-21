@@ -30,7 +30,7 @@ class UserRegisterView(AnonymousRequiredMixin, FormView):
 
     @method_decorator(ratelimit(key='user_or_ip', rate='5/m', block=True))
     def get(self, request):
-        return super().get(request)  # todo Configure the page error
+        return super().get(request)
 
     @method_decorator(ratelimit(key='user_or_ip', rate='5/m', block=True))
     def post(self, request, *args, **kwargs):
@@ -39,7 +39,7 @@ class UserRegisterView(AnonymousRequiredMixin, FormView):
         if form.is_valid():
             return self.form_valid(form)
         else:
-            return self.form_invalid(form)  # todo Configure the page error
+            return self.form_invalid(form)
 
     def form_valid(self, form):
         try:
@@ -68,7 +68,7 @@ class UserRegisterView(AnonymousRequiredMixin, FormView):
                     kwargs={'pk': user.id}
                 )
             )
-        except Exception as e:  # todo Configure the page error,
+        except Exception as e:
             return HttpResponse(f"Error;    {e}", status=500)
 
 

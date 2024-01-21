@@ -44,6 +44,12 @@ class UserRegisterForm(UserCreationForm):
             'password2',
         )
 
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists():
+            raise forms.ValidationError(_('This email address is already registered. Please choose another one.'))
+        return email
+
 
 class VerificationForm(forms.Form):
     code_verification = forms.CharField(label=_('Code Verification'), required=True,

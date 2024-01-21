@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-06 21:06-0600\n"
+"POT-Creation-Date: 2024-01-20 19:44-0600\n"
 "PO-Revision-Date: 2023-12-26 22:30+0000\n"
 "Last-Translator: Jose Alberto Perez BGutierrez <yunipgdes@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,56 +37,60 @@ msgstr ""
 msgid "Maximum Duration"
 msgstr ""
 
-#: .\applications\users\forms.py:15 .\applications\users\forms.py:126
+#: .\applications\users\forms.py:15 .\applications\users\forms.py:132
 msgid "Men"
 msgstr ""
 
-#: .\applications\users\forms.py:15 .\applications\users\forms.py:126
+#: .\applications\users\forms.py:15 .\applications\users\forms.py:132
 msgid "Female"
 msgstr ""
 
-#: .\applications\users\forms.py:15 .\applications\users\forms.py:126
+#: .\applications\users\forms.py:15 .\applications\users\forms.py:132
 msgid "Others"
 msgstr ""
 
-#: .\applications\users\forms.py:23 .\templates\users\profile_update.html:135
+#: .\applications\users\forms.py:23 .\templates\users\profile_update.html:134
 msgid "Gender"
 msgstr ""
 
-#: .\applications\users\forms.py:49
+#: .\applications\users\forms.py:50
+msgid "This email address is already registered. Please choose another one."
+msgstr ""
+
+#: .\applications\users\forms.py:55
 msgid "Code Verification"
 msgstr ""
 
-#: .\applications\users\forms.py:64 .\applications\users\forms.py:66
+#: .\applications\users\forms.py:70 .\applications\users\forms.py:72
 msgid "TheCodeIsIncorrect"
 msgstr "The Code Is Incorrect"
 
-#: .\applications\users\forms.py:74 .\applications\users\forms.py:91
-#: .\applications\users\forms.py:113 .\templates\users\register.html:104
+#: .\applications\users\forms.py:80 .\applications\users\forms.py:97
+#: .\applications\users\forms.py:119 .\templates\users\register.html:107
 msgid "Password"
 msgstr "Password"
 
-#: .\applications\users\forms.py:89 .\applications\users\forms.py:111
+#: .\applications\users\forms.py:95 .\applications\users\forms.py:117
 msgid "New password"
 msgstr "New Password"
 
-#: .\applications\users\forms.py:95 .\applications\users\forms.py:117
+#: .\applications\users\forms.py:101 .\applications\users\forms.py:123
 msgid "New password confirmation"
 msgstr ""
 
-#: .\applications\users\forms.py:98 .\applications\users\forms.py:120
+#: .\applications\users\forms.py:104 .\applications\users\forms.py:126
 msgid "ConfirmPassword"
 msgstr "Confirm Password"
 
-#: .\applications\users\forms.py:105
+#: .\applications\users\forms.py:111
 msgid "Old password"
 msgstr "Old Password"
 
-#: .\applications\users\forms.py:108
+#: .\applications\users\forms.py:114
 msgid "OldPassword"
 msgstr "Old Password"
 
-#: .\applications\users\functions.py:20 .\templates\users\verification.html:8
+#: .\applications\users\functions.py:20 .\templates\users\verification.html:7
 msgid "Verification Code"
 msgstr ""
 
@@ -114,20 +118,24 @@ msgstr ""
 msgid "Spanish"
 msgstr ""
 
-#: .\templates\home\index.html:8
+#: .\templates\home\Error404.html:7
+msgid "404 | Not Found"
+msgstr ""
+
+#: .\templates\home\index.html:7
 msgid "Welcome | Home Page"
 msgstr ""
 
-#: .\templates\home\many_attempts_login.html:8
-#: .\templates\home\many_attempts_login.html:25
+#: .\templates\home\many_attempts_login.html:7
+#: .\templates\home\many_attempts_login.html:24
 msgid "User Blocked"
 msgstr ""
 
-#: .\templates\home\many_attempts_login.html:26
+#: .\templates\home\many_attempts_login.html:25
 msgid "Please contact support "
 msgstr ""
 
-#: .\templates\home\many_attempts_login.html:29
+#: .\templates\home\many_attempts_login.html:28
 msgid ""
 "\n"
 "                                There have been many login attempts on her "
@@ -138,33 +146,33 @@ msgid ""
 "                            "
 msgstr ""
 
-#: .\templates\home\terms-conditions.html:8
-#: .\templates\home\terms-conditions.html:29
+#: .\templates\home\terms-conditions.html:7
+#: .\templates\home\terms-conditions.html:28
 msgid "Terms & Conditions"
 msgstr ""
 
-#: .\templates\home\terms-conditions.html:20
-#: .\templates\home\terms-conditions.html:33
+#: .\templates\home\terms-conditions.html:19
+#: .\templates\home\terms-conditions.html:32
 msgid "Terms of use"
 msgstr ""
 
-#: .\templates\home\terms-conditions.html:21
-#: .\templates\home\terms-conditions.html:39
+#: .\templates\home\terms-conditions.html:20
+#: .\templates\home\terms-conditions.html:38
 msgid "Intellectual property rights"
 msgstr ""
 
-#: .\templates\home\terms-conditions.html:22
-#: .\templates\home\terms-conditions.html:44
+#: .\templates\home\terms-conditions.html:21
+#: .\templates\home\terms-conditions.html:43
 msgid "Prohibited activities"
 msgstr ""
 
-#: .\templates\home\terms-conditions.html:23
-#: .\templates\home\terms-conditions.html:49
+#: .\templates\home\terms-conditions.html:22
+#: .\templates\home\terms-conditions.html:48
 msgid "Termination clause"
 msgstr ""
 
-#: .\templates\home\terms-conditions.html:24
-#: .\templates\home\terms-conditions.html:53
+#: .\templates\home\terms-conditions.html:23
+#: .\templates\home\terms-conditions.html:52
 msgid "Governing law"
 msgstr ""
 
@@ -228,7 +236,7 @@ msgstr ""
 #: .\templates\shifts\create_shifts.html:60
 #: .\templates\shifts\update_shifts.html:61
 #: .\templates\users\password_reset_confirm.html:38
-#: .\templates\users\profile_update.html:55
+#: .\templates\users\profile_update.html:54
 msgid "Save"
 msgstr ""
 
@@ -262,81 +270,81 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: .\templates\users\login.html:8
+#: .\templates\users\login.html:7
 msgid "Login"
 msgstr ""
 
-#: .\templates\users\login.html:29
+#: .\templates\users\login.html:28
 msgid "We are Xibal Team"
 msgstr ""
 
-#: .\templates\users\login.html:33
+#: .\templates\users\login.html:32
 msgid "Please login to your account"
 msgstr ""
 
-#: .\templates\users\login.html:55
+#: .\templates\users\login.html:54
 msgid "Forgot password"
 msgstr "Forgot password"
 
-#: .\templates\users\login.html:60
+#: .\templates\users\login.html:59
 msgid "Don't have an account"
 msgstr ""
 
-#: .\templates\users\login.html:61 .\templates\users\register.html:8
-#: .\templates\users\register.html:136
+#: .\templates\users\login.html:60 .\templates\users\register.html:8
+#: .\templates\users\register.html:139
 msgid "Register"
 msgstr ""
 
-#: .\templates\users\login.html:68
+#: .\templates\users\login.html:67
 msgid "We are more than just a company"
 msgstr ""
 
-#: .\templates\users\password_change.html:8
-#: .\templates\users\profile_update.html:58
+#: .\templates\users\password_change.html:7
+#: .\templates\users\profile_update.html:57
 msgid "Change Password"
 msgstr "Change Password"
 
-#: .\templates\users\password_change_done.html:8
+#: .\templates\users\password_change_done.html:7
 msgid "Password Changed"
 msgstr "Password Changed"
 
-#: .\templates\users\password_change_done.html:23
-#: .\templates\users\password_reset_complete.html:23
-#: .\templates\users\password_reset_done.html:23
+#: .\templates\users\password_change_done.html:22
+#: .\templates\users\password_reset_complete.html:22
+#: .\templates\users\password_reset_done.html:22
 msgid "Success"
 msgstr ""
 
-#: .\templates\users\password_change_done.html:24
-#: .\templates\users\password_reset_done.html:24
+#: .\templates\users\password_change_done.html:23
+#: .\templates\users\password_reset_done.html:23
 msgid "Your email has been successfully sent"
 msgstr ""
 
-#: .\templates\users\password_change_done.html:24
-#: .\templates\users\password_reset_done.html:24
+#: .\templates\users\password_change_done.html:23
+#: .\templates\users\password_reset_done.html:23
 msgid "It may take a few minutes to arrive"
 msgstr ""
 
-#: .\templates\users\password_reset.html:8
-#: .\templates\users\password_reset.html:33
+#: .\templates\users\password_reset.html:7
+#: .\templates\users\password_reset.html:32
 msgid "Send Email"
 msgstr ""
 
-#: .\templates\users\password_reset.html:24
+#: .\templates\users\password_reset.html:23
 #: .\templates\users\password_reset_confirm.html:7
 #: .\templates\users\password_reset_confirm.html:23
 msgid "Reset Password"
 msgstr "Reset Password"
 
-#: .\templates\users\password_reset_complete.html:8
+#: .\templates\users\password_reset_complete.html:7
 #: .\templates\users\password_reset_confirm.html:29
 msgid "Confirm Password"
 msgstr "Confirm Password"
 
-#: .\templates\users\password_reset_complete.html:24
+#: .\templates\users\password_reset_complete.html:23
 msgid "Your password has been successfully reset"
 msgstr ""
 
-#: .\templates\users\password_reset_complete.html:24
+#: .\templates\users\password_reset_complete.html:23
 msgid "You can log in again "
 msgstr ""
 
@@ -344,12 +352,12 @@ msgstr ""
 msgid "New Password"
 msgstr "New Password"
 
-#: .\templates\users\password_reset_done.html:8
+#: .\templates\users\password_reset_done.html:7
 msgid "Sent mail"
 msgstr ""
 
 #: .\templates\users\password_reset_email.html:2
-#: .\templates\users\verification.html:45
+#: .\templates\users\verification.html:44
 msgid "Hi"
 msgstr ""
 
@@ -367,23 +375,23 @@ msgstr ""
 msgid "Thanks"
 msgstr ""
 
-#: .\templates\users\profile_update.html:8
+#: .\templates\users\profile_update.html:7
 msgid "Profile Update"
 msgstr "Profile Update"
 
-#: .\templates\users\profile_update.html:95 .\templates\users\register.html:55
+#: .\templates\users\profile_update.html:94 .\templates\users\register.html:58
 msgid "First Name"
 msgstr "First Name"
 
-#: .\templates\users\profile_update.html:105
+#: .\templates\users\profile_update.html:104
 msgid "Last Name"
 msgstr "Last Name"
 
-#: .\templates\users\profile_update.html:115
+#: .\templates\users\profile_update.html:114
 msgid "Profile Image"
 msgstr "Profile Image"
 
-#: .\templates\users\profile_update.html:125
+#: .\templates\users\profile_update.html:124
 msgid "Phone Number"
 msgstr "Phone Number"
 
@@ -399,51 +407,51 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: .\templates\users\register.html:65
+#: .\templates\users\register.html:68
 msgid "LastName"
 msgstr "Last Name"
 
-#: .\templates\users\register.html:82
+#: .\templates\users\register.html:85
 msgid "PhoneNumber"
 msgstr "Phone Number"
 
-#: .\templates\users\register.html:113
+#: .\templates\users\register.html:116
 msgid "RepeatYourPassword"
 msgstr "Repeat You Password"
 
-#: .\templates\users\register.html:129
+#: .\templates\users\register.html:132
 msgid "I agree all statements in"
 msgstr ""
 
-#: .\templates\users\register.html:130
+#: .\templates\users\register.html:133
 msgid "Terms of service"
 msgstr ""
 
-#: .\templates\users\verification.html:32
+#: .\templates\users\verification.html:31
 msgid "Congratulations"
 msgstr ""
 
-#: .\templates\users\verification.html:33
+#: .\templates\users\verification.html:32
 msgid "Your account has been successfully verified"
 msgstr ""
 
-#: .\templates\users\verification.html:36
+#: .\templates\users\verification.html:35
 msgid "Go to Home"
 msgstr ""
 
-#: .\templates\users\verification.html:61
+#: .\templates\users\verification.html:60
 msgid "Email Verification"
 msgstr ""
 
-#: .\templates\users\verification.html:68
+#: .\templates\users\verification.html:67
 msgid "You didn't receive the email?"
 msgstr ""
 
-#: .\templates\users\verification.html:73
+#: .\templates\users\verification.html:72
 msgid "Send"
 msgstr ""
 
-#: .\templates\users\verification.html:78
+#: .\templates\users\verification.html:77
 msgid "Confirm"
 msgstr ""
 
