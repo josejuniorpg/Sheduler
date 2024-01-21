@@ -29,3 +29,8 @@ class ChangeLanguageView(View):
 
 class TermsAndConditionsView(TemplateView):
     template_name = "home/terms-conditions.html"
+
+
+class ErrorPage404(TemplateView):
+    template_name = "home/Error404.html"
+
