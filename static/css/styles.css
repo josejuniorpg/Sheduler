@@ -123,3 +123,25 @@
     bottom: 0;
     width: 100%;
 }
+
+
+/* Utilis*/
+._button-save {
+    background-color: #039cd9;
+    color: #ffffff
+}
+
+._button-save:hover {
+    background-color: #1c668d;
+    color: #ffffff
+}
+
+._button-cancel {
+    background: #da4371;
+    color: white;
+}
+
+._button-cancel:hover {
+    background: #832741;
+    color: white;
+}

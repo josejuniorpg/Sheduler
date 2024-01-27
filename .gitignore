@@ -5,3 +5,4 @@
 /.idea/prettier.xml
 ./.idea
 /staticfiles/
+/templates/shifts/base_shifts_TODO.html

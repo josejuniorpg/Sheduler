@@ -7,23 +7,10 @@
 
 {% block js %}
     <script type="text/javascript">
-        function openModalFilters(url) {
-            let $ = jQuery.noConflict();
-            $('#filters-shifts').load(url, function () {
-                $(this).modal('show');
-            });
-        }
-
-        function closeModalFilters() {
-            let $ = jQuery.noConflict();
-            $('#filters-shifts').modal('hide');
-        }
-
         function cleanShiftFilters() {
             let form = document.getElementById('searchForm');
             form['search-shifts'].value = '';
             form.submit();
         }
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 {% endblock js %}
