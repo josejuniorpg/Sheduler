@@ -6,6 +6,7 @@ from django.views.generic import CreateView, ListView, UpdateView
 
 from applications.shifts.forms import CreateShiftForm, FiltersShiftForm, UpdateShiftForm
 from applications.shifts.models import Shift, ShiftCategory
+from applications.users.models import User
 
 
 # Create your views here.
@@ -68,3 +69,9 @@ class ShiftDetailsView(UpdateView):
     success_url = reverse_lazy('shifts_app:list-shifts')
     form_class = UpdateShiftForm
     context_object_name = 'shift'
+
+
+class ShiftListUsers(ListView):
+    model = User
+    template_name = "shifts/list_users.html"
+

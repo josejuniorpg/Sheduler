@@ -11,4 +11,5 @@ urlpatterns = [
     path('list-shift/', views.ShiftListView.as_view(), name='list-shifts'),
     path('update-shift/<pk>', views.ShiftDetailsView.as_view(), name='update-shifts'),
     path('filter-shift/', views.FilterListView.as_view(), name='filter-shifts'),  # todo finish the Filters Logic
+    path('list-user/', views.ShiftListUsers.as_view(), name='list-users'),
 ]
