@@ -72,9 +72,9 @@ class ShiftDetailsView(UpdateView):
 
 
 class ShiftListUsers(ListView):
-    model = User
     template_name = "shifts/list_users.html"
     context_object_name = 'users'
     paginate_by = 3
 
-
+    def get_queryset(self):
+        return User.objects.values('email', 'first_name', 'last_name', 'profile_image', 'phone_number', 'status')
