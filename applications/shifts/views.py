@@ -78,3 +78,23 @@ class ShiftListUsers(ListView):
 
     def get_queryset(self):
         return User.objects.values('email', 'first_name', 'last_name', 'profile_image', 'phone_number', 'status')
+
+
+class ShiftDailyListView(ListView):
+    template_name = "shifts/list_shifts.html"
+    # model = Shift
+    context_object_name = 'shifts'
+    paginate_by = 10
+
+    def get_queryset(self):
+        kwargs = self.request.GET.get('search-shifts', '')
+        queryset = Shift.objects.filter(
+            Q(user__first_name__icontains=kwargs) |
+            Q(user__last_name__icontains=kwargs))
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        kwargs['search'] = self.request.GET.get('search-shifts', '')
+        context = super().get_context_data(**kwargs)
+        return context
+
