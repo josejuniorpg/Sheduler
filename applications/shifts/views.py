@@ -1,11 +1,11 @@
 # Django imports
-from django.db.models import Q
+from django.db.models import Q, Prefetch
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, UpdateView
 
 from applications.shifts.forms import CreateShiftForm, FiltersShiftForm, UpdateShiftForm
-from applications.shifts.models import Shift, ShiftCategory
+from applications.shifts.models import Shift, ShiftCategory, ShiftDaily, Scheduler
 from applications.users.models import User
 
 
@@ -81,16 +81,13 @@ class ShiftListUsers(ListView):
 
 
 class ShiftDailyListView(ListView):
-    template_name = "shifts/list_shifts.html"
-    # model = Shift
+    template_name = "shifts/list_daily.html"
     context_object_name = 'shifts'
     paginate_by = 10
 
     def get_queryset(self):
         kwargs = self.request.GET.get('search-shifts', '')
-        queryset = Shift.objects.filter(
-            Q(user__first_name__icontains=kwargs) |
-            Q(user__last_name__icontains=kwargs))
+        queryset = (ShiftDaily.objects.all().select_related('shift__user').distinct())
         return queryset
 
     def get_context_data(self, **kwargs):
